@@ -106,13 +106,13 @@ void MoveBall()
 
 
 
-        /*int bilo_li_ono = bilo_stolknov (x1, y1, x2, y2, r1, r2);
+      /*int bilo_li_ono = bilo_stolknov (x1, y1, x2, y2, r1, r2);
         if (bilo_li_ono)
             {
             Bam_balls (x1, y1, &vx1, &vy1, x2, y2, &vx2, &vy2);
             }
         Ball_Control (&vx1, &vy1);
-        */
+      */
         ControlBall(&ball1, &F4_Col);
 
         ScoreDraw (score1, score2);
@@ -238,7 +238,7 @@ viod Bam_balls (int* x, int* y, int* vx, int* vy);
     *y = *y - r;
     }
 
-    */
+*/
 
 //---------------------------------------------------------------------------------
 
@@ -314,11 +314,10 @@ void ScoreDraw (int score1, int score2)
     txSetFillColor (TX_BLACK);
     txRectangle (W/2 - textSizeX, 2,
                  W/2 + textSizeX, textSizeY);
+
     txSetColor ((TX_GREEN), 2);
     txSetTextAlign (TA_CENTER);
     txTextOut (txGetExtentX() / 2, 2, str);
-
-
     }
 
 
