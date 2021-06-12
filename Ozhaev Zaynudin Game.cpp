@@ -311,11 +311,11 @@ void ScoreDraw (int score1, int score2)
     int textSizeX = txGetTextExtentX ("------"),
         textSizeY = txGetTextExtentY ("------");
 
+    txSetColor ((TX_GREEN), 2);
     txSetFillColor (TX_BLACK);
     txRectangle (W/2 - textSizeX, 2,
                  W/2 + textSizeX, textSizeY);
 
-    txSetColor ((TX_GREEN), 2);
     txSetTextAlign (TA_CENTER);
     txTextOut (txGetExtentX() / 2, 2, str);
     }
