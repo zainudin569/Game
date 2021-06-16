@@ -8,7 +8,7 @@ void MoveBall();
 void DrowBall(Ball ball);
 void PhysicsBall(Ball* ball, int dt, int* score1, int* score2);
 void CollisionBall(Ball* ball_1, Ball* ball_2);
-void ControlBall(Ball* ball, int* F4_Col, Key plaer, int dt, int* score1, int* score2);
+void ControlBall(Ball* ball, int* F4_Col, Key plaer, int dt);
 void ScoreDraw (int score1, int score2);
 
 //void bilo_stolknov (double xA, double yA, double xB, double yB, double rA, double rB)
@@ -101,8 +101,8 @@ void MoveBall()
         Ball_Control (&vx1, &vy1);
       */
 
-        ControlBall(&ball1, &F4_Col, plaer1, dt, &score1, &score2);
-        ControlBall(&ball2, &F4_Col, plaer2, dt, &score1, &score2);
+        ControlBall(&ball1, &F4_Col, plaer1, dt);
+        ControlBall(&ball2, &F4_Col, plaer2, dt);
 
         ScoreDraw (score1, score2);
 
