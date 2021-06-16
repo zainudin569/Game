@@ -87,7 +87,7 @@ void MoveBall()
 
         //PhysicsBall(&ball1, dt);
         //PhysicsBall(&ball2, dt);
-        PhysicsBall(&ball3, dt, &score1, &score2);
+        PhysicsBall(&ball3, dt);
 
         CollisionBall(&ball1, &ball3);//проверка столкновения
 
