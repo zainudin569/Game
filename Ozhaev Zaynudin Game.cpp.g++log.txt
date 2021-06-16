@@ -1,6 +1,9 @@
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void ControlBall(Ball*, int*, Key, int, int, int)':
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:130:6: warning: no previous declaration for 'void ControlBall(Ball*, int*, Key, int, int, int)' [-Wmissing-declarations]
- void ControlBall(Ball* ball, int* F4_Col, Key plaer, int dt, int score1, int score2)
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void MoveBall()':
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:90:49: error: too many arguments to function 'void PhysicsBall(Ball*, int)'
+         PhysicsBall(&ball3, dt, &score1, &score2);
+                                                 ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:9:6: note: declared here
+ void PhysicsBall(Ball* ball, int dt);
       ^
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void CollisionBall(Ball*, Ball*)':
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:243:46: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
@@ -12,10 +15,6 @@ C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:256:28: warning: compa
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:270:43: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
          d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01;
                                            ^
-C:\Users\zainu\AppData\Local\Temp\ccVA4uJH.o: In function `Z8MoveBallv':
-C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp:104: undefined reference to `ControlBall(Ball*, int*, Key, int)'
-C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp:105: undefined reference to `ControlBall(Ball*, int*, Key, int)'
-collect2.exe: error: ld returned 1 exit status
 ---------------------------------------------------------------------------------------------
-[16.06.2021 19:30:58,24 C:\Users\zainu@DESKTOP-ZAINU, returned 1]
+[16.06.2021 19:32:22,48 C:\Users\zainu@DESKTOP-ZAINU, returned 1]
 C:\Users\zainu\Desktop\курс\Game> g++.exe "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp" -o "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe"  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC
