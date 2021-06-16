@@ -2,12 +2,13 @@
 const int W = 1070;
 const int H = 650;
 struct Ball;
+struct Key;
 
 void MoveBall();
 void DrowBall(Ball ball);
-void PhysicsBall(Ball* ball, int dt);
-void CollisionBall(Ball* ball_1, Ball* ball_2, int* score1);
-void ControlBall(Ball* ball, int* F4_Col);
+void PhysicsBall(Ball* ball, int dt, int* score1, int* score2);
+void CollisionBall(Ball* ball_1, Ball* ball_2);
+void ControlBall(Ball* ball, int* F4_Col, Key plaer, int dt, int* score1, int* score2);
 void ScoreDraw (int score1, int score2);
 
 //void bilo_stolknov (double xA, double yA, double xB, double yB, double rA, double rB)
@@ -26,6 +27,11 @@ int main()
 
 //---------------------------------------------------------------------------------
 
+struct Key
+    {
+    int  key_left, key_right , key_up, key_down;
+    };
+
 struct Ball
     {
     int  x, y , vx, vy;
@@ -42,29 +48,20 @@ void MoveBall()
     {
     //srand(time(NULL));
 
-    Ball ball1 = { rand() % W,  rand() % H,
-                 1 + rand() % 9, 1 + rand() % 9,
-                 15 + rand() % 35,
+    Ball ball1 = {W/2 + rand() % W/2 ,  rand() % H, 0, 0, 25,
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
-    Ball ball2 = { rand() % W,  rand() % H,
-                 1 + rand() % 9, 1 + rand() % 9,
-                 15 + rand() % 35,
+    Ball ball2 = { rand() % W/2,  rand() % H, 0, 0, 25,
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
-    Ball ball3 = { rand() % W,  rand() % H,
-                 1 + rand() % 9, 1 + rand() % 9,
-                 15 + rand() % 35,
+    Ball ball3 = { rand() % W,  rand() % H, 1 + rand() % 9, 1 + rand() % 9, 40,
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
-    Ball ball4 = { rand() % W,  rand() % H,
-                 1 + rand() % 9, 1 + rand() % 9,
-                 15 + rand() % 35,
-                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
-                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
+    Key plaer1 = { VK_LEFT, VK_RIGHT, VK_UP, VK_DOWN };
+    Key plaer2 = { 'A', 'D', 'W', 'S' };
 
     int dt = 1;
     int F4_Col = 0;
@@ -84,27 +81,17 @@ void MoveBall()
         DrowBall(ball1);
         DrowBall(ball2);
         DrowBall(ball3);
-        DrowBall(ball4);
 
         //printf ("In CraziBall(): x  = %d and y  = %d\n", x2, y2);
         //printf ("In CraziBall(): vx = %d and vy = %d\n", vx2, vy2);
 
-        PhysicsBall(&ball1, dt);
-        PhysicsBall(&ball2, dt);
-        PhysicsBall(&ball3, dt);
-        PhysicsBall(&ball4, dt);
+        //PhysicsBall(&ball1, dt);
+        //PhysicsBall(&ball2, dt);
+        PhysicsBall(&ball3, dt, &score1, &score2);
 
+        CollisionBall(&ball1, &ball3);//проверка столкновения
 
-        CollisionBall(&ball1, &ball2, &score1); //проверка столкновения
-        CollisionBall(&ball1, &ball3, &score1);
-        CollisionBall(&ball1, &ball4, &score1);
-
-        CollisionBall(&ball2, &ball3, &score2);
-        CollisionBall(&ball2, &ball4, &score2);
-
-        CollisionBall(&ball3, &ball4, &score2);
-
-
+        CollisionBall(&ball2, &ball3);
 
       /*int bilo_li_ono = bilo_stolknov (x1, y1, x2, y2, r1, r2);
         if (bilo_li_ono)
@@ -113,7 +100,9 @@ void MoveBall()
             }
         Ball_Control (&vx1, &vy1);
       */
-        ControlBall(&ball1, &F4_Col);
+
+        ControlBall(&ball1, &F4_Col, plaer1, dt, &score1, &score2);
+        ControlBall(&ball2, &F4_Col, plaer2, dt, &score1, &score2);
 
         ScoreDraw (score1, score2);
 
@@ -138,12 +127,12 @@ void DrowBall(Ball ball)
 
 //---------------------------------------------------------------------------------
 
-void ControlBall(Ball* ball, int* F4_Col)
+void ControlBall(Ball* ball, int* F4_Col, Key plaer, int dt, int* score1, int* score2)
         {
-        if (txGetAsyncKeyState (VK_RIGHT)) ++(*ball) .vx;
-        if (txGetAsyncKeyState (VK_LEFT))  --(*ball) .vx;
-        if (txGetAsyncKeyState (VK_UP))    --(*ball) .vy;
-        if (txGetAsyncKeyState (VK_DOWN))  ++(*ball) .vy;
+        if (txGetAsyncKeyState (plaer .key_left))  (*ball) .vx = (*ball) .vx - 20;
+        if (txGetAsyncKeyState (plaer .key_right)) (*ball) .vx = (*ball) .vx + 20;
+        if (txGetAsyncKeyState (plaer .key_up))    (*ball) .vy = (*ball) .vy - 20;;
+        if (txGetAsyncKeyState (plaer .key_down))  (*ball) .vy = (*ball) .vy + 20;;
 
         if (txGetAsyncKeyState (VK_SPACE)) (*ball) .vy = (*ball) .vx = 0;
 
@@ -178,11 +167,14 @@ void ControlBall(Ball* ball, int* F4_Col)
             (*ball) .Color     = RGB((*ball) .x,   (*ball) .y,   150);
             (*ball) .FillColor = RGB((*ball) .x/2, (*ball) .y/2, 150);
             }
+        PhysicsBall(ball, dt, &score1, &score2);
+        (*ball) .vx = 0;
+        (*ball) .vy = 0;
         }
 
 //---------------------------------------------------------------------------------
 
-void PhysicsBall(Ball* ball, int dt)
+void PhysicsBall(Ball* ball, int dt, int* score1, int* score2)
     {
     (*ball) .x += (*ball) .vx * dt;
     (*ball) .y += (*ball) .vy * dt;
@@ -191,6 +183,7 @@ void PhysicsBall(Ball* ball, int dt)
         {
         (*ball) .vx =   - (*ball) .vx;
         (*ball) .x  = W - (*ball) .r;
+        ++(*score1);
         }
 
     if ((*ball) .y  > H - (*ball) .r)
@@ -203,6 +196,7 @@ void PhysicsBall(Ball* ball, int dt)
         {
         (*ball) .vx =   - (*ball) .vx;
         (*ball) .x  = 0 + (*ball) .r;
+        ++(*score2);
         }
 
     if ((*ball) .y  < 50 + (*ball) .r)
@@ -242,7 +236,7 @@ viod Bam_balls (int* x, int* y, int* vx, int* vy);
 
 //---------------------------------------------------------------------------------
 
-void CollisionBall (Ball* ball_1, Ball* ball_2, int* score)
+void CollisionBall (Ball* ball_1, Ball* ball_2)
 {
     int Dx = (*ball_1) .x - (*ball_2) .x; // стороны треугольника
     int Dy = (*ball_1) .y - (*ball_2) .y; // стороны треугольника
@@ -254,7 +248,7 @@ void CollisionBall (Ball* ball_1, Ball* ball_2, int* score)
         {
         txPlaySound ("sounds/Zvuk_Ball.wav");
 
-        ++(*score);
+        //++(*score);
 
         double Vn1 = (*ball_2) .vx*sin + (*ball_2) .vy*cos; //поворот системы координат шар1
         double Vn2 = (*ball_1) .vx*sin + (*ball_1) .vy*cos; //поворот системы координат шар2
@@ -266,8 +260,8 @@ void CollisionBall (Ball* ball_1, Ball* ball_2, int* score)
         if (dt >  1)  dt = 1;   // ограничение на dt, чтоб мяч не отскакивал далеко
         if (dt < -1) dt = -1;
 
-        (*ball_1) .x = ROUND((*ball_1) .x - (*ball_1) .vx*dt);
-        (*ball_1) .y = ROUND((*ball_1) .y - (*ball_1) .vy*dt);
+        //(*ball_1) .x = ROUND((*ball_1) .x - (*ball_1) .vx*dt);
+        //(*ball_1) .y = ROUND((*ball_1) .y - (*ball_1) .vy*dt);
         (*ball_2) .x = ROUND((*ball_2) .x - (*ball_2) .vx*dt);
         (*ball_2) .y = ROUND((*ball_2) .y - (*ball_2) .vy*dt);
 
@@ -286,13 +280,15 @@ void CollisionBall (Ball* ball_1, Ball* ball_2, int* score)
         Vn2 = Vn1;
         Vn1 = o;
 
-        (*ball_1) .vx = ROUND(Vn2*sin - Vt2*cos); //обратный поворот системы координат шар1
-        (*ball_1) .vy = ROUND(Vn2*cos + Vt2*sin); //обратный поворот системы координат шар1
+        Vn1 = Vn1 - Vn2;
+
+        //(*ball_1) .vx = ROUND(Vn2*sin - Vt2*cos); //обратный поворот системы координат шар1
+        //(*ball_1) .vy = ROUND(Vn2*cos + Vt2*sin); //обратный поворот системы координат шар1
         (*ball_2) .vx = ROUND(Vn1*sin - Vt1*cos); //обратный поворот системы координат шар2
         (*ball_2) .vy = ROUND(Vn1*cos + Vt1*sin); //обратный поворот системы координат шар2
 
-        (*ball_1) .x = ROUND((*ball_1) .x + (*ball_1) .vx*dt);
-        (*ball_1) .y = ROUND((*ball_1) .y + (*ball_1) .vy*dt);
+        //(*ball_1) .x = ROUND((*ball_1) .x + (*ball_1) .vx*dt);
+        //(*ball_1) .y = ROUND((*ball_1) .y + (*ball_1) .vy*dt);
         (*ball_2) .x = ROUND((*ball_2) .x + (*ball_2) .vx*dt);
         (*ball_2) .y = ROUND((*ball_2) .y + (*ball_2) .vy*dt);
         //printf (" dt  = %f\n", dt);
@@ -308,8 +304,8 @@ void ScoreDraw (int score1, int score2)
     char str[12] = "";
     sprintf (str, "%d : %d", score1, score2);
 
-    int textSizeX = txGetTextExtentX ("------"),
-        textSizeY = txGetTextExtentY ("------");
+    int textSizeX = txGetTextExtentX (str)/2 + 10,
+        textSizeY = txGetTextExtentY (str);
 
     txSetColor ((TX_WHITE), 2);
     txSetFillColor (TX_BLACK);
