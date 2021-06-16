@@ -127,7 +127,7 @@ void DrowBall(Ball ball)
 
 //---------------------------------------------------------------------------------
 
-void ControlBall(Ball* ball, int* F4_Col, Key plaer, int dt, int* score1, int* score2)
+void ControlBall(Ball* ball, int* F4_Col, Key plaer, int dt, int score1, int score2)
         {
         if (txGetAsyncKeyState (plaer .key_left))  (*ball) .vx = (*ball) .vx - 20;
         if (txGetAsyncKeyState (plaer .key_right)) (*ball) .vx = (*ball) .vx + 20;
@@ -167,7 +167,7 @@ void ControlBall(Ball* ball, int* F4_Col, Key plaer, int dt, int* score1, int* s
             (*ball) .Color     = RGB((*ball) .x,   (*ball) .y,   150);
             (*ball) .FillColor = RGB((*ball) .x/2, (*ball) .y/2, 150);
             }
-        PhysicsBall(ball, dt, &score1, &score2);
+        PhysicsBall(ball, dt, score1, score2);
         (*ball) .vx = 0;
         (*ball) .vy = 0;
         }
