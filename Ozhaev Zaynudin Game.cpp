@@ -276,12 +276,12 @@ void CollisionBall (Ball* ball_1, Ball* ball_2)
         //double Vt1 = -(*ball_2) .vx*cos + (*ball_2) .vy*sin; //поворот системы координат шар1
         double Vt2 = -(*ball_2) .vx*cos + (*ball_1) .vy*sin; //поворот системы координат шар2
 
-        /*double o = Vn2; //меняем местами vn1 и vn2
+        double o = Vn2; //меняем местами vn1 и vn2
         Vn2 = Vn1;
         Vn1 = o;
-        */
 
-        Vn2 = Vn1 - Vn2;
+
+        //Vn2 = Vn1 - Vn2;
 
         //(*ball_1) .vx = ROUND(Vn2*sin - Vt2*cos); //обратный поворот системы координат шар1
         //(*ball_1) .vy = ROUND(Vn2*cos + Vt2*sin); //обратный поворот системы координат шар1
