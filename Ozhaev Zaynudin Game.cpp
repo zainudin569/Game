@@ -187,17 +187,17 @@ void Ball::Physics(int* score1, int* score2, int dt)
 
     if ( pl == 1)
         {
-        int W_org = W - W/2
+        int W_org = W - W/2;
         }
 
     if ( pl == 2)
         {
-        int W_org = W/2
+        int W_org = W/2;
         }
 
     if ( pl == 0)
         {
-        int W_org = W
+        int W_org = W;
         }
 
     if (x > W_org - r)
