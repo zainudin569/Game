@@ -263,13 +263,13 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
      double Dx = (*ball_b).x-(*ball_p).x;
      double Dy = (*ball_b).y-(*ball_p).y;
      double d = sqrt(Dx*Dx+Dy*Dy);      if (d==0) d=0.01;                 // во избежании деления на ноль
-	 double ax = Dx/d;
-	 double ay = Dy/d;
+	 double sin = Dx/d;
+	 double cos = Dy/d;
 
 	 if (d < (*ball_b).r+(*ball_p).r)
 	 {
-		 double Vn1 = (*ball_p).vx*ax + (*ball_p).vy*ay;
-         double Vn2 = (*ball_b).vx*ax + (*ball_b).vy*ay;
+		 double Vn1 = (*ball_p).vx*sin + (*ball_p).vy*cos;
+         double Vn2 = (*ball_b).vx*sin + (*ball_b).vy*cos;
 
 		 if ((Vn1 - Vn2) == 0) Vn1 = Vn1 + 0.01;
 
@@ -290,19 +290,19 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 		  Dx = (*ball_b).x-(*ball_p).x;
 		  Dy = (*ball_b).y-(*ball_p).y;
 	      d = sqrt(Dx*Dx+Dy*Dy);  if (d==0) d=0.01;
-  		  ax = Dx/d;
-		  ay = Dy/d;
+  		  sin = Dx/d;
+		  cos = Dy/d;
 
 
-		  Vn1=(*ball_p).vx*ax+(*ball_p).vy*ay;
-          Vn2=(*ball_b).vx*ax+(*ball_b).vy*ay;
+		  Vn1=(*ball_p).vx*sin+(*ball_p).vy*cos;
+          Vn2=(*ball_b).vx*sin+(*ball_b).vy*cos;
 
-   double Vt2= -(*ball_b).vx*ay+(*ball_b).vy*ax;
+   double Vt2= -(*ball_b).vx*cos+(*ball_b).vy*sin;
 
           Vn2 = Vn1-Vn2;
 
-          (*ball_b).vx=ROUND(Vn2*ax-Vt2*ay);
-		  (*ball_b).vy=ROUND(Vn2*ay+Vt2*ax);
+          (*ball_b).vx=ROUND(Vn2*sin-Vt2*cos);
+		  (*ball_b).vy=ROUND(Vn2*cos+Vt2*sin);
     ///////
 
 
