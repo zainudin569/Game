@@ -34,11 +34,13 @@ struct Ball
 
     int r;
 
+    int pl;
+
     COLORREF Color;
     COLORREF FillColor;
 
     void Physics(int* score1, int* score2, int dt);
-    void Drow(int p);
+    void Drow();
     };
 
 //---------------------------------------------------------------------------------
@@ -47,15 +49,15 @@ void MoveBall()
     {
     //srand(time(NULL));
 
-    Ball ball1 = {W/2 + rand() % W/2 ,  rand() % H, 0, 0, 25,
+    Ball ball1 = {W/2 + rand() % W/2 ,  rand() % H, 0, 0, 25, 1,
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
-    Ball ball2 = { rand() % W/2,  rand() % H, 0, 0, 25,
+    Ball ball2 = { rand() % W/2,  rand() % H, 0, 0, 25, 1,
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
-    Ball ball3 = { rand() % W,  rand() % H, 1 + rand() % 9, 1 + rand() % 9, 40,
+    Ball ball3 = { rand() % W,  rand() % H, 1 + rand() % 9, 1 + rand() % 9, 40, 0,
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
@@ -90,9 +92,9 @@ void MoveBall()
         CollisionBall(&ball1, &ball3);//проверка столкновения
         CollisionBall(&ball2, &ball3);
 
-        ball1.Drow(1);
-        ball2.Drow(1);
-        ball3.Drow(0);
+        ball1.Drow();
+        ball2.Drow();
+        ball3.Drow();
 
         ScoreDraw (score1, score2);
 
@@ -105,7 +107,7 @@ void MoveBall()
 
 //---------------------------------------------------------------------------------
 
-void Ball::Drow(int p)
+void Ball::Drow()
     {
     txSetColor ((Color), 2);
     txSetFillColor (FillColor);
@@ -114,7 +116,7 @@ void Ball::Drow(int p)
     //txLine (x, y, x + vx*5, y + vy*5);
     //txCircle (x + vx*5, y + vy*5, 3);
 
-    if ( p == 1 )
+    if ( pl == 1 )
         {
         vx = 0;
         vy = 0;
@@ -130,7 +132,7 @@ void Key::Control(Ball* ball, int* F4_Col)
     if (txGetAsyncKeyState (key_up))    (*ball) .vy = (*ball) .vy - 10;;
     if (txGetAsyncKeyState (key_down))  (*ball) .vy = (*ball) .vy + 10;;
 
-    if (txGetAsyncKeyState (VK_SPACE)) (*ball) .vy = (*ball) .vx = 0;
+    //if (txGetAsyncKeyState (VK_SPACE)) (*ball) .vy = (*ball) .vx = 0;
 
     if (txGetAsyncKeyState (VK_F1))
         {
