@@ -30,7 +30,7 @@ struct Key
     {
     int  key_left, key_right , key_up, key_down;
 
-    void Control(Ball* ball, int* F4_Col, int dt);
+    void Control(Ball* ball, int* F4_Col);
     };
 
 struct Ball
@@ -42,7 +42,7 @@ struct Ball
     COLORREF Color;
     COLORREF FillColor;
 
-    void Physics(int* score1, int* score2, int dt);
+    void Physics(int* score1, int* score2, int dt, int p);
     void Drow();
     };
 
@@ -89,15 +89,15 @@ void MoveBall()
         //printf ("In CraziBall(): x  = %d and y  = %d\n", x2, y2);
         //printf ("In CraziBall(): vx = %d and vy = %d\n", vx2, vy2);
 
-        //ball1 .Physics(&score1, &score2, dt);
-        //ball2 .Physics(&score1, &score2, dt);
-        ball3 .Physics(&score1, &score2, dt);
+        ball1 .Physics(&score1, &score2, dt, 1);
+        ball2 .Physics(&score1, &score2, dt, 1);
+        ball3 .Physics(&score1, &score2, dt, 0);
 
         CollisionBall(&ball1, &ball3);//проверка столкновения
         CollisionBall(&ball2, &ball3);
 
-        plaer1 .Control(&ball1, &F4_Col, dt);
-        plaer2 .Control(&ball2, &F4_Col, dt);
+        plaer1 .Control(&ball1, &F4_Col);
+        plaer2 .Control(&ball2, &F4_Col);
 
         ScoreDraw (score1, score2);
 
@@ -122,60 +122,62 @@ void Ball::Drow()
 
 //---------------------------------------------------------------------------------
 
-void Key::Control(Ball* ball, int* F4_Col, int dt)
+void Key::Control(Ball* ball, int* F4_Col)
+    {
+    if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 5;
+    if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 5;
+    if (txGetAsyncKeyState (key_up))    (*ball) .vy = (*ball) .vy - 5;;
+    if (txGetAsyncKeyState (key_down))  (*ball) .vy = (*ball) .vy + 5;;
+
+    if (txGetAsyncKeyState (VK_SPACE)) (*ball) .vy = (*ball) .vx = 0;
+
+    if (txGetAsyncKeyState (VK_F1))
         {
-        if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 5;
-        if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 5;
-        if (txGetAsyncKeyState (key_up))    (*ball) .vy = (*ball) .vy - 5;;
-        if (txGetAsyncKeyState (key_down))  (*ball) .vy = (*ball) .vy + 5;;
-
-        if (txGetAsyncKeyState (VK_SPACE)) (*ball) .vy = (*ball) .vx = 0;
-
-        if (txGetAsyncKeyState (VK_F1))
-            {
-            (*ball) .Color = TX_LIGHTRED;
-            (*ball) .FillColor = TX_RED;
-            *F4_Col = 0;
-            }
-
-        if (txGetAsyncKeyState (VK_F2))
-            {
-            (*ball) .Color = TX_LIGHTBLUE;
-            (*ball) .FillColor = TX_BLUE;
-            *F4_Col = 0;
-            }
-
-        if (txGetAsyncKeyState (VK_F3))
-            {
-            (*ball) .Color = TX_LIGHTGREEN;
-            (*ball) .FillColor = TX_GREEN;
-            *F4_Col = 0;
-            }
-
-        if (txGetAsyncKeyState (VK_F4))
-            {
-            *F4_Col = 1;
-            }
-
-        if (*F4_Col == 1)
-            {
-            (*ball) .Color     = RGB((*ball) .x,   (*ball) .y,   150);
-            (*ball) .FillColor = RGB((*ball) .x/2, (*ball) .y/2, 150);
-            }
-
-        ball .Physics(dt)
-        (*ball) .vx = 0;
-        (*ball) .vy = 0;
+        (*ball) .Color = TX_LIGHTRED;
+        (*ball) .FillColor = TX_RED;
+        *F4_Col = 0;
         }
+
+    if (txGetAsyncKeyState (VK_F2))
+        {
+        (*ball) .Color = TX_LIGHTBLUE;
+        (*ball) .FillColor = TX_BLUE;
+        *F4_Col = 0;
+        }
+
+    if (txGetAsyncKeyState (VK_F3))
+        {
+        (*ball) .Color = TX_LIGHTGREEN;
+        (*ball) .FillColor = TX_GREEN;
+        *F4_Col = 0;
+        }
+
+    if (txGetAsyncKeyState (VK_F4))
+        {
+        *F4_Col = 1;
+        }
+
+    if (*F4_Col == 1)
+        {
+        (*ball) .Color     = RGB((*ball) .x,   (*ball) .y,   150);
+        (*ball) .FillColor = RGB((*ball) .x/2, (*ball) .y/2, 150);
+        }
+    }
 
 //---------------------------------------------------------------------------------
 
-void Ball::Physics(int* score1, int* score2, int dt)
+void Ball::Physics(int* score1, int* score2, int dt, int p)
     {
     if (vy >  15) vy =  15;//ограничение на скорость движения
     if (vx >  15) vx =  15;
     if (vy < -15) vy = -15;
     if (vx < -15) vx = -15;
+
+    if ( p==1 )
+        {
+        (*ball) .vx = 0;
+        (*ball) .vy = 0;
+        }
 
     (*this) .x += (*this) .vx * dt;
     (*this) .y += (*this) .vy * dt;
