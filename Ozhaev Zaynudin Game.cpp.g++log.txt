@@ -1,13 +1,13 @@
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void CollisionBall(Ball*, Ball*)':
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:213:46: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
-     double d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; //гипотенуза
-                                              ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:224:28: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
-         if ((Vn1 - Vn2) == 0) Vn1 = Vn1 + 0.01;
-                            ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:238:43: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
-         d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01;
-                                           ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:261:45: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+      double d = sqrt(Dx*Dx + Dy*Dy); if (d==0) d = 0.01;   // во избежании деления на ноль
+                                             ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:272:23: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+    if ((Vn1 - Vn2) == 0) Vn1 = Vn1 + 0.01;
+                       ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:290:39: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+        d = sqrt(Dx*Dx+Dy*Dy);  if (d==0) d=0.01;
+                                       ^
 ---------------------------------------------------------------------------------------------
-[20.06.2021 14:37:59,50 C:\Users\zainu@DESKTOP-ZAINU, returned 0]
+[20.06.2021 14:38:50,48 C:\Users\zainu@DESKTOP-ZAINU, returned 0]
 C:\Users\zainu\Desktop\курс\Game> g++.exe "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp" -o "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe"  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC
