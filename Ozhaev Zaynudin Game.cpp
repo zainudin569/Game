@@ -82,7 +82,7 @@ void MoveBall()
 
         ball1.Drow();
         ball2.Drow();
-        ball2.Drow();
+        ball3.Drow();
 
         //printf ("In CraziBall(): x  = %d and y  = %d\n", x2, y2);
         //printf ("In CraziBall(): vx = %d and vy = %d\n", vx2, vy2);
