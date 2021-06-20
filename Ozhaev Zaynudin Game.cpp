@@ -292,11 +292,11 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 	 double ax = Dx/d;
 	 double ay = Dy/d;
 
-	 if (d < (*ball_b).R+(*ball_p).R)
+	 if (d < (*ball_b).r+(*ball_p).r)
 	 {
 		 double Vn1 = (*ball_p).vx*ax + (*ball_p).vy*ay;
          double Vn2 = (*ball_b).vx*ax + (*ball_b).vy*ay;
-		 double dt=((*ball_b).R+(*ball_p).R-d)/(Vn1-Vn2);
+		 double dt=((*ball_b).r+(*ball_p).r-d)/(Vn1-Vn2);
 
 	                 if (dt>0.6)  dt= 0.6;   // ограничение на dt, чтоб мяч не улетал
                      if (dt<-0.6) dt=-0.6; // усли проникновение сильное было
