@@ -1,16 +1,23 @@
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:134:6: warning: unused parameter 'dt' [-Wunused-parameter]
+In file included from c:\users\zainu\desktop\курс\codeblocks\mingw\include\txlib.h:1:0,
+                 from C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:1:
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In member function 'void Ball::Drow()':
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:122:18: error: 'ball' was not declared in this scope
+     txSetColor ((ball .Color), 2);
+                  ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: At global scope:
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:132:6: warning: unused parameter 'dt' [-Wunused-parameter]
  void ControlBall(Ball* ball, int* F4_Col, Key plaer, int dt)
       ^
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void CollisionBall(Ball*, Ball*)':
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:247:46: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:245:46: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
      double d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; //гипотенуза
                                               ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:260:28: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:258:28: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
          if ((Vn1 - Vn2) == 0) Vn1 = Vn1 + 0.01;
                             ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:274:43: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:272:43: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
          d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01;
                                            ^
 ---------------------------------------------------------------------------------------------
-[20.06.2021 12:39:29,93 C:\Users\zainu@DESKTOP-ZAINU, returned 0]
+[20.06.2021 13:00:17,46 C:\Users\zainu@DESKTOP-ZAINU, returned 1]
 C:\Users\zainu\Desktop\курс\Game> g++.exe "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp" -o "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe"  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC

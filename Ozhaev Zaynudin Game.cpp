@@ -5,7 +5,7 @@ struct Ball;
 struct Key;
 
 void MoveBall();
-void DrowBall(Ball ball);
+
 void CollisionBall(Ball* ball_p, Ball* ball_b);
 void ControlBall(Ball* ball, int* F4_Col, Key plaer, int dt);
 void ScoreDraw (int score1, int score2);
@@ -41,6 +41,7 @@ struct Ball
     COLORREF FillColor;
 
     void Physics(int dt);
+    void Drow();
     };
 
 //---------------------------------------------------------------------------------
@@ -79,15 +80,12 @@ void MoveBall()
 
         txBitBlt  (txDC(), 0, 50, 0, 0, Fon);
 
-        DrowBall(ball1);
-        DrowBall(ball2);
-        DrowBall(ball3);
+        ball1.Drow();
+        ball2.Drow();
+        ball2.Drow();
 
         //printf ("In CraziBall(): x  = %d and y  = %d\n", x2, y2);
         //printf ("In CraziBall(): vx = %d and vy = %d\n", vx2, vy2);
-
-        //PhysicsBall(&ball1, dt);
-        //PhysicsBall(&ball2, dt);
 
         ball1.Physics(dt);
         ball2.Physics(dt);
@@ -119,7 +117,7 @@ void MoveBall()
 
 //---------------------------------------------------------------------------------
 
-void DrowBall(Ball ball)
+void Ball::Drow()
     {
     txSetColor ((ball .Color), 2);
     txSetFillColor (ball .FillColor);
