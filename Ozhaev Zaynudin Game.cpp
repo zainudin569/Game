@@ -7,7 +7,7 @@ struct Key;
 void MoveBall();
 void DrowBall(Ball ball);
 void PhysicsBall(Ball* ball, int dt);
-void CollisionBall(Ball* ball_1, Ball* ball_2);
+void CollisionBall(Ball* ball_p, Ball* ball_b);
 void ControlBall(Ball* ball, int* F4_Col, Key plaer, int dt);
 void ScoreDraw (int score1, int score2);
 
@@ -236,45 +236,45 @@ viod Bam_balls (int* x, int* y, int* vx, int* vy);
 
 //---------------------------------------------------------------------------------
 
-void CollisionBall (Ball* ball_1, Ball* ball_2)
+void CollisionBall (Ball* ball_p, Ball* ball_b)
 {
-    int Dx = (*ball_1) .x - (*ball_2) .x; // стороны треугольника
-    int Dy = (*ball_1) .y - (*ball_2) .y; // стороны треугольника
+    int Dx = (*ball_p) .x - (*ball_b) .x; // стороны треугольника
+    int Dy = (*ball_p) .y - (*ball_b) .y; // стороны треугольника
     double d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; //гипотенуза
     double sin = Dx/d; // sin угла треугольника
     double cos = Dy/d; // cos угла треугольника
 
-    if (d < (*ball_1) .r + (*ball_2) .r) //проверка столкновения
+    if (d < (*ball_p) .r + (*ball_b) .r) //проверка столкновения
         {
         txPlaySound ("sounds/Zvuk_Ball.wav");
 
         //++(*score);
 
-        double Vn1 = (*ball_1) .vx*sin + (*ball_1) .vy*cos; //поворот системы координат шар1
-        double Vn2 = (*ball_2) .vx*sin + (*ball_2) .vy*cos; //поворот системы координат шар2
+        double Vn1 = (*ball_p) .vx*sin + (*ball_p) .vy*cos; //поворот системы координат шар1
+        double Vn2 = (*ball_b) .vx*sin + (*ball_b) .vy*cos; //поворот системы координат шар2
 
         if ((Vn1 - Vn2) == 0) Vn1 = Vn1 + 0.01;
 
-        double dt = ((*ball_1) .r + (*ball_2) .r - d)/(Vn1 - Vn2); // удаление залипания
+        double dt = ((*ball_p) .r + (*ball_b) .r - d)/(Vn1 - Vn2); // удаление залипания
 
         if (dt >  1)  dt = 1;   // ограничение на dt, чтоб мяч не отскакивал далеко
         if (dt < -1) dt = -1;
 
-        (*ball_1) .x = ROUND((*ball_1) .x - (*ball_1) .vx*dt);
-        (*ball_1) .y = ROUND((*ball_1) .y - (*ball_1) .vy*dt);
-        (*ball_2) .x = ROUND((*ball_2) .x - (*ball_2) .vx*dt);
-        (*ball_2) .y = ROUND((*ball_2) .y - (*ball_2) .vy*dt);
+        (*ball_p) .x = ROUND((*ball_p) .x - (*ball_p) .vx*dt);
+        (*ball_p) .y = ROUND((*ball_p) .y - (*ball_p) .vy*dt);
+        (*ball_b) .x = ROUND((*ball_b) .x - (*ball_b) .vx*dt);
+        (*ball_b) .y = ROUND((*ball_b) .y - (*ball_b) .vy*dt);
 
-        Dx = (*ball_1) .x - (*ball_2) .x;
-        Dy = (*ball_1) .y - (*ball_2) .y;
+        Dx = (*ball_p) .x - (*ball_b) .x;
+        Dy = (*ball_p) .y - (*ball_b) .y;
         d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01;
         sin = Dx/d; // sin
         cos = Dy/d; // cos
-        Vn1 = (*ball_1) .vx*sin + (*ball_2) .vy*cos;
-        Vn2 = (*ball_2) .vx*sin + (*ball_2) .vy*cos;
+        Vn1 = (*ball_p) .vx*sin + (*ball_p) .vy*cos;
+        Vn2 = (*ball_b) .vx*sin + (*ball_b) .vy*cos;
 
-        //double Vt1 = -(*ball_1) .vx*cos + (*ball_1) .vy*sin; //поворот системы координат шар1
-        double Vt2 = -(*ball_2) .vx*cos + (*ball_2) .vy*sin; //поворот системы координат шар2
+        //double Vt1 = -(*ball_p) .vx*cos + (*ball_p) .vy*sin; //поворот системы координат шар1
+        double Vt2 = -(*ball_b) .vx*cos + (*ball_b) .vy*sin; //поворот системы координат шар2
 
         /*double o = Vn2; //меняем местами vn1 и vn2
         Vn2 = Vn1;
@@ -283,15 +283,15 @@ void CollisionBall (Ball* ball_1, Ball* ball_2)
 
         Vn2 = Vn2 - Vn1;
 
-        //(*ball_1) .vx = ROUND(Vn1*sin - Vt1*cos); //обратный поворот системы координат шар1
-        //(*ball_1) .vy = ROUND(Vn1*cos + Vt1*sin); //обратный поворот системы координат шар1
-        (*ball_2) .vx = ROUND(Vn2*sin - Vt2*cos); //обратный поворот системы координат шар2
-        (*ball_2) .vy = ROUND(Vn2*cos + Vt2*sin); //обратный поворот системы координат шар2
+        //(*ball_p) .vx = ROUND(Vn1*sin - Vt1*cos); //обратный поворот системы координат шар1
+        //(*ball_p) .vy = ROUND(Vn1*cos + Vt1*sin); //обратный поворот системы координат шар1
+        (*ball_b) .vx = ROUND(Vn2*sin - Vt2*cos); //обратный поворот системы координат шар2
+        (*ball_b) .vy = ROUND(Vn2*cos + Vt2*sin); //обратный поворот системы координат шар2
 
-        (*ball_1) .x = ROUND((*ball_1) .x + (*ball_1) .vx*dt);
-        (*ball_1) .y = ROUND((*ball_1) .y + (*ball_1) .vy*dt);
-        (*ball_2) .x = ROUND((*ball_2) .x + (*ball_2) .vx*dt);
-        (*ball_2) .y = ROUND((*ball_2) .y + (*ball_2) .vy*dt);
+        (*ball_p) .x = ROUND((*ball_p) .x + (*ball_p) .vx*dt);
+        (*ball_p) .y = ROUND((*ball_p) .y + (*ball_p) .vy*dt);
+        (*ball_b) .x = ROUND((*ball_b) .x + (*ball_b) .vx*dt);
+        (*ball_b) .y = ROUND((*ball_b) .y + (*ball_b) .vy*dt);
         //printf (" dt  = %f\n", dt);
         //txSleep (3000);
         }
