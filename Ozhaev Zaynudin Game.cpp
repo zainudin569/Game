@@ -125,10 +125,10 @@ void Ball::Drow(int p)
 
 void Key::Control(Ball* ball, int* F4_Col)
     {
-    if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 100;
-    if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 100;
-    if (txGetAsyncKeyState (key_up))    (*ball) .vy = (*ball) .vy - 100;;
-    if (txGetAsyncKeyState (key_down))  (*ball) .vy = (*ball) .vy + 100;;
+    if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 10;
+    if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 10;
+    if (txGetAsyncKeyState (key_up))    (*ball) .vy = (*ball) .vy - 10;;
+    if (txGetAsyncKeyState (key_down))  (*ball) .vy = (*ball) .vy + 10;;
 
     if (txGetAsyncKeyState (VK_SPACE)) (*ball) .vy = (*ball) .vx = 0;
 
@@ -169,10 +169,10 @@ void Key::Control(Ball* ball, int* F4_Col)
 
 void Ball::Physics(int* score1, int* score2, int dt)
     {
-    if (vy >  15) vy =  15;//ограничение на скорость движения
-    if (vx >  15) vx =  15;
-    if (vy < -15) vy = -15;
-    if (vx < -15) vx = -15;
+    if (vy >  15) vy =  20;//ограничение на скорость движения
+    if (vx >  15) vx =  20;
+    if (vy < -15) vy = -20;
+    if (vx < -15) vx = -20;
 
     (*this) .x += (*this) .vx * dt;
     (*this) .y += (*this) .vy * dt;
@@ -208,13 +208,13 @@ void Ball::Physics(int* score1, int* score2, int dt)
 
 void CollisionBall (Ball* ball_p, Ball* ball_b)
     {
-    /*int Dx = (*ball_b) .x - (*ball_p) .x; // стороны треугольника
-    int Dy = (*ball_b) .y - (*ball_p) .y; // стороны треугольника
-    double d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; //гипотенуза
-    double sin = Dx/d; // sin угла треугольника
-    double cos = Dy/d; // cos угла треугольника
+     double Dx = (*ball_b) .x - (*ball_p) .x; //стороны треугольника
+     double Dy = (*ball_b) .y - (*ball_p) .y; //стороны треугольника
+     double d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; // гипотенуза
+	 double sin = Dx/d; //sin угла треугольника
+	 double cos = Dy/d; //cos угла треугольника
 
-    if (d < (*ball_p) .r + (*ball_b) .r) //проверка столкновения
+	 if (d < (*ball_b) .r + (*ball_p) .r) //проверка столкновения
         {
         txPlaySound ("sounds/Zvuk_Ball.wav");
 
@@ -223,21 +223,22 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 
         if ((Vn1 - Vn2) == 0) Vn1 = Vn1 + 0.01;
 
-        double dt = ((*ball_p) .r + (*ball_b) .r - d)/(Vn1 - Vn2); // удаление залипания
+        double dt = ((*ball_b) .r + (*ball_p) .r - d)/(Vn1 - Vn2); //удаление залипания
 
-        if (dt >  0.6) dt =  0.6;   // ограничение на dt, чтоб мяч не отскакивал далеко
+        if (dt >  0.6) dt =  0.6; //ограничение на dt, чтобы мяч не отскакивал далеко
         if (dt < -0.6) dt = -0.6;
 
-        (*ball_p) .x = ROUND((*ball_p) .x - (*ball_p) .vx*dt);
-        (*ball_p) .y = ROUND((*ball_p) .y - (*ball_p) .vy*dt);
-        (*ball_b) .x = ROUND((*ball_b) .x - (*ball_b) .vx*dt);
-        (*ball_b) .y = ROUND((*ball_b) .y - (*ball_b) .vy*dt);
+        (*ball_b) .x -= ROUND((*ball_b) .vx*dt);
+        (*ball_b) .y -= ROUND((*ball_b) .vy*dt);
+        (*ball_p) .x -= ROUND((*ball_p) .vx*dt);
+        (*ball_p) .y -= ROUND((*ball_p) .vy*dt);
 
         Dx = (*ball_b) .x - (*ball_p) .x;
         Dy = (*ball_b) .y - (*ball_p) .y;
-        d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01;
-        sin = Dx/d; // sin
-        cos = Dy/d; // cos
+        d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d=0.01;
+        sin = Dx/d;
+        cos = Dy/d;
+
         Vn1 = (*ball_p) .vx*sin + (*ball_p) .vy*cos;
         Vn2 = (*ball_b) .vx*sin + (*ball_b) .vy*cos;
 
@@ -245,69 +246,15 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 
         Vn2 = Vn1 - Vn2;
 
-        (*ball_b) .vx = ROUND(Vn2*sin - Vt2*cos); //обратный поворот системы координат шар2
-        (*ball_b) .vy = ROUND(Vn2*cos + Vt2*sin); //обратный поворот системы координат шар2
+        (*ball_b) .vx = ROUND(Vn2*sin - Vt2*cos);
+        (*ball_b) .vy = ROUND(Vn2*cos + Vt2*sin);
 
-        (*ball_p) .x = ROUND((*ball_p) .x + (*ball_p) .vx*dt);
-        (*ball_p) .y = ROUND((*ball_p) .y + (*ball_p) .vy*dt);
-        (*ball_b) .x = ROUND((*ball_b) .x + (*ball_b) .vx*dt);
-        (*ball_b) .y = ROUND((*ball_b) .y + (*ball_b) .vy*dt);
+        (*ball_b) .x +=ROUND((*ball_b) .vx*dt);
+        (*ball_b) .y +=ROUND((*ball_b) .vy*dt);
+        (*ball_p) .x +=ROUND((*ball_p) .vx*dt);
+        (*ball_p) .y +=ROUND((*ball_p) .vy*dt);
         //printf (" dt  = %f\n", dt);
         //txSleep (3000);
-        }*/
-
-     double Dx = (*ball_b) .x - (*ball_p) .x;
-     double Dy = (*ball_b) .y - (*ball_p) .y;
-     double d = sqrt(Dx*Dx + Dy*Dy); if (d==0) d = 0.01;   // во избежании деления на ноль
-	 double sin = Dx/d;
-	 double cos = Dy/d;
-
-	 if (d < (*ball_b) .r+(*ball_p) .r)
-	 {
-         txPlaySound ("sounds/Zvuk_Ball.wav");
-
-		 double Vn1 = (*ball_p).vx*sin + (*ball_p).vy*cos;
-         double Vn2 = (*ball_b).vx*sin + (*ball_b).vy*cos;
-
-		 if ((Vn1 - Vn2) == 0) Vn1 = Vn1 + 0.01;
-
-		 double dt=((*ball_b).r+(*ball_p).r-d)/(Vn1-Vn2);
-
-	                 if (dt>0.6)  dt= 0.6;   // ограничение на dt, чтоб мяч не улетал
-                     if (dt<-0.6) dt=-0.6; // усли проникновение сильное было
-
-
-		 (*ball_b).x-=ROUND((*ball_b).vx*dt);
-		 (*ball_b).y-=ROUND((*ball_b).vy*dt);
-		 (*ball_p).x-=ROUND((*ball_p).vx*dt);
-		 (*ball_p).y-=ROUND((*ball_p).vy*dt);
-
-
-
-	////////основная часть, находим новые скорости после столкновения
-		  Dx = (*ball_b).x-(*ball_p).x;
-		  Dy = (*ball_b).y-(*ball_p).y;
-	      d = sqrt(Dx*Dx+Dy*Dy);  if (d==0) d=0.01;
-  		  sin = Dx/d;
-		  cos = Dy/d;
-
-
-		  Vn1=(*ball_p).vx*sin+(*ball_p).vy*cos;
-          Vn2=(*ball_b).vx*sin+(*ball_b).vy*cos;
-
-   double Vt2= -(*ball_b).vx*cos+(*ball_b).vy*sin;
-
-          Vn2 = Vn1-Vn2;
-
-          (*ball_b).vx=ROUND(Vn2*sin-Vt2*cos);
-		  (*ball_b).vy=ROUND(Vn2*cos+Vt2*sin);
-    ///////
-
-
-		 (*ball_b).x+=ROUND((*ball_b).vx*dt);
-		 (*ball_b).y+=ROUND((*ball_b).vy*dt);
-		 (*ball_p).x+=ROUND((*ball_p).vx*dt);
-		 (*ball_p).y+=ROUND((*ball_p).vy*dt);
 	 }
 
 }
