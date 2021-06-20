@@ -85,6 +85,9 @@ void MoveBall()
         //printf ("In CraziBall(): x  = %d and y  = %d\n", x2, y2);
         //printf ("In CraziBall(): vx = %d and vy = %d\n", vx2, vy2);
 
+        plaer1 .Control(&ball1, &F4_Col);
+        plaer2 .Control(&ball2, &F4_Col);
+
         ball1 .Physics(&score1, &score2, dt);
         ball2 .Physics(&score1, &score2, dt);
         ball3 .Physics(&score1, &score2, dt);
@@ -92,11 +95,8 @@ void MoveBall()
         CollisionBall(&ball1, &ball3);//проверка столкновения
         CollisionBall(&ball2, &ball3);
 
-        plaer1 .Control(&ball1, &F4_Col);
-        plaer2 .Control(&ball2, &F4_Col);
-
         ball1.Drow(1);
-        ball2.Drow(0);
+        ball2.Drow(1);
         ball3.Drow(0);
 
         ScoreDraw (score1, score2);
