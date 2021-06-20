@@ -324,8 +324,8 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 
           Vn2 = Vn1-Vn2;
 
-          (*ball_b).dx=Vn2*ax-Vt2*ay;
-		  (*ball_b).dy=Vn2*ay+Vt2*ax;
+          (*ball_b).vx=Vn2*ax-Vt2*ay;
+		  (*ball_b).vy=Vn2*ay+Vt2*ax;
     ///////
 
 
