@@ -201,7 +201,7 @@ void Ball::Physics(int* score1, int* score2, int dt)
         {
         vx =   - vx;
         x  = W_org - r;
-        ++(*score1);
+        if ( pl == 0) ++(*score1);
         }
 
     if (y  > H - r)
@@ -214,7 +214,7 @@ void Ball::Physics(int* score1, int* score2, int dt)
         {
         vx =   - vx;
         x  = 0 + r;
-        ++(*score2);
+        if ( pl == 0) ++(*score2);
         }
 
     if (y  < 50 + r)
