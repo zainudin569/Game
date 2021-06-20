@@ -214,8 +214,6 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
     double sin = Dx/d; // sin угла треугольника
     double cos = Dy/d; // cos угла треугольника
 
-	if (d < (*ball_b) .r+(*ball_p) .r
-
     if (d < (*ball_p) .r + (*ball_b) .r) //проверка столкновения
         {
         txPlaySound ("sounds/Zvuk_Ball.wav");
