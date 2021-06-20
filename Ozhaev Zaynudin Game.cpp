@@ -209,7 +209,7 @@ void Ball::Physics(int* score1, int* score2, int dt)
             {
             ++(*score1);
             x = W/2;
-            txPlaySound ("zvuk-krika-gol.wav");
+            txPlaySound ("sounds/zvuk-krika-gol.wav");
             }
         }
 
@@ -228,7 +228,7 @@ void Ball::Physics(int* score1, int* score2, int dt)
             {
             ++(*score2);
             x = W/2;
-            txPlaySound ("zvuk-krika-gol.wav");
+            txPlaySound ("sounds/zvuk-krika-gol.wav");
             }
         }
 
