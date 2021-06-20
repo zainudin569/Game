@@ -83,7 +83,7 @@ void MoveBall()
         txBitBlt  (txDC(), 0, 50, 0, 0, Fon);
 
         ball1.Drow(1);
-        ball2.Drow(1);
+        ball2.Drow(0);
         ball3.Drow(0);
 
         //printf ("In CraziBall(): x  = %d and y  = %d\n", x2, y2);
