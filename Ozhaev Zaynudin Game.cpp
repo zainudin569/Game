@@ -6,7 +6,7 @@ struct Key;
 
 void MoveBall();
 void CollisionBall(Ball* ball_p, Ball* ball_b);
-void ScoreDraw (int score1, int score2, Ball* ball);
+void ScoreDraw (int score1, int score2);
 
 //---------------------------------------------------------------------------------
 
@@ -102,7 +102,7 @@ void MoveBall()
         ball2.Drow();
         ball3.Drow();
 
-        ScoreDraw (score1, score2, &ball3);
+        ScoreDraw (score1, score2);
 
         txEnd ();
         txSleep (1);
@@ -204,7 +204,12 @@ void Ball::Physics(int* score1, int* score2, int dt)
         {
         vx =   - vx;
         x  = W_org - r;
-        if ( pl == 0) ++(*score1);
+
+        if ( pl == 0)
+            {
+            ++(*score1);
+            x = w/2;
+            }
         }
 
     if (y  > H - r)
@@ -217,7 +222,12 @@ void Ball::Physics(int* score1, int* score2, int dt)
         {
         vx =   - vx;
         x  = W_org_2 + r;
-        if ( pl == 0) ++(*score2);
+
+        if ( pl == 0)
+            {
+            ++(*score1);
+            x = w/2;
+            }
         }
 
     if (y  < 50 + r)
@@ -284,7 +294,7 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 
 //---------------------------------------------------------------------------------
 
-void ScoreDraw (int score1, int score2, Ball* ball)
+void ScoreDraw (int score1, int score2)
     {
     txSelectFont ("TimesNewRoman", 50);
     char str[12] = "";
@@ -300,12 +310,6 @@ void ScoreDraw (int score1, int score2, Ball* ball)
 
     txSetTextAlign (TA_CENTER);
     txTextOut (txGetExtentX() / 2, 2, str);
-
-    *ball = { W/2,  rand() % H, 1 + rand() % 9, 1 + rand() % 9,
-                 25,
-                  0,
-                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
-                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
     }
 
 
