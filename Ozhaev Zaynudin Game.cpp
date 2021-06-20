@@ -169,11 +169,11 @@ void Key::Control(Ball* ball, int* F4_Col)
 
 void Ball::Physics(int* score1, int* score2, int dt)
     {
-    /*if (vy >  15) vy =  15;//ограничение на скорость движения
+    if (vy >  15) vy =  15;//ограничение на скорость движения
     if (vx >  15) vx =  15;
     if (vy < -15) vy = -15;
     if (vx < -15) vx = -15;
-    */
+
     (*this) .x += (*this) .vx * dt;
     (*this) .y += (*this) .vy * dt;
 
@@ -255,61 +255,6 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
         //printf (" dt  = %f\n", dt);
         //txSleep (3000);
         }
-
-     /*double Dx = (*ball_b) .x - (*ball_p) .x;
-     double Dy = (*ball_b) .y - (*ball_p) .y;
-     double d = sqrt(Dx*Dx + Dy*Dy); if (d==0) d = 0.01;   // во избежании деления на ноль
-	 double sin = Dx/d;
-	 double cos = Dy/d;
-
-	 if (d < (*ball_b) .r+(*ball_p) .r)
-	 {
-         txPlaySound ("sounds/Zvuk_Ball.wav");
-
-		 double Vn1 = (*ball_p).vx*sin + (*ball_p).vy*cos;
-         double Vn2 = (*ball_b).vx*sin + (*ball_b).vy*cos;
-
-		 if ((Vn1 - Vn2) == 0) Vn1 = Vn1 + 0.01;
-
-		 double dt=((*ball_b).r+(*ball_p).r-d)/(Vn1-Vn2);
-
-	                 if (dt>0.6)  dt= 0.6;   // ограничение на dt, чтоб мяч не улетал
-                     if (dt<-0.6) dt=-0.6; // усли проникновение сильное было
-
-
-		 (*ball_b).x-=ROUND((*ball_b).vx*dt);
-		 (*ball_b).y-=ROUND((*ball_b).vy*dt);
-		 (*ball_p).x-=ROUND((*ball_p).vx*dt);
-		 (*ball_p).y-=ROUND((*ball_p).vy*dt);
-
-
-
-	////////основная часть, находим новые скорости после столкновения
-		  Dx = (*ball_b).x-(*ball_p).x;
-		  Dy = (*ball_b).y-(*ball_p).y;
-	      d = sqrt(Dx*Dx+Dy*Dy);  if (d==0) d=0.01;
-  		  sin = Dx/d;
-		  cos = Dy/d;
-
-
-		  Vn1=(*ball_p).vx*sin+(*ball_p).vy*cos;
-          Vn2=(*ball_b).vx*sin+(*ball_b).vy*cos;
-
-   double Vt2= -(*ball_b).vx*cos+(*ball_b).vy*sin;
-
-          Vn2 = Vn1-Vn2;
-
-          (*ball_b).vx=ROUND(Vn2*sin-Vt2*cos);
-		  (*ball_b).vy=ROUND(Vn2*cos+Vt2*sin);
-    ///////
-
-
-		 (*ball_b).x+=ROUND((*ball_b).vx*dt);
-		 (*ball_b).y+=ROUND((*ball_b).vy*dt);
-		 (*ball_p).x+=ROUND((*ball_p).vx*dt);
-		 (*ball_p).y+=ROUND((*ball_p).vy*dt);
-	 }*/
-
 }
 
 //---------------------------------------------------------------------------------
