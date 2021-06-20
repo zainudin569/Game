@@ -1,16 +1,28 @@
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:125:6: warning: unused parameter 'dt' [-Wunused-parameter]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:45:5: error: expected unqualified-id before 'if'
+     if (vy >  5) vy =  5;//ограничение на скорость движения
+     ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:46:5: error: expected unqualified-id before 'if'
+     if (vx >  5) vx =  5;
+     ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:47:5: error: expected unqualified-id before 'if'
+     if (vy < -5) vy = -5;
+     ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:48:5: error: expected unqualified-id before 'if'
+     if (vx < -5) vx = -5;
+     ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:130:6: warning: unused parameter 'dt' [-Wunused-parameter]
  void Key::Control(Ball* ball, int* F4_Col, int dt)
       ^
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void CollisionBall(Ball*, Ball*)':
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:216:46: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:218:46: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
      double d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; //гипотенуза
                                               ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:229:28: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:231:28: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
          if ((Vn1 - Vn2) == 0) Vn1 = Vn1 + 0.01;
                             ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:243:43: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:245:43: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
          d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01;
                                            ^
 ---------------------------------------------------------------------------------------------
-[20.06.2021 13:34:51,94 C:\Users\zainu@DESKTOP-ZAINU, returned 0]
+[20.06.2021 13:37:18,66 C:\Users\zainu@DESKTOP-ZAINU, returned 1]
 C:\Users\zainu\Desktop\курс\Game> g++.exe "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp" -o "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe"  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC

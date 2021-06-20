@@ -42,6 +42,11 @@ struct Ball
     COLORREF Color;
     COLORREF FillColor;
 
+    if (vy >  5) vy =  5;//ограничение на скорость движения
+    if (vx >  5) vx =  5;
+    if (vy < -5) vy = -5;
+    if (vx < -5) vx = -5;
+
     void Physics(int* score1, int* score2, int dt);
     void Drow();
     };
@@ -160,10 +165,7 @@ void Key::Control(Ball* ball, int* F4_Col, int dt)
         if (*F4_Col == 1)
             {
 
-        if ((*ball) .vy >  5) (*ball) .vy =  5;//ограничение на скорость движения
-        if ((*ball) .vx >  5) (*ball) .vx =  5;
-        if ((*ball) .vy < -5) (*ball) .vy = -5;
-        if ((*ball) .vx < -5) (*ball) .vx = -5;
+
 
             (*ball) .Color     = RGB((*ball) .x,   (*ball) .y,   150);
             (*ball) .FillColor = RGB((*ball) .x/2, (*ball) .y/2, 150);
