@@ -185,10 +185,25 @@ void Ball::Physics(int* score1, int* score2, int dt)
     (*this) .x += (*this) .vx * dt;
     (*this) .y += (*this) .vy * dt;
 
-    if (x > W - r)
+    if ( pl == 1)
+        {
+        int W_org = W - W/2
+        }
+
+    if ( pl == 2)
+        {
+        int W_org = W/2
+        }
+
+    if ( pl == 0)
+        {
+        int W_org = W
+        }
+
+    if (x > W_org - r)
         {
         vx =   - vx;
-        x  = W - r;
+        x  = W_org - r;
         ++(*score1);
         }
 
