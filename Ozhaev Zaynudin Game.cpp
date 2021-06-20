@@ -163,7 +163,7 @@ void Key::Control(Ball* ball, int* F4_Col, int dt)
             (*ball) .FillColor = RGB((*ball) .x/2, (*ball) .y/2, 150);
             }
 
-        ball .Physics(&score1, &score2, dt)
+        ball .Physics(dt)
         (*ball) .vx = 0;
         (*ball) .vy = 0;
         }
