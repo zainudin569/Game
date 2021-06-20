@@ -102,7 +102,7 @@ void MoveBall()
         ball2.Drow();
         ball3.Drow();
 
-        ScoreDraw (score1, score2);
+        ScoreDraw (score1, score2, &ball3);
 
         txEnd ();
         txSleep (1);
@@ -284,7 +284,7 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 
 //---------------------------------------------------------------------------------
 
-void ScoreDraw (int score1, int score2)
+void ScoreDraw (int score1, int score2, Ball* ball)
     {
     txSelectFont ("TimesNewRoman", 50);
     char str[12] = "";
@@ -301,7 +301,7 @@ void ScoreDraw (int score1, int score2)
     txSetTextAlign (TA_CENTER);
     txTextOut (txGetExtentX() / 2, 2, str);
 
-    Ball ball3 = { W/2,  rand() % H, 1 + rand() % 9, 1 + rand() % 9,
+    *ball = { W/2,  rand() % H, 1 + rand() % 9, 1 + rand() % 9,
                  25,
                   0,
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),

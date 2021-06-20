@@ -1,3 +1,10 @@
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void MoveBall()':
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:105:42: error: too many arguments to function 'void ScoreDraw(int, int)'
+         ScoreDraw (score1, score2, &ball3);
+                                          ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:9:6: note: declared here
+ void ScoreDraw (int score1, int score2);
+      ^
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void CollisionBall(Ball*, Ball*)':
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:236:47: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
       double d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; // гипотенуза
@@ -8,10 +15,10 @@ C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:247:28: warning: compa
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:261:43: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
          d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d=0.01;
                                            ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void ScoreDraw(int, int)':
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:304:10: warning: unused variable 'ball3' [-Wunused-variable]
-     Ball ball3 = { W/2,  rand() % H, 1 + rand() % 9, 1 + rand() % 9,
-          ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void ScoreDraw(int, int, Ball*)':
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:287:6: warning: no previous declaration for 'void ScoreDraw(int, int, Ball*)' [-Wmissing-declarations]
+ void ScoreDraw (int score1, int score2, Ball* ball)
+      ^
 ---------------------------------------------------------------------------------------------
-[20.06.2021 15:36:49,88 C:\Users\zainu@DESKTOP-ZAINU, returned 0]
+[20.06.2021 15:38:46,34 C:\Users\zainu@DESKTOP-ZAINU, returned 1]
 C:\Users\zainu\Desktop\курс\Game> g++.exe "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp" -o "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe"  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC
