@@ -42,7 +42,7 @@ struct Ball
     COLORREF Color;
     COLORREF FillColor;
 
-    void Physics(int dt);
+    void Physics(int* score1, int* score2, int dt);
     void Drow();
     };
 
@@ -89,21 +89,12 @@ void MoveBall()
         //printf ("In CraziBall(): x  = %d and y  = %d\n", x2, y2);
         //printf ("In CraziBall(): vx = %d and vy = %d\n", vx2, vy2);
 
-        ball1 .Physics(dt);
-        ball2 .Physics(dt);
-        ball3 .Physics(dt);
+        ball1 .Physics(&score1, &score2, dt);
+        ball2 .Physics(&score1, &score2, dt);
+        ball3 .Physics(&score1, &score2, dt);
 
         CollisionBall(&ball1, &ball3);//проверка столкновения
-
         CollisionBall(&ball2, &ball3);
-
-      /*int bilo_li_ono = bilo_stolknov (x1, y1, x2, y2, r1, r2);
-        if (bilo_li_ono)
-            {
-            Bam_balls (x1, y1, &vx1, &vy1, x2, y2, &vx2, &vy2);
-            }
-        Ball_Control (&vx1, &vy1);
-      */
 
         plaer1 .Control(&ball1, &F4_Col, dt);
         plaer1 .Control(&ball2, &F4_Col, dt);
@@ -178,7 +169,7 @@ void Key::Control(Ball* ball, int* F4_Col, int dt)
 
 //---------------------------------------------------------------------------------
 
-void Ball::Physics(int dt)
+void Ball::Physics(int* score1, int* score2, int dt)
     {
     (*this) .x += (*this) .vx * dt;
     (*this) .y += (*this) .vy * dt;
@@ -187,7 +178,7 @@ void Ball::Physics(int dt)
         {
         vx =   - vx;
         x  = W - r;
-        //++(*score1);
+        ++(*score1);
         }
 
     if (y  > H - r)
@@ -200,7 +191,7 @@ void Ball::Physics(int dt)
         {
         vx =   - vx;
         x  = 0 + r;
-        //++(*score2);
+        ++(*score2);
         }
 
     if (y  < 50 + r)
@@ -209,34 +200,6 @@ void Ball::Physics(int dt)
         y  = 50 + r;
         }
     }
-
-//---------------------------------------------------------------------------------
-
-/*void bilo_stolknov (double xA, double yA, double xB, double yB, double rA, double rB)
-    {
-    return (Distansce (xA, yA, xB, yB) <= r1 + r2);
-    }
-
-//---------------------------------------------------------------------------------
-
-double Distansce (double x1, double y1, double x2, double y2);
-    {
-    double answer= sqrt((x1 - x2) * (x1 - x2) + (y1 - y2)* (y1 - y2));
-
-    printf ("In Distance(): answer = %lg\n ", answer;
-
-    return answer;
-    }
-
-viod Bam_balls (int* x, int* y, int* vx, int* vy);
-    {
-    *vx = -(*xv);
-    *x = *x - r;
-    *vy = -(*xy);
-    *y = *y - r;
-    }
-
-*/
 
 //---------------------------------------------------------------------------------
 
