@@ -209,7 +209,7 @@ void Ball::Physics(int* score1, int* score2, int dt)
             {
             ++(*score1);
             x = W/2;
-            delay (100);
+            txdelay (100);
             }
         }
 
