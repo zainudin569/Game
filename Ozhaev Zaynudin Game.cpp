@@ -7,7 +7,7 @@ struct Key;
 void MoveBall();
 
 void CollisionBall(Ball* ball_p, Ball* ball_b);
-void ControlBall(Ball* ball, int* F4_Col, Key plaer, int dt);
+
 void ScoreDraw (int score1, int score2);
 
 //void bilo_stolknov (double xA, double yA, double xB, double yB, double rA, double rB)
@@ -29,6 +29,8 @@ int main()
 struct Key
     {
     int  key_left, key_right , key_up, key_down;
+
+    void Control(Ball* ball, int* F4_Col, int dt);
     };
 
 struct Ball
@@ -87,9 +89,9 @@ void MoveBall()
         //printf ("In CraziBall(): x  = %d and y  = %d\n", x2, y2);
         //printf ("In CraziBall(): vx = %d and vy = %d\n", vx2, vy2);
 
-        ball1.Physics(dt);
-        ball2.Physics(dt);
-        ball3.Physics(dt);
+        ball1 .Physics(dt);
+        ball2 .Physics(dt);
+        ball3 .Physics(dt);
 
         CollisionBall(&ball1, &ball3);//проверка столкновения
 
@@ -103,8 +105,8 @@ void MoveBall()
         Ball_Control (&vx1, &vy1);
       */
 
-        ControlBall(&ball1, &F4_Col, plaer1, dt);
-        ControlBall(&ball2, &F4_Col, plaer2, dt);
+        plaer1 .Control(&ball1, &F4_Col, dt);
+        plaer1 .Control(&ball2, &F4_Col, dt);
 
         ScoreDraw (score1, score2);
 
@@ -129,12 +131,12 @@ void Ball::Drow()
 
 //---------------------------------------------------------------------------------
 
-void ControlBall(Ball* ball, int* F4_Col, Key plaer, int dt)
+void Ball::Control(Ball* ball, int* F4_Col, int dt)
         {
-        if (txGetAsyncKeyState (plaer .key_left))  (*ball) .vx = (*ball) .vx - 20;
-        if (txGetAsyncKeyState (plaer .key_right)) (*ball) .vx = (*ball) .vx + 20;
-        if (txGetAsyncKeyState (plaer .key_up))    (*ball) .vy = (*ball) .vy - 20;;
-        if (txGetAsyncKeyState (plaer .key_down))  (*ball) .vy = (*ball) .vy + 20;;
+        if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 20;
+        if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 20;
+        if (txGetAsyncKeyState (key_up))    (*ball) .vy = (*ball) .vy - 20;;
+        if (txGetAsyncKeyState (key_down))  (*ball) .vy = (*ball) .vy + 20;;
 
         if (txGetAsyncKeyState (VK_SPACE)) (*ball) .vy = (*ball) .vx = 0;
 
