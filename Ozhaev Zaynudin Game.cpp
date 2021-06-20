@@ -131,7 +131,7 @@ void Ball::Drow()
 
 //---------------------------------------------------------------------------------
 
-void Ball::Control(Ball* ball, int* F4_Col, int dt)
+void Key::Control(Ball* ball, int* F4_Col, int dt)
         {
         if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 20;
         if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 20;
