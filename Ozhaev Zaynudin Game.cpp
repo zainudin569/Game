@@ -210,7 +210,7 @@ void Ball::Physics(int* score1, int* score2, int dt)
             ++(*score1);
             x = W/2; vx = 1 + rand() % 9; vy = 1 + rand() % 9;
             txPlaySound ("sounds/zvuk-krika-gol.wav");
-            Sleep (300);
+            Sleep (500);
             }
         }
 
@@ -230,7 +230,7 @@ void Ball::Physics(int* score1, int* score2, int dt)
             ++(*score2);
             x = W/2; vx = 1 + rand() % 9; vy = 1 + rand() % 9;
             txPlaySound ("sounds/zvuk-krika-gol.wav");
-            Sleep (300);
+            Sleep (500);
             }
         }
 
