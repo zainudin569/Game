@@ -211,7 +211,7 @@ void Ball::Physics(int* score1, int* score2, int dt)
             ++(*score1);
             x = W/2;
             txPlaySound ("sounds/zvuk-krika-gol.wav");
-            delay (50)
+            delay (50);
             }
         }
 
