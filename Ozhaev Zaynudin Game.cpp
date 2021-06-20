@@ -119,12 +119,12 @@ void MoveBall()
 
 void Ball::Drow()
     {
-    txSetColor ((ball .Color), 2);
-    txSetFillColor (ball .FillColor);
+    txSetColor ((Color), 2);
+    txSetFillColor (FillColor);
 
-    txCircle (ball .x, ball .y, ball .r);
-    //txLine (ball .x, ball .y, ball .x + ball .vx*5, ball .y + ball .vy*5);
-    //txCircle (ball .x + ball .vx*5, ball .y + ball .vy*5, 3);
+    txCircle (x, y, r);
+    //txLine (x, y, x + vx*5, y + vy*5);
+    //txCircle (x + vx*5, y + vy*5, 3);
     }
 
 //---------------------------------------------------------------------------------
