@@ -89,8 +89,8 @@ void MoveBall()
         //printf ("In CraziBall(): x  = %d and y  = %d\n", x2, y2);
         //printf ("In CraziBall(): vx = %d and vy = %d\n", vx2, vy2);
 
-        ball1 .Physics(&score1, &score2, dt);
-        ball2 .Physics(&score1, &score2, dt);
+        //ball1 .Physics(&score1, &score2, dt);
+        //ball2 .Physics(&score1, &score2, dt);
         ball3 .Physics(&score1, &score2, dt);
 
         CollisionBall(&ball1, &ball3);//проверка столкновения
@@ -159,15 +159,13 @@ void Key::Control(Ball* ball, int* F4_Col, int dt)
 
         if (*F4_Col == 1)
             {
-
-
-
             (*ball) .Color     = RGB((*ball) .x,   (*ball) .y,   150);
             (*ball) .FillColor = RGB((*ball) .x/2, (*ball) .y/2, 150);
             }
-        /*PhysicsBall(ball, dt);
+
+        ball .Physics(&score1, &score2, dt)
         (*ball) .vx = 0;
-        (*ball) .vy = 0;*/
+        (*ball) .vy = 0;
         }
 
 //---------------------------------------------------------------------------------
