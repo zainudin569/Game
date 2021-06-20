@@ -114,7 +114,7 @@ void Ball::Drow(int p)
     //txLine (x, y, x + vx*5, y + vy*5);
     //txCircle (x + vx*5, y + vy*5, 3);
 
-    if ( p==1 )
+    if ( p == 1 )
         {
         vx = 0;
         vy = 0;
@@ -207,12 +207,14 @@ void Ball::Physics(int* score1, int* score2, int dt)
 //---------------------------------------------------------------------------------
 
 void CollisionBall (Ball* ball_p, Ball* ball_b)
-{
-    /*int Dx = (*ball_p) .x - (*ball_b) .x; // стороны треугольника
-    int Dy = (*ball_p) .y - (*ball_b) .y; // стороны треугольника
+    {
+    int Dx = (*ball_b) .x - (*ball_p) .x; // стороны треугольника
+    int Dy = (*ball_b) .y - (*ball_p) .y; // стороны треугольника
     double d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; //гипотенуза
     double sin = Dx/d; // sin угла треугольника
     double cos = Dy/d; // cos угла треугольника
+
+	if (d < (*ball_b) .r+(*ball_p) .r
 
     if (d < (*ball_p) .r + (*ball_b) .r) //проверка столкновения
         {
@@ -233,8 +235,8 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
         (*ball_b) .x = ROUND((*ball_b) .x - (*ball_b) .vx*dt);
         (*ball_b) .y = ROUND((*ball_b) .y - (*ball_b) .vy*dt);
 
-        Dx = (*ball_p) .x - (*ball_b) .x;
-        Dy = (*ball_p) .y - (*ball_b) .y;
+        Dx = (*ball_b) .x - (*ball_p) .x;
+        Dy = (*ball_b) .y - (*ball_p) .y;
         d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01;
         sin = Dx/d; // sin
         cos = Dy/d; // cos
@@ -254,15 +256,15 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
         (*ball_b) .y = ROUND((*ball_b) .y + (*ball_b) .vy*dt);
         //printf (" dt  = %f\n", dt);
         //txSleep (3000);
-        }*/
+        }
 
-     double Dx = (*ball_b).x - (*ball_p).x;
-     double Dy = (*ball_b).y - (*ball_p).y;
-     double d = sqrt(Dx*Dx + Dy*Dy); if (d==0) d=0.01;   // во избежании деления на ноль
+     /*double Dx = (*ball_b) .x - (*ball_p) .x;
+     double Dy = (*ball_b) .y - (*ball_p) .y;
+     double d = sqrt(Dx*Dx + Dy*Dy); if (d==0) d = 0.01;   // во избежании деления на ноль
 	 double sin = Dx/d;
 	 double cos = Dy/d;
 
-	 if (d < (*ball_b).r+(*ball_p).r)
+	 if (d < (*ball_b) .r+(*ball_p) .r)
 	 {
          txPlaySound ("sounds/Zvuk_Ball.wav");
 
@@ -308,7 +310,7 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 		 (*ball_b).y+=ROUND((*ball_b).vy*dt);
 		 (*ball_p).x+=ROUND((*ball_p).vx*dt);
 		 (*ball_p).y+=ROUND((*ball_p).vy*dt);
-	 }
+	 }*/
 
 }
 

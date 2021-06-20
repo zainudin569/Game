@@ -1,13 +1,20 @@
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void CollisionBall(Ball*, Ball*)':
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:261:45: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
-      double d = sqrt(Dx*Dx + Dy*Dy); if (d==0) d=0.01;   // во избежании деления на ноль
-                                             ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:272:23: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
-    if ((Vn1 - Vn2) == 0) Vn1 = Vn1 + 0.01;
-                       ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:290:39: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
-        d = sqrt(Dx*Dx+Dy*Dy);  if (d==0) d=0.01;
-                                       ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:213:46: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+     double d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; //гипотенуза
+                                              ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:219:5: error: expected ')' before 'if'
+     if (d < (*ball_p) .r + (*ball_b) .r) //проверка столкновения
+     ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:315:1: error: expected primary-expression before '}' token
+ }
+ ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:315:1: error: expected ';' before '}' token
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:214:12: warning: unused variable 'sin' [-Wunused-variable]
+     double sin = Dx/d; // sin угла треугольника
+            ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:215:12: warning: unused variable 'cos' [-Wunused-variable]
+     double cos = Dy/d; // cos угла треугольника
+            ^
 ---------------------------------------------------------------------------------------------
-[20.06.2021 14:21:50,05 C:\Users\zainu@DESKTOP-ZAINU, returned 0]
+[20.06.2021 14:31:44,75 C:\Users\zainu@DESKTOP-ZAINU, returned 1]
 C:\Users\zainu\Desktop\курс\Game> g++.exe "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp" -o "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe"  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC
