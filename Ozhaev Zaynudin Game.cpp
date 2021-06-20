@@ -61,7 +61,7 @@ void MoveBall()
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
-    Ball ball3 = { rand() % W,  rand() % H, 1 + rand() % 9, 1 + rand() % 9,
+    Ball ball3 = { W/2,  rand() % H, 1 + rand() % 9, 1 + rand() % 9,
                  25,
                   0,
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
@@ -188,13 +188,13 @@ void Ball::Physics(int* score1, int* score2, int dt)
     (*this) .x += (*this) .vx * dt;
     (*this) .y += (*this) .vy * dt;
 
-    if ( pl == 1)
+    if ( pl == 1) // ограничения для pl = 1
         {
         W_org   = W;
         W_org_2 = W/2;
         }
 
-    if ( pl == 2)
+    if ( pl == 2) // ограничения для pl = 2
         {
         W_org   = W/2;
         W_org_2 = 0;
@@ -300,6 +300,12 @@ void ScoreDraw (int score1, int score2)
 
     txSetTextAlign (TA_CENTER);
     txTextOut (txGetExtentX() / 2, 2, str);
+
+    Ball ball3 = { W/2,  rand() % H, 1 + rand() % 9, 1 + rand() % 9,
+                 25,
+                  0,
+                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
+                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
     }
 
 
