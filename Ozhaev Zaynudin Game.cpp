@@ -4,8 +4,8 @@ const int H = 650;
 struct Ball;
 struct Key;
 
-void MoveBall();
-void CollisionBall(Ball* ball_p, Ball* ball_b);
+void MoveBall ();
+void CollisionBall (Ball* ball_p, Ball* ball_b);
 void ScoreDraw (int score1, int score2);
 
 //---------------------------------------------------------------------------------
@@ -25,7 +25,7 @@ struct Key
     {
     int  key_left, key_right , key_up, key_down;
 
-    void Control(Ball* ball, int* F4_Col);
+    void Control (Ball* ball, int* F4_Col);
     };
 
 struct Ball
@@ -39,7 +39,7 @@ struct Ball
     COLORREF Color;
     COLORREF FillColor;
 
-    void Physics(int* score1, int* score2, int dt);
+    void Physics (int* score1, int* score2, int dt);
     void Drow();
     };
 
@@ -49,15 +49,15 @@ void MoveBall()
     {
     //srand(time(NULL));
 
-    Ball ball1 = {W/2 + rand() % W/2 ,  rand() % H, 0, 0,
-                  40,
-                   1,
+    Ball ball1 = { W/2 + rand() % W/2 ,  rand() % H, 0, 0,
+                   40,
+                    1,
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
     Ball ball2 = { rand() % W/2,  rand() % H, 0, 0,
-                 40,
-                  2,
+                   40,
+                    2,
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
@@ -78,25 +78,24 @@ void MoveBall()
 
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
-
         txBegin ();
         txSetFillColor (TX_BLACK);
         txClear ();
 
-        txBitBlt  (txDC(), 0, 50, 0, 0, Fon);
+        txBitBlt (txDC(), 0, 50, 0, 0, Fon);
 
         //printf ("In CraziBall(): x  = %d and y  = %d\n", x2, y2);
         //printf ("In CraziBall(): vx = %d and vy = %d\n", vx2, vy2);
 
-        plaer1 .Control(&ball1, &F4_Col);
-        plaer2 .Control(&ball2, &F4_Col);
+        plaer1 .Control (&ball1, &F4_Col);
+        plaer2 .Control (&ball2, &F4_Col);
 
-        ball1 .Physics(&score1, &score2, dt);
-        ball2 .Physics(&score1, &score2, dt);
-        ball3 .Physics(&score1, &score2, dt);
+        ball1 .Physics (&score1, &score2, dt);
+        ball2 .Physics (&score1, &score2, dt);
+        ball3 .Physics (&score1, &score2, dt);
 
-        CollisionBall(&ball1, &ball3);//проверка столкновения
-        CollisionBall(&ball2, &ball3);
+        CollisionBall (&ball1, &ball3);//проверка столкновения
+        CollisionBall (&ball2, &ball3);
 
         ball1.Drow();
         ball2.Drow();
@@ -104,11 +103,11 @@ void MoveBall()
 
         ScoreDraw (score1, score2);
 
-        txEnd ();
+        txEnd();
         txSleep (1);
         }
 
-    txDeleteDC(Fon);
+    txDeleteDC (Fon);
     }
 
 //---------------------------------------------------------------------------------
@@ -131,7 +130,7 @@ void Ball::Drow()
 
 //---------------------------------------------------------------------------------
 
-void Key::Control(Ball* ball, int* F4_Col)
+void Key::Control (Ball* ball, int* F4_Col)
     {
     if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 15;
     if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 15;
@@ -175,7 +174,7 @@ void Key::Control(Ball* ball, int* F4_Col)
 
 //---------------------------------------------------------------------------------
 
-void Ball::Physics(int* score1, int* score2, int dt)
+void Ball::Physics (int* score1, int* score2, int dt)
     {
     int W_org   = W;
     int W_org_2 = 0;
@@ -247,7 +246,7 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
     {
      double Dx = (*ball_b) .x - (*ball_p) .x; //стороны треугольника
      double Dy = (*ball_b) .y - (*ball_p) .y; //стороны треугольника
-     double d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; // гипотенуза
+     double d = sqrt (Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; // гипотенуза
 	 double sin = Dx/d; //sin угла треугольника
 	 double cos = Dy/d; //cos угла треугольника
 
@@ -265,14 +264,14 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
         if (dt >  0.6) dt =  0.6; //ограничение на dt, чтобы мяч не отскакивал далеко
         if (dt < -0.6) dt = -0.6;
 
-        (*ball_b) .x -= ROUND((*ball_b) .vx*dt);
-        (*ball_b) .y -= ROUND((*ball_b) .vy*dt);
-        (*ball_p) .x -= ROUND((*ball_p) .vx*dt);
-        (*ball_p) .y -= ROUND((*ball_p) .vy*dt);
+        (*ball_b) .x -= ROUND ((*ball_b) .vx*dt);
+        (*ball_b) .y -= ROUND ((*ball_b) .vy*dt);
+        (*ball_p) .x -= ROUND ((*ball_p) .vx*dt);
+        (*ball_p) .y -= ROUND ((*ball_p) .vy*dt);
 
         Dx = (*ball_b) .x - (*ball_p) .x;
         Dy = (*ball_b) .y - (*ball_p) .y;
-        d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d=0.01;
+        d = sqrt (Dx*Dx + Dy*Dy); if (d == 0) d=0.01;
         sin = Dx/d;
         cos = Dy/d;
 
@@ -283,13 +282,13 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 
         Vn2 = Vn1 - Vn2;
 
-        (*ball_b) .vx = ROUND(Vn2*sin - Vt2*cos);
-        (*ball_b) .vy = ROUND(Vn2*cos + Vt2*sin);
+        (*ball_b) .vx = ROUND (Vn2*sin - Vt2*cos);
+        (*ball_b) .vy = ROUND (Vn2*cos + Vt2*sin);
 
-        (*ball_b) .x +=ROUND((*ball_b) .vx*dt);
-        (*ball_b) .y +=ROUND((*ball_b) .vy*dt);
-        (*ball_p) .x +=ROUND((*ball_p) .vx*dt);
-        (*ball_p) .y +=ROUND((*ball_p) .vy*dt);
+        (*ball_b) .x +=ROUND ((*ball_b) .vx*dt);
+        (*ball_b) .y +=ROUND ((*ball_b) .vy*dt);
+        (*ball_p) .x +=ROUND ((*ball_p) .vx*dt);
+        (*ball_p) .y +=ROUND ((*ball_p) .vy*dt);
         //printf (" dt  = %f\n", dt);
         //txSleep (3000);
 	 }
