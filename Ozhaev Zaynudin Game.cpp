@@ -280,10 +280,10 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
         (*ball_b) .vx = ROUND(Vn2*sin - Vt2*cos); //обратный поворот системы координат шар2
         (*ball_b) .vy = ROUND(Vn2*cos + Vt2*sin); //обратный поворот системы координат шар2
 
-        (*ball_p) .x = ROUND((*ball_p) .x + (*ball_p) .vx*dt);
-        (*ball_p) .y = ROUND((*ball_p) .y + (*ball_p) .vy*dt);
-        (*ball_b) .x = ROUND((*ball_b) .x + (*ball_b) .vx*dt);
-        (*ball_b) .y = ROUND((*ball_b) .y + (*ball_b) .vy*dt);
+        (*ball_b).x+=(*ball_b).vx*dt;
+		 (*ball_b).y+=(*ball_b).vy*dt;
+		 (*ball_p).x+=(*ball_p).vx*dt;
+		 (*ball_p).y+=(*ball_p).vy*dt;
         //printf (" dt  = %f\n", dt);
         //txSleep (3000);
         }
