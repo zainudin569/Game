@@ -173,11 +173,11 @@ void Key::Control(Ball* ball, int* F4_Col)
 
 void Ball::Physics(int* score1, int* score2, int dt)
     {
-    if (vy >  15) vy =  15;//ограничение на скорость движения
+    /*if (vy >  15) vy =  15;//ограничение на скорость движения
     if (vx >  15) vx =  15;
     if (vy < -15) vy = -15;
     if (vx < -15) vx = -15;
-
+    */
     (*this) .x += (*this) .vx * dt;
     (*this) .y += (*this) .vy * dt;
 
@@ -260,9 +260,9 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
         //txSleep (3000);
         }*/
 
-     double Dx = (*ball_b).x-(*ball_p).x;
-     double Dy = (*ball_b).y-(*ball_p).y;
-     double d = sqrt(Dx*Dx+Dy*Dy);      if (d==0) d=0.01;                 // во избежании деления на ноль
+     double Dx = (*ball_b).x - (*ball_p).x;
+     double Dy = (*ball_b).y - (*ball_p).y;
+     double d = sqrt(Dx*Dx + Dy*Dy); if (d==0) d=0.01;   // во избежании деления на ноль
 	 double sin = Dx/d;
 	 double cos = Dy/d;
 
