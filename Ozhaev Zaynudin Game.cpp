@@ -159,6 +159,10 @@ void Key::Control(Ball* ball, int* F4_Col, int dt)
 
         if (*F4_Col == 1)
             {
+
+        if (vy >  25) vy =  25;  if (vx >  25) vx =  25;
+        if (vy < -25) vy = -25;  if (vx < -25) vx = -25;   //ограничение на скорость движения
+
             (*ball) .Color     = RGB((*ball) .x,   (*ball) .y,   150);
             (*ball) .FillColor = RGB((*ball) .x/2, (*ball) .y/2, 150);
             }
