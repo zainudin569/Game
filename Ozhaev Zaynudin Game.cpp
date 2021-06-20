@@ -177,7 +177,8 @@ void Key::Control(Ball* ball, int* F4_Col)
 
 void Ball::Physics(int* score1, int* score2, int dt)
     {
-    int W_org = W;
+    int W_org   = W;
+    int W_org_2 = 0;
 
     if (vy >  15) vy =  20;//ограничение на скорость движения
     if (vx >  15) vx =  20;
@@ -189,12 +190,14 @@ void Ball::Physics(int* score1, int* score2, int dt)
 
     if ( pl == 1)
         {
-        W_org = W - W/2;
+        W_org   = W;
+        W_org_2 = w/2
         }
 
     if ( pl == 2)
         {
-        W_org = W/2;
+        W_org   = W/2;
+        W_org_2 = 0;
         }
 
     if (x > W_org - r)
@@ -210,10 +213,10 @@ void Ball::Physics(int* score1, int* score2, int dt)
         y  = H - r;
         }
 
-    if (x  < 0 + r)
+    if (x  < W_org_2 + r)
         {
         vx =   - vx;
-        x  = 0 + r;
+        x  = W_org_2 + r;
         if ( pl == 0) ++(*score2);
         }
 
