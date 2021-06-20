@@ -91,7 +91,7 @@ void MoveBall()
 
         CollisionBall(&ball1, &ball3);//проверка столкновения
 
-        CollisionBall(&ball1, &ball3);
+        CollisionBall(&ball2, &ball3);
 
       /*int bilo_li_ono = bilo_stolknov (x1, y1, x2, y2, r1, r2);
         if (bilo_li_ono)
