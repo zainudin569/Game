@@ -119,8 +119,8 @@ void Ball::Drow()
     txSetFillColor (FillColor);
 
     txCircle (x, y, r);
-    //txLine (x, y, x + vx*5, y + vy*5);
-    //txCircle (x + vx*5, y + vy*5, 3);
+    txLine (x, y, x + vx*5, y + vy*5);
+    txCircle (x + vx*5, y + vy*5, 3);
 
     if ( pl == 1 or pl == 2 )
         {
@@ -188,13 +188,13 @@ void Ball::Physics(int* score1, int* score2, int dt)
     (*this) .x += (*this) .vx * dt;
     (*this) .y += (*this) .vy * dt;
 
-    if ( pl == 1) // ограничения для pl = 1
+    if (pl == 1) // ограничения для pl = 1
         {
         W_org   = W;
         W_org_2 = W/2;
         }
 
-    if ( pl == 2) // ограничения для pl = 2
+    if (pl == 2) // ограничения для pl = 2
         {
         W_org   = W/2;
         W_org_2 = 0;
@@ -202,10 +202,10 @@ void Ball::Physics(int* score1, int* score2, int dt)
 
     if (x > W_org - r)
         {
-        vx =   - vx;
-        x  = W_org - r;
+        vx = - vx;
+         x = W_org - r;
 
-        if ( pl == 0)
+        if (pl == 0)
             {
             ++(*score1);
             x = W/2; vx = 1 + rand() % 9; vy = 1 + rand() % 9;
@@ -214,16 +214,16 @@ void Ball::Physics(int* score1, int* score2, int dt)
             }
         }
 
-    if (y  > H - r)
+    if (y > H - r)
         {
-        vy =   - vy;
-        y  = H - r;
+        vy = - vy;
+         y = H - r;
         }
 
-    if (x  < W_org_2 + r)
+    if (x < W_org_2 + r)
         {
-        vx =   - vx;
-        x  = W_org_2 + r;
+        vx = - vx;
+         x = W_org_2 + r;
 
         if ( pl == 0)
             {
@@ -234,10 +234,10 @@ void Ball::Physics(int* score1, int* score2, int dt)
             }
         }
 
-    if (y  < 50 + r)
+    if (y < 50 + r)
         {
-        vy =   - vy;
-        y  = 50 + r;
+        vy = - vy;
+         y = 50 + r;
         }
     }
 
