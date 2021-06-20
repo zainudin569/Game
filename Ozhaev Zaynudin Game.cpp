@@ -174,10 +174,10 @@ void Key::Control(Ball* ball, int* F4_Col, int dt)
 
 void Ball::Physics(int* score1, int* score2, int dt)
     {
-    if (vy >  5) vy =  5;//ограничение на скорость движения
-    if (vx >  5) vx =  5;
-    if (vy < -5) vy = -5;
-    if (vx < -5) vx = -5;
+    if (vy >  15) vy =  15;//ограничение на скорость движения
+    if (vx >  15) vx =  15;
+    if (vy < -15) vy = -15;
+    if (vx < -15) vx = -15;
 
     (*this) .x += (*this) .vx * dt;
     (*this) .y += (*this) .vy * dt;
