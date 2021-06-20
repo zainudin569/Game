@@ -296,6 +296,9 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 	 {
 		 double Vn1 = (*ball_p).vx*ax + (*ball_p).vy*ay;
          double Vn2 = (*ball_b).vx*ax + (*ball_b).vy*ay;
+
+		 if ((Vn1 - Vn2) == 0) Vn1 = Vn1 + 0.01;
+
 		 double dt=((*ball_b).r+(*ball_p).r-d)/(Vn1-Vn2);
 
 	                 if (dt>0.6)  dt= 0.6;   // ограничение на dt, чтоб м€ч не улетал
