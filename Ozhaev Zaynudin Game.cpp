@@ -177,7 +177,7 @@ void Key::Control(Ball* ball, int* F4_Col)
 
 void Ball::Physics(int* score1, int* score2, int dt)
     {
-    int W_org = W
+    int W_org = W;
 
     if (vy >  15) vy =  20;//ограничение на скорость движения
     if (vx >  15) vx =  20;
