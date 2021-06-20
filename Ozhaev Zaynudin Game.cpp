@@ -175,8 +175,8 @@ void Ball::Physics(int* score1, int* score2, int dt, int p)
 
     if ( p==1 )
         {
-        (*ball) .vx = 0;
-        (*ball) .vy = 0;
+        vx = 0;
+        vy = 0;
         }
 
     (*this) .x += (*this) .vx * dt;
