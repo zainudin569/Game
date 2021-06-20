@@ -190,23 +190,23 @@ void Ball::Physics(int dt)
         //++(*score1);
         }
 
-    if ((*this) .y  > H - (*this) .r)
+    if (y  > H - r)
         {
-        (*this) .vy =   - (*this) .vy;
-        (*this) .y  = H - (*this) .r;
+        vy =   - vy;
+        y  = H - r;
         }
 
-    if ((*this) .x  < 0 + (*this) .r)
+    if (x  < 0 + r)
         {
-        (*this) .vx =   - (*this) .vx;
-        (*this) .x  = 0 + (*this) .r;
+        vx =   - vx;
+        x  = 0 + r;
         //++(*score2);
         }
 
-    if ((*this) .y  < 50 + (*this) .r)
+    if (y  < 50 + r)
         {
-        (*this) .vy =   - (*this) .vy;
-        (*this) .y  = 50 + (*this) .r;
+        vy =   - vy;
+        y  = 50 + r;
         }
     }
 
