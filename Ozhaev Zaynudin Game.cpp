@@ -160,10 +160,10 @@ void Key::Control(Ball* ball, int* F4_Col, int dt)
         if (*F4_Col == 1)
             {
 
-        if ((*ball) .vy >  25) (*ball) .vy =  25;//ограничение на скорость движения
-        if ((*ball) .vx >  25) (*ball) .vx =  25;
-        if ((*ball) .vy < -25) (*ball) .vy = -25;
-        if ((*ball) .vx < -25) (*ball) .vx = -25;
+        if ((*ball) .vy >  15) (*ball) .vy =  15;//ограничение на скорость движения
+        if ((*ball) .vx >  15) (*ball) .vx =  15;
+        if ((*ball) .vy < -15) (*ball) .vy = -15;
+        if ((*ball) .vx < -15) (*ball) .vx = -15;
 
             (*ball) .Color     = RGB((*ball) .x,   (*ball) .y,   150);
             (*ball) .FillColor = RGB((*ball) .x/2, (*ball) .y/2, 150);
