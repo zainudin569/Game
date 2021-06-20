@@ -42,7 +42,7 @@ struct Ball
     COLORREF Color;
     COLORREF FillColor;
 
-    void Physics(int* score1, int* score2, int dt, int p);
+    void Physics(int* score1, int* score2, int dt);
     void Drow(int p);
     };
 
