@@ -209,6 +209,7 @@ void Ball::Physics(int* score1, int* score2, int dt)
             {
             ++(*score1);
             x = W/2;
+            txSleep (300);
             }
         }
 
@@ -227,6 +228,7 @@ void Ball::Physics(int* score1, int* score2, int dt)
             {
             ++(*score1);
             x = W/2;
+            txSleep (300);
             }
         }
 
