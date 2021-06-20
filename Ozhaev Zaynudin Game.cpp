@@ -97,7 +97,7 @@ void MoveBall()
         CollisionBall(&ball2, &ball3);
 
         plaer1 .Control(&ball1, &F4_Col, dt);
-        plaer1 .Control(&ball2, &F4_Col, dt);
+        plaer2 .Control(&ball2, &F4_Col, dt);
 
         ScoreDraw (score1, score2);
 
