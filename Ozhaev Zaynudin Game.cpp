@@ -57,7 +57,7 @@ void MoveBall()
 
     Ball ball2 = { rand() % W/2,  rand() % H, 0, 0,
                  40,
-                  1,
+                  2,
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                  RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
@@ -122,7 +122,7 @@ void Ball::Drow()
     //txLine (x, y, x + vx*5, y + vy*5);
     //txCircle (x + vx*5, y + vy*5, 3);
 
-    if ( pl == 1 )
+    if ( pl == 1 or pl == 2 )
         {
         vx = 0;
         vy = 0;
