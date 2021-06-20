@@ -6,7 +6,7 @@ struct Key;
 
 void MoveBall();
 void CollisionBall(Ball* ball_p, Ball* ball_b);
-void ScoreDraw (int score1, int score2);
+void ScoreDraw (int score1, int score2, Ball* ball);
 
 //---------------------------------------------------------------------------------
 
