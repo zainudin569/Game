@@ -238,7 +238,7 @@ viod Bam_balls (int* x, int* y, int* vx, int* vy);
 
 void CollisionBall (Ball* ball_p, Ball* ball_b)
 {
-    /*int Dx = (*ball_p) .x - (*ball_b) .x; // стороны треугольника
+    int Dx = (*ball_p) .x - (*ball_b) .x; // стороны треугольника
     int Dy = (*ball_p) .y - (*ball_b) .y; // стороны треугольника
     double d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; //гипотенуза
     double sin = Dx/d; // sin угла треугольника
@@ -285,8 +285,9 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
         (*ball_b) .x = ROUND((*ball_b) .x + (*ball_b) .vx*dt);
         (*ball_b) .y = ROUND((*ball_b) .y + (*ball_b) .vy*dt);
         //printf (" dt  = %f\n", dt);
-        //txSleep (3000);*/
-     double Dx = (*ball_b).x-(*ball_p).x;
+        //txSleep (3000);
+
+     /*double Dx = (*ball_b).x-(*ball_p).x;
      double Dy = (*ball_b).y-(*ball_p).y;
      double d = sqrt(Dx*Dx+Dy*Dy);      if (d==0) d=0.01;                 // во избежании деления на ноль
 	 double ax = Dx/d;
@@ -336,7 +337,7 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 		 (*ball_b).y+=(*ball_b).vy*dt;
 		 (*ball_p).x+=(*ball_p).vx*dt;
 		 (*ball_p).y+=(*ball_p).vy*dt;
-	 }
+	 }*/
 
 }
 
