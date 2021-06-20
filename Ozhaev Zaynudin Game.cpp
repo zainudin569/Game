@@ -6,7 +6,6 @@ struct Key;
 
 void MoveBall();
 void DrowBall(Ball ball);
-void PhysicsBall(Ball* ball, int dt);
 void CollisionBall(Ball* ball_p, Ball* ball_b);
 void ControlBall(Ball* ball, int* F4_Col, Key plaer, int dt);
 void ScoreDraw (int score1, int score2);
@@ -40,6 +39,8 @@ struct Ball
 
     COLORREF Color;
     COLORREF FillColor;
+
+    void Physics(int dt);
     };
 
 //---------------------------------------------------------------------------------
@@ -87,7 +88,10 @@ void MoveBall()
 
         //PhysicsBall(&ball1, dt);
         //PhysicsBall(&ball2, dt);
-        PhysicsBall(&ball3, dt);
+
+        ball1.Physics(dt);
+        ball2.Physics(dt);
+        ball3.Physics(dt);
 
         CollisionBall(&ball1, &ball3);//проверка столкновения
 
@@ -167,42 +171,42 @@ void ControlBall(Ball* ball, int* F4_Col, Key plaer, int dt)
             (*ball) .Color     = RGB((*ball) .x,   (*ball) .y,   150);
             (*ball) .FillColor = RGB((*ball) .x/2, (*ball) .y/2, 150);
             }
-        PhysicsBall(ball, dt);
+        /*PhysicsBall(ball, dt);
         (*ball) .vx = 0;
-        (*ball) .vy = 0;
+        (*ball) .vy = 0;*/
         }
 
 //---------------------------------------------------------------------------------
 
-void PhysicsBall(Ball* ball, int dt)
+void Ball::Physics(int dt)
     {
-    (*ball) .x += (*ball) .vx * dt;
-    (*ball) .y += (*ball) .vy * dt;
+    (*this) .x += (*this) .vx * dt;
+    (*this) .y += (*this) .vy * dt;
 
-    if ((*ball) .x  > W - (*ball) .r)
+    if (x > W - r)
         {
-        (*ball) .vx =   - (*ball) .vx;
-        (*ball) .x  = W - (*ball) .r;
+        vx =   - vx;
+        x  = W - r;
         //++(*score1);
         }
 
-    if ((*ball) .y  > H - (*ball) .r)
+    if ((*this) .y  > H - (*this) .r)
         {
-        (*ball) .vy =   - (*ball) .vy;
-        (*ball) .y  = H - (*ball) .r;
+        (*this) .vy =   - (*this) .vy;
+        (*this) .y  = H - (*this) .r;
         }
 
-    if ((*ball) .x  < 0 + (*ball) .r)
+    if ((*this) .x  < 0 + (*this) .r)
         {
-        (*ball) .vx =   - (*ball) .vx;
-        (*ball) .x  = 0 + (*ball) .r;
+        (*this) .vx =   - (*this) .vx;
+        (*this) .x  = 0 + (*this) .r;
         //++(*score2);
         }
 
-    if ((*ball) .y  < 50 + (*ball) .r)
+    if ((*this) .y  < 50 + (*this) .r)
         {
-        (*ball) .vy =   - (*ball) .vy;
-        (*ball) .y  = 50 + (*ball) .r;
+        (*this) .vy =   - (*this) .vy;
+        (*this) .y  = 50 + (*this) .r;
         }
     }
 
@@ -260,10 +264,10 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
         if (dt >  0.6) dt =  0.6;   // ограничение на dt, чтоб мяч не отскакивал далеко
         if (dt < -0.6) dt = -0.6;
 
-        (*ball_p) .x = ((*ball_p) .x - (*ball_p) .vx*dt);
-        (*ball_p) .y = ((*ball_p) .y - (*ball_p) .vy*dt);
-        (*ball_b) .x = ((*ball_b) .x - (*ball_b) .vx*dt);
-        (*ball_b) .y = ((*ball_b) .y - (*ball_b) .vy*dt);
+        (*ball_p) .x = ROUND((*ball_p) .x - (*ball_p) .vx*dt);
+        (*ball_p) .y = ROUND((*ball_p) .y - (*ball_p) .vy*dt);
+        (*ball_b) .x = ROUND((*ball_b) .x - (*ball_b) .vx*dt);
+        (*ball_b) .y = ROUND((*ball_b) .y - (*ball_b) .vy*dt);
 
         Dx = (*ball_p) .x - (*ball_b) .x;
         Dy = (*ball_p) .y - (*ball_b) .y;
@@ -277,13 +281,13 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 
         Vn2 = Vn1 - Vn2;
 
-        (*ball_b) .vx = (Vn2*sin - Vt2*cos); //обратный поворот системы координат шар2
-        (*ball_b) .vy = (Vn2*cos + Vt2*sin); //обратный поворот системы координат шар2
+        (*ball_b) .vx = ROUND(Vn2*sin - Vt2*cos); //обратный поворот системы координат шар2
+        (*ball_b) .vy = ROUND(Vn2*cos + Vt2*sin); //обратный поворот системы координат шар2
 
-        (*ball_p) .x = ((*ball_p) .x + (*ball_p) .vx*dt);
-        (*ball_p) .y = ((*ball_p) .y + (*ball_p) .vy*dt);
-        (*ball_b) .x = ((*ball_b) .x + (*ball_b) .vx*dt);
-        (*ball_b) .y = ((*ball_b) .y + (*ball_b) .vy*dt);
+        (*ball_p) .x = ROUND((*ball_p) .x + (*ball_p) .vx*dt);
+        (*ball_p) .y = ROUND((*ball_p) .y + (*ball_p) .vy*dt);
+        (*ball_b) .x = ROUND((*ball_b) .x + (*ball_b) .vx*dt);
+        (*ball_b) .y = ROUND((*ball_b) .y + (*ball_b) .vy*dt);
         //printf (" dt  = %f\n", dt);
         //txSleep (3000);
         }
