@@ -5,13 +5,8 @@ struct Ball;
 struct Key;
 
 void MoveBall();
-
 void CollisionBall(Ball* ball_p, Ball* ball_b);
-
 void ScoreDraw (int score1, int score2);
-
-//void bilo_stolknov (double xA, double yA, double xB, double yB, double rA, double rB)
-//double Distansce (double x1, double y1, double x2, double y2);
 
 //---------------------------------------------------------------------------------
 
@@ -118,6 +113,7 @@ void Ball::Drow(int p)
     txCircle (x, y, r);
     //txLine (x, y, x + vx*5, y + vy*5);
     //txCircle (x + vx*5, y + vy*5, 3);
+
     if ( p==1 )
         {
         vx = 0;
@@ -268,6 +264,8 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 
 	 if (d < (*ball_b).r+(*ball_p).r)
 	 {
+         txPlaySound ("sounds/Zvuk_Ball.wav");
+
 		 double Vn1 = (*ball_p).vx*sin + (*ball_p).vy*cos;
          double Vn2 = (*ball_b).vx*sin + (*ball_b).vy*cos;
 
