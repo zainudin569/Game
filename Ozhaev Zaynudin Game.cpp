@@ -125,10 +125,10 @@ void Ball::Drow(int p)
 
 void Key::Control(Ball* ball, int* F4_Col)
     {
-    if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 10;
-    if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 10;
-    if (txGetAsyncKeyState (key_up))    (*ball) .vy = (*ball) .vy - 10;;
-    if (txGetAsyncKeyState (key_down))  (*ball) .vy = (*ball) .vy + 10;;
+    if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 100;
+    if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 100;
+    if (txGetAsyncKeyState (key_up))    (*ball) .vy = (*ball) .vy - 100;;
+    if (txGetAsyncKeyState (key_down))  (*ball) .vy = (*ball) .vy + 100;;
 
     if (txGetAsyncKeyState (VK_SPACE)) (*ball) .vy = (*ball) .vx = 0;
 
