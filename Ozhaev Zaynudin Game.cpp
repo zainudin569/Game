@@ -4,7 +4,7 @@ const int H = 650;
 struct Ball;
 struct Key;
 
-void MoveBall ();
+void MoveBall();
 void CollisionBall (Ball* ball_p, Ball* ball_b);
 void ScoreDraw (int score1, int score2);
 
@@ -51,21 +51,21 @@ void MoveBall()
 
     Ball ball1 = { W/2 + rand() % W/2 ,  rand() % H, 0, 0,
                    40,
-                    1,
-                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
-                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
+                   1,
+                   RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
+                   RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
     Ball ball2 = { rand() % W/2,  rand() % H, 0, 0,
                    40,
-                    2,
-                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
-                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
+                   2,
+                   RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
+                   RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
     Ball ball3 = { W/2,  rand() % H, 1 + rand() % 9, 1 + rand() % 9,
-                 25,
-                  0,
-                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
-                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
+                   25,
+                   0,
+                   RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
+                   RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
     Key plaer1 = { VK_LEFT, VK_RIGHT, VK_UP, VK_DOWN };
     Key plaer2 = { 'A', 'D', 'W', 'S' };
@@ -74,13 +74,13 @@ void MoveBall()
     int F4_Col = 0;
     int score1 = 0, score2 = 0;
 
-    HDC Fon  = txLoadImage ("Pictures\\Fon.bmp");
+    HDC Fon = txLoadImage ("Pictures\\Fon.bmp");
 
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
-        txBegin ();
+        txBegin();
         txSetFillColor (TX_BLACK);
-        txClear ();
+        txClear();
 
         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
 
