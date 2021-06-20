@@ -43,7 +43,7 @@ struct Ball
     COLORREF FillColor;
 
     void Physics(int* score1, int* score2, int dt, int p);
-    void Drow();
+    void Drow(int p);
     };
 
 //---------------------------------------------------------------------------------
@@ -82,16 +82,16 @@ void MoveBall()
 
         txBitBlt  (txDC(), 0, 50, 0, 0, Fon);
 
-        ball1.Drow();
-        ball2.Drow();
-        ball3.Drow();
+        ball1.Drow(1);
+        ball2.Drow(1);
+        ball3.Drow(0);
 
         //printf ("In CraziBall(): x  = %d and y  = %d\n", x2, y2);
         //printf ("In CraziBall(): vx = %d and vy = %d\n", vx2, vy2);
 
-        ball1 .Physics(&score1, &score2, dt, 1);
-        ball2 .Physics(&score1, &score2, dt, 1);
-        ball3 .Physics(&score1, &score2, dt, 0);
+        ball1 .Physics(&score1, &score2, dt);
+        ball2 .Physics(&score1, &score2, dt);
+        ball3 .Physics(&score1, &score2, dt);
 
         CollisionBall(&ball1, &ball3);//проверка столкновения
         CollisionBall(&ball2, &ball3);
@@ -110,7 +110,7 @@ void MoveBall()
 
 //---------------------------------------------------------------------------------
 
-void Ball::Drow()
+void Ball::Drow(int p)
     {
     txSetColor ((Color), 2);
     txSetFillColor (FillColor);
@@ -118,6 +118,11 @@ void Ball::Drow()
     txCircle (x, y, r);
     //txLine (x, y, x + vx*5, y + vy*5);
     //txCircle (x + vx*5, y + vy*5, 3);
+    if ( p==1 )
+        {
+        vx = 0;
+        vy = 0;
+        }
     }
 
 //---------------------------------------------------------------------------------
@@ -172,12 +177,6 @@ void Ball::Physics(int* score1, int* score2, int dt, int p)
     if (vx >  15) vx =  15;
     if (vy < -15) vy = -15;
     if (vx < -15) vx = -15;
-
-    if ( p==1 )
-        {
-        vx = 0;
-        vy = 0;
-        }
 
     (*this) .x += (*this) .vx * dt;
     (*this) .y += (*this) .vy * dt;
