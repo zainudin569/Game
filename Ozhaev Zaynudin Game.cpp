@@ -257,8 +257,8 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 
         double dt = ((*ball_p) .r + (*ball_b) .r - d)/(Vn1 - Vn2); // удаление залипания
 
-        if (dt >  1)  dt = 1;   // ограничение на dt, чтоб мяч не отскакивал далеко
-        if (dt < -1) dt = -1;
+        if (dt >  0.6) dt =  0.6;   // ограничение на dt, чтоб мяч не отскакивал далеко
+        if (dt < -0.6) dt = -0.6;
 
         (*ball_p) .x = ROUND((*ball_p) .x - (*ball_p) .vx*dt);
         (*ball_p) .y = ROUND((*ball_p) .y - (*ball_p) .vy*dt);
@@ -273,18 +273,10 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
         Vn1 = (*ball_p) .vx*sin + (*ball_p) .vy*cos;
         Vn2 = (*ball_b) .vx*sin + (*ball_b) .vy*cos;
 
-        //double Vt1 = -(*ball_p) .vx*cos + (*ball_p) .vy*sin; //поворот системы координат шар1
         double Vt2 = -(*ball_b) .vx*cos + (*ball_b) .vy*sin; //поворот системы координат шар2
 
-        /*double o = Vn2; //меняем местами vn1 и vn2
-        Vn2 = Vn1;
-        Vn1 = o;
-        */
+        Vn2 = Vn1 - Vn2;
 
-        Vn2 = Vn2 - Vn1;
-
-        //(*ball_p) .vx = ROUND(Vn1*sin - Vt1*cos); //обратный поворот системы координат шар1
-        //(*ball_p) .vy = ROUND(Vn1*cos + Vt1*sin); //обратный поворот системы координат шар1
         (*ball_b) .vx = ROUND(Vn2*sin - Vt2*cos); //обратный поворот системы координат шар2
         (*ball_b) .vy = ROUND(Vn2*cos + Vt2*sin); //обратный поворот системы координат шар2
 
