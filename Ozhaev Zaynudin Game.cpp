@@ -82,10 +82,6 @@ void MoveBall()
 
         txBitBlt  (txDC(), 0, 50, 0, 0, Fon);
 
-        ball1.Drow(1);
-        ball2.Drow(0);
-        ball3.Drow(0);
-
         //printf ("In CraziBall(): x  = %d and y  = %d\n", x2, y2);
         //printf ("In CraziBall(): vx = %d and vy = %d\n", vx2, vy2);
 
@@ -98,6 +94,10 @@ void MoveBall()
 
         plaer1 .Control(&ball1, &F4_Col);
         plaer2 .Control(&ball2, &F4_Col);
+
+        ball1.Drow(1);
+        ball2.Drow(0);
+        ball3.Drow(0);
 
         ScoreDraw (score1, score2);
 
