@@ -1,134 +1,52 @@
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void CollisionBall(Ball*, Ball*)':
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:289:25: error: request for member 'x' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-      double Dx = ball_b.x-ball_p.x;
-                         ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:289:34: error: request for member 'x' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-      double Dx = ball_b.x-ball_p.x;
-                                  ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:290:25: error: request for member 'y' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-      double Dy = ball_b.y-ball_p.y;
-                         ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:290:34: error: request for member 'y' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-      double Dy = ball_b.y-ball_p.y;
-                                  ^
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:291:48: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
       double d = sqrt(Dx*Dx+Dy*Dy);      if (d==0) d=0.01;                 // во избежании деления на ноль
                                                 ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:295:18: error: request for member 'R' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-   if (d < ball_b.R+ball_p.R)
-                  ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:295:27: error: request for member 'R' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-   if (d < ball_b.R+ball_p.R)
-                           ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:297:24: error: request for member 'dx' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    double Vn1 = ball_p.dx*ax + ball_p.dy*ay;
-                        ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:297:39: error: request for member 'dy' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    double Vn1 = ball_p.dx*ax + ball_p.dy*ay;
-                                       ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:298:30: error: request for member 'dx' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-          double Vn2 = ball_b.dx*ax + ball_b.dy*ay;
-                              ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:298:45: error: request for member 'dy' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-          double Vn2 = ball_b.dx*ax + ball_b.dy*ay;
-                                             ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:299:22: error: request for member 'R' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    double dt=(ball_b.R+ball_p.R-d)/(Vn1-Vn2);
-                      ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:299:31: error: request for member 'R' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    double dt=(ball_b.R+ball_p.R-d)/(Vn1-Vn2);
-                               ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:305:11: error: request for member 'x' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    ball_b.x-=ball_b.dx*dt;
-           ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:305:21: error: request for member 'dx' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    ball_b.x-=ball_b.dx*dt;
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:295:21: error: 'struct Ball' has no member named 'R'
+   if (d < (*ball_b).R+(*ball_p).R)
                      ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:306:11: error: request for member 'y' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    ball_b.y-=ball_b.dy*dt;
-           ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:306:21: error: request for member 'dy' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    ball_b.y-=ball_b.dy*dt;
-                     ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:307:11: error: request for member 'x' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    ball_p.x-=ball_p.dx*dt;
-           ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:307:21: error: request for member 'dx' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    ball_p.x-=ball_p.dx*dt;
-                     ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:308:11: error: request for member 'y' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    ball_p.y-=ball_p.dy*dt;
-           ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:308:21: error: request for member 'dy' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    ball_p.y-=ball_p.dy*dt;
-                     ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:313:17: error: request for member 'x' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-     Dx = ball_b.x-ball_p.x;
-                 ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:313:26: error: request for member 'x' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-     Dx = ball_b.x-ball_p.x;
-                          ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:314:17: error: request for member 'y' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-     Dy = ball_b.y-ball_p.y;
-                 ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:314:26: error: request for member 'y' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-     Dy = ball_b.y-ball_p.y;
-                          ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:295:33: error: 'struct Ball' has no member named 'R'
+   if (d < (*ball_b).R+(*ball_p).R)
+                                 ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:299:25: error: 'struct Ball' has no member named 'R'
+    double dt=((*ball_b).R+(*ball_p).R-d)/(Vn1-Vn2);
+                         ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:299:37: error: 'struct Ball' has no member named 'R'
+    double dt=((*ball_b).R+(*ball_p).R-d)/(Vn1-Vn2);
+                                     ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:305:15: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]
+    (*ball_b).x-=(*ball_b).vx*dt;
+               ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:306:15: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]
+    (*ball_b).y-=(*ball_b).vy*dt;
+               ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:307:15: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]
+    (*ball_p).x-=(*ball_p).vx*dt;
+               ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:308:15: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]
+    (*ball_p).y-=(*ball_p).vy*dt;
+               ^
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:315:39: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
         d = sqrt(Dx*Dx+Dy*Dy);  if (d==0) d=0.01;
                                        ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:320:16: error: request for member 'dx' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-     Vn1=ball_p.dx*ax+ball_p.dy*ay;
-                ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:320:29: error: request for member 'dy' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-     Vn1=ball_p.dx*ax+ball_p.dy*ay;
-                             ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:321:22: error: request for member 'dx' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-           Vn2=ball_b.dx*ax+ball_b.dy*ay;
-                      ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:321:35: error: request for member 'dy' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-           Vn2=ball_b.dx*ax+ball_b.dy*ay;
-                                   ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:323:24: error: request for member 'dx' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    double Vt2= -ball_b.dx*ay+ball_b.dy*ax;
-                        ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:323:37: error: request for member 'dy' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    double Vt2= -ball_b.dx*ay+ball_b.dy*ax;
-                                     ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:327:18: error: request for member 'dx' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-           ball_b.dx=Vn2*ax-Vt2*ay;
-                  ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:328:12: error: request for member 'dy' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-     ball_b.dy=Vn2*ay+Vt2*ax;
-            ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:332:11: error: request for member 'x' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    ball_b.x+=ball_b.dx*dt;
-           ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:332:21: error: request for member 'dx' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    ball_b.x+=ball_b.dx*dt;
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:327:21: error: 'struct Ball' has no member named 'dx'
+           (*ball_b).dx=Vn2*ax-Vt2*ay;
                      ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:333:11: error: request for member 'y' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    ball_b.y+=ball_b.dy*dt;
-           ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:333:21: error: request for member 'dy' in 'ball_b', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    ball_b.y+=ball_b.dy*dt;
-                     ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:334:11: error: request for member 'x' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    ball_p.x+=ball_p.dx*dt;
-           ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:334:21: error: request for member 'dx' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    ball_p.x+=ball_p.dx*dt;
-                     ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:335:11: error: request for member 'y' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    ball_p.y+=ball_p.dy*dt;
-           ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:335:21: error: request for member 'dy' in 'ball_p', which is of pointer type 'Ball*' (maybe you meant to use '->' ?)
-    ball_p.y+=ball_p.dy*dt;
-                     ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: At global scope:
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:338:1: error: expected declaration before '}' token
- }
- ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:328:15: error: 'struct Ball' has no member named 'dy'
+     (*ball_b).dy=Vn2*ay+Vt2*ax;
+               ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:332:15: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]
+    (*ball_b).x+=(*ball_b).vx*dt;
+               ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:333:15: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]
+    (*ball_b).y+=(*ball_b).vy*dt;
+               ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:334:15: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]
+    (*ball_p).x+=(*ball_p).vx*dt;
+               ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:335:15: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]
+    (*ball_p).y+=(*ball_p).vy*dt;
+               ^
 ---------------------------------------------------------------------------------------------
-[20.06.2021 11:47:03,94 C:\Users\zainu@DESKTOP-ZAINU, returned 1]
+[20.06.2021 11:53:15,53 C:\Users\zainu@DESKTOP-ZAINU, returned 1]
 C:\Users\zainu\Desktop\курс\Game> g++.exe "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp" -o "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe"  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC

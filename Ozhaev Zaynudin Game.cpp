@@ -286,55 +286,55 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
         (*ball_b) .y = ROUND((*ball_b) .y + (*ball_b) .vy*dt);
         //printf (" dt  = %f\n", dt);
         //txSleep (3000);*/
-     double Dx = ball_b.x-ball_p.x;
-     double Dy = ball_b.y-ball_p.y;
+     double Dx = (*ball_b).x-(*ball_p).x;
+     double Dy = (*ball_b).y-(*ball_p).y;
      double d = sqrt(Dx*Dx+Dy*Dy);      if (d==0) d=0.01;                 // во избежании деления на ноль
 	 double ax = Dx/d;
 	 double ay = Dy/d;
 
-	 if (d < ball_b.R+ball_p.R)
+	 if (d < (*ball_b).R+(*ball_p).R)
 	 {
-		 double Vn1 = ball_p.dx*ax + ball_p.dy*ay;
-         double Vn2 = ball_b.dx*ax + ball_b.dy*ay;
-		 double dt=(ball_b.R+ball_p.R-d)/(Vn1-Vn2);
+		 double Vn1 = (*ball_p).vx*ax + (*ball_p).vy*ay;
+         double Vn2 = (*ball_b).vx*ax + (*ball_b).vy*ay;
+		 double dt=((*ball_b).R+(*ball_p).R-d)/(Vn1-Vn2);
 
 	                 if (dt>0.6)  dt= 0.6;   // ограничение на dt, чтоб мяч не улетал
                      if (dt<-0.6) dt=-0.6; // усли проникновение сильное было
 
 
-		 ball_b.x-=ball_b.dx*dt;
-		 ball_b.y-=ball_b.dy*dt;
-		 ball_p.x-=ball_p.dx*dt;
-		 ball_p.y-=ball_p.dy*dt;
+		 (*ball_b).x-=(*ball_b).vx*dt;
+		 (*ball_b).y-=(*ball_b).vy*dt;
+		 (*ball_p).x-=(*ball_p).vx*dt;
+		 (*ball_p).y-=(*ball_p).vy*dt;
 
 
 
 	////////основная часть, находим новые скорости после столкновения
-		  Dx = ball_b.x-ball_p.x;
-		  Dy = ball_b.y-ball_p.y;
+		  Dx = (*ball_b).x-(*ball_p).x;
+		  Dy = (*ball_b).y-(*ball_p).y;
 	      d = sqrt(Dx*Dx+Dy*Dy);  if (d==0) d=0.01;
   		  ax = Dx/d;
 		  ay = Dy/d;
 
 
-		  Vn1=ball_p.dx*ax+ball_p.dy*ay;
-          Vn2=ball_b.dx*ax+ball_b.dy*ay;
+		  Vn1=(*ball_p).vx*ax+(*ball_p).vy*ay;
+          Vn2=(*ball_b).vx*ax+(*ball_b).vy*ay;
 
-   double Vt2= -ball_b.dx*ay+ball_b.dy*ax;
+   double Vt2= -(*ball_b).vx*ay+(*ball_b).vy*ax;
 
           Vn2 = Vn1-Vn2;
 
-          ball_b.dx=Vn2*ax-Vt2*ay;
-		  ball_b.dy=Vn2*ay+Vt2*ax;
+          (*ball_b).dx=Vn2*ax-Vt2*ay;
+		  (*ball_b).dy=Vn2*ay+Vt2*ax;
     ///////
 
 
-		 ball_b.x+=ball_b.dx*dt;
-		 ball_b.y+=ball_b.dy*dt;
-		 ball_p.x+=ball_p.dx*dt;
-		 ball_p.y+=ball_p.dy*dt;
+		 (*ball_b).x+=(*ball_b).vx*dt;
+		 (*ball_b).y+=(*ball_b).vy*dt;
+		 (*ball_p).x+=(*ball_p).vx*dt;
+		 (*ball_p).y+=(*ball_p).vy*dt;
 	 }
-        }
+
 }
 
 //---------------------------------------------------------------------------------
