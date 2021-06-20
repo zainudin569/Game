@@ -286,6 +286,7 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
         (*ball_b) .y = ROUND((*ball_b) .y + (*ball_b) .vy*dt);
         //printf (" dt  = %f\n", dt);
         //txSleep (3000);
+        }
 
      /*double Dx = (*ball_b).x-(*ball_p).x;
      double Dy = (*ball_b).y-(*ball_p).y;
