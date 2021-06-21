@@ -61,7 +61,7 @@ void MoveBall()
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
-    Ball ball3 = { W/2,  rand() % H, 1 + rand() % 9, 1 + rand() % 9,
+    Ball ball3 = { W/2,  rand() % H, -10 + rand() % 20, -10 + rand() % 20,
                    25,
                    0,
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
@@ -207,7 +207,7 @@ void Ball::Physics (int* score1, int* score2, int dt)
         if (pl == 0)
             {
             ++(*score1);
-            x = W/2; vx = 1 + rand() % 9; vy = 1 + rand() % 9;
+            x = W/2; vx = -10 + rand() % 20; vy = -10 + rand() % 20;
             txPlaySound ("sounds/zvuk-krika-gol.wav");
             Sleep (200);
             }
@@ -227,7 +227,7 @@ void Ball::Physics (int* score1, int* score2, int dt)
         if ( pl == 0)
             {
             ++(*score2);
-            x = W/2; vx = 1 + rand() % 9; vy = 1 + rand() % 9;
+            x = W/2; vx = -10 + rand() % 20; -10 + rand() % 20;
             txPlaySound ("sounds/zvuk-krika-gol.wav");
             Sleep (200);
             }

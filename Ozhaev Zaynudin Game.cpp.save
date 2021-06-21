@@ -4,7 +4,7 @@ const int H = 650;
 struct Ball;
 struct Key;
 
-void MoveBall ();
+void MoveBall();
 void CollisionBall (Ball* ball_p, Ball* ball_b);
 void ScoreDraw (int score1, int score2);
 
@@ -51,21 +51,21 @@ void MoveBall()
 
     Ball ball1 = { W/2 + rand() % W/2 ,  rand() % H, 0, 0,
                    40,
-                    1,
-                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
-                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
+                   1,
+                   RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
+                   RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
     Ball ball2 = { rand() % W/2,  rand() % H, 0, 0,
                    40,
-                    2,
-                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
-                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
+                   2,
+                   RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
+                   RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
-    Ball ball3 = { W/2,  rand() % H, 1 + rand() % 9, 1 + rand() % 9,
-                 25,
-                  0,
-                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
-                 RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
+    Ball ball3 = { W/2,  rand() % H, -10 + rand() % 20, -10 + rand() % 20,
+                   25,
+                   0,
+                   RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
+                   RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
     Key plaer1 = { VK_LEFT, VK_RIGHT, VK_UP, VK_DOWN };
     Key plaer2 = { 'A', 'D', 'W', 'S' };
@@ -74,13 +74,13 @@ void MoveBall()
     int F4_Col = 0;
     int score1 = 0, score2 = 0;
 
-    HDC Fon  = txLoadImage ("Pictures\\Fon.bmp");
+    HDC Fon = txLoadImage ("Pictures\\Fon.bmp");
 
     while (!txGetAsyncKeyState (VK_ESCAPE))
-        { 
-        txBegin ();
+        {
+        txBegin();
         txSetFillColor (TX_BLACK);
-        txClear ();
+        txClear();
 
         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
 
@@ -207,7 +207,7 @@ void Ball::Physics (int* score1, int* score2, int dt)
         if (pl == 0)
             {
             ++(*score1);
-            x = W/2; vx = 1 + rand() % 9; vy = 1 + rand() % 9;
+            x = W/2; vx = -10 + rand() % 20; vy = -10 + rand() % 20;
             txPlaySound ("sounds/zvuk-krika-gol.wav");
             Sleep (200);
             }
@@ -227,7 +227,7 @@ void Ball::Physics (int* score1, int* score2, int dt)
         if ( pl == 0)
             {
             ++(*score2);
-            x = W/2; vx = 1 + rand() % 9; vy = 1 + rand() % 9;
+            x = W/2; vx = -10 + rand() % 20; -10 + rand() % 20;
             txPlaySound ("sounds/zvuk-krika-gol.wav");
             Sleep (200);
             }
@@ -246,7 +246,7 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
     {
      double Dx = (*ball_b) .x - (*ball_p) .x; //стороны треугольника
      double Dy = (*ball_b) .y - (*ball_p) .y; //стороны треугольника
-     double d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; // гипотенуза
+     double d = sqrt (Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; // гипотенуза
 	 double sin = Dx/d; //sin угла треугольника
 	 double cos = Dy/d; //cos угла треугольника
 
@@ -271,7 +271,7 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 
         Dx = (*ball_b) .x - (*ball_p) .x;
         Dy = (*ball_b) .y - (*ball_p) .y;
-        d = sqrt(Dx*Dx + Dy*Dy); if (d == 0) d=0.01;
+        d = sqrt (Dx*Dx + Dy*Dy); if (d == 0) d=0.01;
         sin = Dx/d;
         cos = Dy/d;
 
@@ -282,13 +282,13 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 
         Vn2 = Vn1 - Vn2;
 
-        (*ball_b) .vx = ROUND(Vn2*sin - Vt2*cos);
-        (*ball_b) .vy = ROUND(Vn2*cos + Vt2*sin);
+        (*ball_b) .vx = ROUND (Vn2*sin - Vt2*cos);
+        (*ball_b) .vy = ROUND (Vn2*cos + Vt2*sin);
 
-        (*ball_b) .x +=ROUND((*ball_b) .vx*dt);
-        (*ball_b) .y +=ROUND((*ball_b) .vy*dt);
-        (*ball_p) .x +=ROUND((*ball_p) .vx*dt);
-        (*ball_p) .y +=ROUND((*ball_p) .vy*dt);
+        (*ball_b) .x +=ROUND ((*ball_b) .vx*dt);
+        (*ball_b) .y +=ROUND ((*ball_b) .vy*dt);
+        (*ball_p) .x +=ROUND ((*ball_p) .vx*dt);
+        (*ball_p) .y +=ROUND ((*ball_p) .vy*dt);
         //printf (" dt  = %f\n", dt);
         //txSleep (3000);
 	 }
