@@ -261,8 +261,8 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 
         double dt = ((*ball_b) .r + (*ball_p) .r - d)/(Vn1 - Vn2); //удаление залипания
 
-        if (dt >  0.6) dt =  0.6; //ограничение на dt, чтобы мяч не отскакивал далеко
-        if (dt < -0.6) dt = -0.6;
+        if (dt >  0.7) dt =  0.7; //ограничение на dt, чтобы мяч не отскакивал далеко
+        if (dt < -0.7) dt = -0.7;
 
         (*ball_b) .x -= ROUND ((*ball_b) .vx*dt);
         (*ball_b) .y -= ROUND ((*ball_b) .vy*dt);
