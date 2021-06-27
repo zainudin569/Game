@@ -61,7 +61,7 @@ void MoveBall()
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
-    Ball ball3 = { W/2,  rand() % H, 1 + rand() % 9, 1 + rand() % 9,
+    Ball ball3 = { W/2,  rand() % H, -10 + rand() % 20, -10 + rand() % 20,
                    25,
                    0,
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
@@ -212,7 +212,7 @@ void Ball::Physics (int* score1, int* score2, int dt)
         if (pl == 0)
             {
             ++(*score1);
-            x = W/2; vx = 1 + rand() % 9; vy = 1 + rand() % 9;
+            x = W/2; vx = -10 + rand() % 20; vy = -10 + rand() % 20;
             txPlaySound ("sounds/zvuk-krika-gol.wav");
             Sleep (200);
             }
@@ -232,7 +232,7 @@ void Ball::Physics (int* score1, int* score2, int dt)
         if ( pl == 0)
             {
             ++(*score2);
-            x = W/2; vx = 1 + rand() % 9; vy = 1 + rand() % 9;
+            x = W/2; vx = -10 + rand() % 20; -10 + rand() % 20;
             txPlaySound ("sounds/zvuk-krika-gol.wav");
             Sleep (200);
             }
@@ -266,8 +266,8 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 
         double dt = ((*ball_b) .r + (*ball_p) .r - d)/(Vn1 - Vn2); //удаление залипания
 
-        if (dt >  0.6) dt =  0.6; //ограничение на dt, чтобы мяч не отскакивал далеко
-        if (dt < -0.6) dt = -0.6;
+        if (dt >  0.7) dt =  0.7; //ограничение на dt, чтобы мяч не отскакивал далеко
+        if (dt < -0.7) dt = -0.7;
 
         (*ball_b) .x -= ROUND ((*ball_b) .vx*dt);
         (*ball_b) .y -= ROUND ((*ball_b) .vy*dt);
