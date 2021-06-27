@@ -123,8 +123,8 @@ void Ball::Drow()
 
     if ( pl == 1 or pl == 2 )
         {
-        vx = vx * 0.99;
-        vy = vy * 0.99;
+        vx = vx * 0.999;
+        vy = vy * 0.999;
         }
     }
 
