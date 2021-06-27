@@ -75,12 +75,15 @@ void MoveBall()
     int score1 = 0, score2 = 0;
 
     HDC Fon = txLoadImage ("Pictures\\Fon.bmp");
-
+    HDC Map1 = txLoadImage ("Pictures\\Map1.bmp");
+    HDC Map2 = txLoadImage ("Pictures\\Map2.bmp");
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
         txBegin();
         txSetFillColor (TX_BLACK);
         txClear();
+
+        txBitBlt (txDC(), 0, 50, 0, 0, Map2);
 
         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
 
