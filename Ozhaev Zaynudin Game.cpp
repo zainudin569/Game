@@ -85,7 +85,7 @@ void MoveBall()
         txClear();
 
         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
-        COLORREF collor = txGetPixel( ball3 .x, ball3 .y, Map2)
+        COLORREF collor = txGetPixel( ball3 .x, ball3 .y, Map2);
 
         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
 
