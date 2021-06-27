@@ -84,7 +84,7 @@ void MoveBall()
         txSetFillColor (TX_BLACK);
         txClear();
 
-        //txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+        txBitBlt (txDC(), 0, 50, 0, 0, Map2);
 
         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
 
