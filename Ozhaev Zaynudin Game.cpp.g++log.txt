@@ -1,10 +1,25 @@
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In member function 'void Ball::Drow()':
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:126:17: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]
-         vx = vx * 0.999;
-                 ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:127:17: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]
-         vy = vy * 0.999;
-                 ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void MoveBall()':
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:52:24: warning: narrowing conversion of '(((rand() % 1070) / 2) + 535)' from 'int' to 'double' inside { } [-Wnarrowing]
+     Ball ball1 = { W/2 + rand() % W/2 ,  rand() % H, 0, 0,
+                        ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:52:49: warning: narrowing conversion of '(rand() % 650)' from 'int' to 'double' inside { } [-Wnarrowing]
+     Ball ball1 = { W/2 + rand() % W/2 ,  rand() % H, 0, 0,
+                                                 ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:58:30: warning: narrowing conversion of '((rand() % 1070) / 2)' from 'int' to 'double' inside { } [-Wnarrowing]
+     Ball ball2 = { rand() % W/2,  rand() % H, 0, 0,
+                              ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:58:42: warning: narrowing conversion of '(rand() % 650)' from 'int' to 'double' inside { } [-Wnarrowing]
+     Ball ball2 = { rand() % W/2,  rand() % H, 0, 0,
+                                          ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:64:33: warning: narrowing conversion of '(rand() % 650)' from 'int' to 'double' inside { } [-Wnarrowing]
+     Ball ball3 = { W/2,  rand() % H, 1 + rand() % 9, 1 + rand() % 9,
+                                 ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:64:40: warning: narrowing conversion of '((rand() % 9) + 1)' from 'int' to 'double' inside { } [-Wnarrowing]
+     Ball ball3 = { W/2,  rand() % H, 1 + rand() % 9, 1 + rand() % 9,
+                                        ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:64:56: warning: narrowing conversion of '((rand() % 9) + 1)' from 'int' to 'double' inside { } [-Wnarrowing]
+     Ball ball3 = { W/2,  rand() % H, 1 + rand() % 9, 1 + rand() % 9,
+                                                        ^
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void CollisionBall(Ball*, Ball*)':
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:249:48: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
       double d = sqrt (Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; // гипотенуза
@@ -16,5 +31,5 @@ C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:274:44: warning: compa
          d = sqrt (Dx*Dx + Dy*Dy); if (d == 0) d=0.01;
                                             ^
 ---------------------------------------------------------------------------------------------
-[27.06.2021  9:34:59,55 C:\Users\zainu@DESKTOP-ZAINU, returned 0]
+[27.06.2021  9:37:22,24 C:\Users\zainu@DESKTOP-ZAINU, returned 0]
 C:\Users\zainu\Desktop\курс\Game> g++.exe "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp" -o "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe"  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC
