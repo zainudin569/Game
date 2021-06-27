@@ -74,9 +74,10 @@ void MoveBall()
     int F4_Col = 0;
     int score1 = 0, score2 = 0;
 
-    HDC Fon = txLoadImage ("Pictures\\Fon.bmp");
+    HDC Fon  = txLoadImage ("Pictures\\Fon.bmp");
     HDC Map1 = txLoadImage ("Pictures\\Map1.bmp");
     HDC Map2 = txLoadImage ("Pictures\\Map2.bmp");
+
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
         txBegin();
@@ -85,7 +86,7 @@ void MoveBall()
 
         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
 
-        txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+        //txBitBlt (txDC(), 0, 50, 0, 0, Fon);
 
         //printf ("In CraziBall(): x  = %d and y  = %d\n", x2, y2);
         //printf ("In CraziBall(): vx = %d and vy = %d\n", vx2, vy2);
