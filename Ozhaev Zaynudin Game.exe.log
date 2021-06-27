@@ -674,3 +674,1059 @@ Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
 Directory:	C:\Users\zainu\Desktop\курс\Game
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x56CC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C7B3 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (17):
+
+     15:     txCreateWindow (W, H);
+     16: 
+=>   17:     MoveBall();
+     18: 
+     19:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jun 27 2021 11:29:39, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jun 27 2021 11:29:43
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#2: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x56CC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C7B3 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (17):
+
+     15:     txCreateWindow (W, H);
+     16: 
+=>   17:     MoveBall();
+     18: 
+     19:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jun 27 2021 11:29:39, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jun 27 2021 11:29:43
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#3: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x56CC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C7B3 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (17):
+
+     15:     txCreateWindow (W, H);
+     16: 
+=>   17:     MoveBall();
+     18: 
+     19:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jun 27 2021 11:29:39, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jun 27 2021 11:29:43
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#4: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x56CC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C7B3 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (17):
+
+     15:     txCreateWindow (W, H);
+     16: 
+=>   17:     MoveBall();
+     18: 
+     19:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jun 27 2021 11:29:39, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jun 27 2021 11:29:43
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#5: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x56CC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C7B3 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (17):
+
+     15:     txCreateWindow (W, H);
+     16: 
+=>   17:     MoveBall();
+     18: 
+     19:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jun 27 2021 11:29:39, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jun 27 2021 11:29:43
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#6: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x56CC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C7B3 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (17):
+
+     15:     txCreateWindow (W, H);
+     16: 
+=>   17:     MoveBall();
+     18: 
+     19:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jun 27 2021 11:29:39, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jun 27 2021 11:29:43
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#7: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x56CC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C7B3 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (17):
+
+     15:     txCreateWindow (W, H);
+     16: 
+=>   17:     MoveBall();
+     18: 
+     19:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jun 27 2021 11:29:39, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jun 27 2021 11:29:43
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#8: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x56CC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C7B3 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (17):
+
+     15:     txCreateWindow (W, H);
+     16: 
+=>   17:     MoveBall();
+     18: 
+     19:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jun 27 2021 11:29:39, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jun 27 2021 11:29:42
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#9: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x56CC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C7B3 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (17):
+
+     15:     txCreateWindow (W, H);
+     16: 
+=>   17:     MoveBall();
+     18: 
+     19:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jun 27 2021 11:29:39, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jun 27 2021 11:29:43
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#10: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x56CC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C7B3 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (17):
+
+     15:     txCreateWindow (W, H);
+     16: 
+=>   17:     MoveBall();
+     18: 
+     19:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jun 27 2021 11:29:39, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jun 27 2021 11:29:43
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#11: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x56CC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C7B3 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (17):
+
+     15:     txCreateWindow (W, H);
+     16: 
+=>   17:     MoveBall();
+     18: 
+     19:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jun 27 2021 11:29:39, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jun 27 2021 11:29:43
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x1E0 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C7B3 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (17):
+
+     15:     txCreateWindow (W, H);
+     16: 
+=>   17:     MoveBall();
+     18: 
+     19:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (86):
+
+     84:         txClear();
+     85: 
+=>   86:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     87: 
+     88:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jun 27 2021 11:31:42, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jun 27 2021 11:31:46
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x3558 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C7B3 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (87):
+
+     85:         txClear();
+     86: 
+=>   87:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     88: 
+     89:         //txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (17):
+
+     15:     txCreateWindow (W, H);
+     16: 
+=>   17:     MoveBall();
+     18: 
+     19:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (87):
+
+     85:         txClear();
+     86: 
+=>   87:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     88: 
+     89:         //txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jun 27 2021 11:33:20, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jun 27 2021 11:33:24
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x2B84 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C7B3 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (87):
+
+     85:         txClear();
+     86: 
+=>   87:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     88: 
+     89:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (17):
+
+     15:     txCreateWindow (W, H);
+     16: 
+=>   17:     MoveBall();
+     18: 
+     19:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (87):
+
+     85:         txClear();
+     86: 
+=>   87:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     88: 
+     89:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jun 27 2021 11:35:03, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jun 27 2021 11:35:07
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#2: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRE0, Thread: 0x2B84 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C7B3 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (87):
+
+     85:         txClear();
+     86: 
+=>   87:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     88: 
+     89:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (17):
+
+     15:     txCreateWindow (W, H);
+     16: 
+=>   17:     MoveBall();
+     18: 
+     19:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (87):
+
+     85:         txClear();
+     86: 
+=>   87:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     88: 
+     89:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jun 27 2021 11:35:03, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jun 27 2021 11:35:07
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x3E08 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C7B3 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (87):
+
+     85:         txClear();
+     86: 
+=>   87:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     88: 
+     89:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (17):
+
+     15:     txCreateWindow (W, H);
+     16: 
+=>   17:     MoveBall();
+     18: 
+     19:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (87):
+
+     85:         txClear();
+     86: 
+=>   87:         txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+     88: 
+     89:         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jun 27 2021 11:36:55, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jun 27 2021 11:36:59
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
