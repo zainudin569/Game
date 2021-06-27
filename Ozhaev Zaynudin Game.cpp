@@ -7,6 +7,7 @@ struct Key;
 void MoveBall();
 void CollisionBall (Ball* ball_p, Ball* ball_b);
 void ScoreDraw (int score1, int score2);
+void Maze (Ball* ball, Key plaer, int* F4_Col);
 
 //---------------------------------------------------------------------------------
 
@@ -62,7 +63,7 @@ void MoveBall()
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
     Ball ball3 = { W/2,  rand() % H, -10 + rand() % 20, -10 + rand() % 20,
-                   25,
+                   20,
                    0,
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
@@ -72,11 +73,9 @@ void MoveBall()
 
     int dt = 1;
     int F4_Col = 0;
-    int score1 = 0, score2 = 0;
+    int score1 = 4, score2 = 4;
 
     HDC Fon  = txLoadImage ("Pictures\\Fon.bmp");
-    HDC Map1 = txLoadImage ("Pictures\\Map1.bmp");
-    HDC Map2 = txLoadImage ("Pictures\\Map2.bmp");
 
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
@@ -84,13 +83,61 @@ void MoveBall()
         txSetFillColor (TX_BLACK);
         txClear();
 
-        txBitBlt (txDC(), 0, 50, 0, 0, Map2);
-        COLORREF collor = txGetPixel( ball3 .x, ball3 .y, Map2);
+        if (score1 == 5 or score2 == 5)
+            {
+            ball3 .x= 145;
+            ball3 .y= 155;
+
+            HDC Map1 = txLoadImage ("Pictures\\Map1.bmp");
+            HDC Map2 = txLoadImage ("Pictures\\Map2.bmp");
+
+            while (!txGetAsyncKeyState ('Q'))
+                {
+                txBegin();
+                txSetFillColor (TX_BLACK);
+                txClear();
+
+                txBitBlt (txDC(), 0, 50, 0, 0, Map2);
+
+                plaer1 .Control (&ball3, &F4_Col);
+
+                int a = ball3 .x, b = ball3 .y;
+
+                ball3 .Physics (&score1, &score2, dt);
+
+                COLORREF color = txGetPixel (ball3 .x, ball3 .y, Map2);
+
+                if(color != 65280)
+                    {
+                    ball3 .x = a;
+                    ball3 .y = b;
+                    }
+
+                //txBitBlt (txDC(), 0, 50, 0, 0, Map1);
+
+                ball3.Drow();
+
+                ball3 .vx *= 0.99;
+                ball3 .vy *= 0.99;
+
+                //printf ("In color():  %06x\n", color);
+                printf ("In col1or():  %d\n", color);
+
+                txEnd();
+                txSleep (1);
+                }
+
+            txDeleteDC (Map1);
+            txDeleteDC (Map2);
+
+            //Maze (&ball3, plaer1, &F4_Col);
+            score1 = 0, score2 = 0;
+            }
 
         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
 
-        //printf ("In CraziBall(): x  = %d and y  = %d\n", x2, y2);
-        //printf ("In CraziBall(): vx = %d and vy = %d\n", vx2, vy2);
+        //printf ("In collor():  %06x\n", collor);
+        //printf ("In CraziBall(): score1 = %d and score2 = %d\n", score1, score2);
 
         plaer1 .Control (&ball1, &F4_Col);
         plaer2 .Control (&ball2, &F4_Col);
@@ -137,12 +184,12 @@ void Ball::Drow()
 
 void Key::Control (Ball* ball, int* F4_Col)
     {
-    if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 15;
-    if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 15;
-    if (txGetAsyncKeyState (key_up))    (*ball) .vy = (*ball) .vy - 15;;
-    if (txGetAsyncKeyState (key_down))  (*ball) .vy = (*ball) .vy + 15;;
+    if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 5;
+    if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 5;
+    if (txGetAsyncKeyState (key_up))    (*ball) .vy = (*ball) .vy - 5;;
+    if (txGetAsyncKeyState (key_down))  (*ball) .vy = (*ball) .vy + 5;;
 
-    //if (txGetAsyncKeyState (VK_SPACE)) (*ball) .vy = (*ball) .vx = 0;
+    if (txGetAsyncKeyState (VK_SPACE)) (*ball) .vy = (*ball) .vx = 0;
 
     if (txGetAsyncKeyState (VK_F1))
         {
@@ -318,6 +365,12 @@ void ScoreDraw (int score1, int score2)
 
     txSetTextAlign (TA_CENTER);
     txTextOut (txGetExtentX() / 2, 2, str);
+    }
+
+void Maze (Ball* ball, Key plaer1, int* F4_Col)
+    {
+
+
     }
 
 

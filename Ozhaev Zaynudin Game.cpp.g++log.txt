@@ -1,17 +1,33 @@
+C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp: In function 'void MoveBall()':
+C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp:120:27: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]
+                 ball3 .vx *= 0.99;
+                           ^
+C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp:121:27: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]
+                 ball3 .vy *= 0.99;
+                           ^
+C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp:124:52: warning: format '%d' expects argument of type 'int', but argument 2 has type 'COLORREF {aka long unsigned int}' [-Wformat=]
+                 printf ("In col1or():  %d\n", color);
+                                                    ^
 C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp: In member function 'void Ball::Physics(int*, int*, int)':
-C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp:230:50: warning: value computed is not used [-Wunused-value]
+C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp:282:50: warning: value computed is not used [-Wunused-value]
              x = W/2; vx = -10 + rand() % 20; -10 + rand() % 20;
                                                   ^
 C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp: In function 'void CollisionBall(Ball*, Ball*)':
-C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp:249:48: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp:301:48: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
       double d = sqrt (Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; // דטןמעוםףחא
                                                 ^
-C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp:260:28: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp:312:28: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
          if ((Vn1 - Vn2) == 0) Vn1 = Vn1 + 0.01;
                             ^
-C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp:274:44: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp:326:44: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
          d = sqrt (Dx*Dx + Dy*Dy); if (d == 0) d=0.01;
                                             ^
+C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp: At global scope:
+C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp:370:6: warning: unused parameter 'ball' [-Wunused-parameter]
+ void Maze (Ball* ball, Key plaer1, int* F4_Col)
+      ^
+C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp:370:6: warning: unused parameter 'plaer1' [-Wunused-parameter]
+C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp:370:6: warning: unused parameter 'F4_Col' [-Wunused-parameter]
 ---------------------------------------------------------------------------------------------
-[21.06.2021  7:47:44,55 C:\Users\ֳ‏כüזאדüאם@GULJAGAN, returned 0]
+[28.06.2021  2:54:40,98 C:\Users\ֳ‏כüזאדüאם@GULJAGAN, returned 0]
 C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game> g++.exe "C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.cpp" -o "C:\Users\ֳ‏כüזאדüאם\Desktop\KPK FizTeh\Game\Ozhaev Zaynudin Game.exe"  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC
