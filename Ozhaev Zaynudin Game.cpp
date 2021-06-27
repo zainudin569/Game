@@ -30,7 +30,7 @@ struct Key
 
 struct Ball
     {
-    double  x, y , vx, vy;
+    int  x, y , vx, vy;
 
     int r;
 
