@@ -107,7 +107,7 @@ void MoveBall()
 
                 COLORREF color = txGetPixel (ball3 .x, ball3 .y, Map2);
 
-                if(color != 65280)
+                if(color != RGB (0, 255, 0))
                     {
                     ball3 .x = a;
                     ball3 .y = b;
