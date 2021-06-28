@@ -170,8 +170,8 @@ void Ball::Drow()
     txSetFillColor (FillColor);
 
     txCircle (x, y, r);
-    txLine (x, y, x + vx*5, y + vy*5);
-    txCircle (x + vx*5, y + vy*5, 3);
+    //txLine (x, y, x + vx*5, y + vy*5);
+    //txCircle (x + vx*5, y + vy*5, 3);
 
     if ( pl == 1 or pl == 2 )
         {
