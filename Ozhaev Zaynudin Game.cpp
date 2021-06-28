@@ -87,7 +87,7 @@ void MoveBall()
             {
             ball3 .x = 145;
             ball3 .y = 155;
-            ball3 .r = 15
+            ball3 .r = 15;
             HDC Map1 = txLoadImage ("Pictures\\Map1.bmp");
             HDC Map2 = txLoadImage ("Pictures\\Map2.bmp");
 
