@@ -117,8 +117,8 @@ void MoveBall()
 
                 ball3.Drow();
 
-                ball3 .vx *= 0.99;
-                ball3 .vy *= 0.99;
+                ball3 .vx = 0;
+                ball3 .vy = 0;
 
                 //printf ("In color():  %06x\n", color);
                 printf ("In col1or():  %d\n", color);
