@@ -132,7 +132,7 @@ void MoveBall()
 
             //Maze (&ball3, plaer1, &F4_Col);
             score1 = 0, score2 = 0;
-            ball3 .r = 25
+            ball3 .r = 25;
             }
 
         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
