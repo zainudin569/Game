@@ -85,7 +85,9 @@ void MoveBall()
 
         if (score1 == 5 or score2 == 5)
             {
-
+            ball3 .x = 145;
+            ball3 .y = 155;
+            ball3 .r = 15
             HDC Map1 = txLoadImage ("Pictures\\Map1.bmp");
             HDC Map2 = txLoadImage ("Pictures\\Map2.bmp");
 
@@ -96,20 +98,29 @@ void MoveBall()
                 txClear();
 
                 txBitBlt (txDC(), 0, 50, 0, 0, Map2);
-                COLORREF color = txGetPixel (ball3 .x, ball3 .y, Map2);
-
-                txBitBlt (txDC(), 0, 50, 0, 0, Map1);
 
                 plaer1 .Control (&ball3, &F4_Col);
-                ø
-                if(color == 65280)
+
+                int a = ball3 .x, b = ball3 .y;
+
+                ball3 .Physics (&score1, &score2, dt);
+
+                COLORREF color = txGetPixel (ball3 .x, ball3 .y, Map2);
+
+                if(color != RGB (0, 255, 0))
                     {
-                    ball3 .Physics (&score1, &score2, dt);
+                    ball3 .x = a;
+                    ball3 .y = b;
                     }
-                //ball3 .Physics (&score1, &score2, dt);
+
+                //txBitBlt (txDC(), 0, 50, 0, 0, Map1);
+
                 ball3.Drow();
 
-                //printf ("In color():  %06x\n", color);
+                ball3 .vx = 0;
+                ball3 .vy = 0;
+
+                printf ("In color():  %06x\n", color);
                 //printf ("In col1or():  %d\n", color);
 
                 txEnd();
@@ -121,6 +132,7 @@ void MoveBall()
 
             //Maze (&ball3, plaer1, &F4_Col);
             score1 = 0, score2 = 0;
+            ball3 .r = 25
             }
 
         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
@@ -173,10 +185,10 @@ void Ball::Drow()
 
 void Key::Control (Ball* ball, int* F4_Col)
     {
-    if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 15;
-    if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 15;
-    if (txGetAsyncKeyState (key_up))    (*ball) .vy = (*ball) .vy - 15;;
-    if (txGetAsyncKeyState (key_down))  (*ball) .vy = (*ball) .vy + 15;;
+    if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 5;
+    if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 5;
+    if (txGetAsyncKeyState (key_up))    (*ball) .vy = (*ball) .vy - 5;;
+    if (txGetAsyncKeyState (key_down))  (*ball) .vy = (*ball) .vy + 5;;
 
     if (txGetAsyncKeyState (VK_SPACE)) (*ball) .vy = (*ball) .vx = 0;
 
