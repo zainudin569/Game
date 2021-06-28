@@ -1,27 +1,38 @@
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void MoveBall()':
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:91:13: error: expected ';' before 'HDC'
+             HDC Map1 = txLoadImage ("Pictures\\Map1.bmp");
+             ^
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:123:53: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'COLORREF {aka long unsigned int}' [-Wformat=]
                  printf ("In color():  %06x\n", color);
                                                      ^
+In file included from c:\users\zainu\desktop\курс\codeblocks\mingw\include\txlib.h:1:0,
+                 from C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:1:
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:130:25: error: 'Map1' was not declared in this scope
+             txDeleteDC (Map1);
+                         ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:136:13: error: expected ';' before '}' token
+             }
+             ^
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In member function 'void Ball::Physics(int*, int*, int)':
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:282:50: warning: value computed is not used [-Wunused-value]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:283:50: warning: value computed is not used [-Wunused-value]
              x = W/2; vx = -10 + rand() % 20; -10 + rand() % 20;
                                                   ^
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void CollisionBall(Ball*, Ball*)':
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:301:48: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:302:48: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
       double d = sqrt (Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; // гипотенуза
                                                 ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:312:28: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:313:28: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
          if ((Vn1 - Vn2) == 0) Vn1 = Vn1 + 0.01;
                             ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:326:44: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:327:44: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
          d = sqrt (Dx*Dx + Dy*Dy); if (d == 0) d=0.01;
                                             ^
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: At global scope:
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:370:6: warning: unused parameter 'ball' [-Wunused-parameter]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:371:6: warning: unused parameter 'ball' [-Wunused-parameter]
  void Maze (Ball* ball, Key plaer1, int* F4_Col)
       ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:370:6: warning: unused parameter 'plaer1' [-Wunused-parameter]
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:370:6: warning: unused parameter 'F4_Col' [-Wunused-parameter]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:371:6: warning: unused parameter 'plaer1' [-Wunused-parameter]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:371:6: warning: unused parameter 'F4_Col' [-Wunused-parameter]
 ---------------------------------------------------------------------------------------------
-[28.06.2021  9:55:57,77 C:\Users\zainu@DESKTOP-ZAINU, returned 0]
+[28.06.2021 10:02:31,66 C:\Users\zainu@DESKTOP-ZAINU, returned 1]
 C:\Users\zainu\Desktop\курс\Game> g++.exe "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp" -o "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe"  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC

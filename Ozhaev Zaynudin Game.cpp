@@ -63,7 +63,7 @@ void MoveBall()
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
     Ball ball3 = { W/2,  rand() % H, -10 + rand() % 20, -10 + rand() % 20,
-                   20,
+                   25,
                    0,
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
@@ -85,9 +85,9 @@ void MoveBall()
 
         if (score1 == 5 or score2 == 5)
             {
-            ball3 .x= 145;
-            ball3 .y= 155;
-
+            ball3 .x = 145;
+            ball3 .y = 155;
+            ball3 .r = 15
             HDC Map1 = txLoadImage ("Pictures\\Map1.bmp");
             HDC Map2 = txLoadImage ("Pictures\\Map2.bmp");
 
@@ -132,6 +132,7 @@ void MoveBall()
 
             //Maze (&ball3, plaer1, &F4_Col);
             score1 = 0, score2 = 0;
+            ball3 .r = 25
             }
 
         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
