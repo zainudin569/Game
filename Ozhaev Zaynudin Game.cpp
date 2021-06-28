@@ -120,8 +120,8 @@ void MoveBall()
                 ball3 .vx = 0;
                 ball3 .vy = 0;
 
-                //printf ("In color():  %06x\n", color);
-                printf ("In col1or():  %d\n", color);
+                printf ("In color():  %06x\n", color);
+                //printf ("In col1or():  %d\n", color);
 
                 txEnd();
                 txSleep (1);
@@ -170,8 +170,8 @@ void Ball::Drow()
     txSetFillColor (FillColor);
 
     txCircle (x, y, r);
-    //txLine (x, y, x + vx*5, y + vy*5);
-    //txCircle (x + vx*5, y + vy*5, 3);
+    txLine (x, y, x + vx*5, y + vy*5);
+    txCircle (x + vx*5, y + vy*5, 3);
 
     if ( pl == 1 or pl == 2 )
         {
