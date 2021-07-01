@@ -73,17 +73,17 @@ void MoveBall()
 
     int dt = 1;
     int F4_Col = 0;
-    int score1 = 4, score2 = 4;
+    int score1 = 0, score2 = 0;
 
     HDC Fon  = txLoadImage ("Pictures\\Fon.bmp");
-
+    HDC Ball  = txLoadImage ("Pictures\\Fon.bmp");
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
         txBegin();
         txSetFillColor (TX_BLACK);
         txClear();
 
-        if (score1 == 5 or score2 == 5)
+        /*if (score1 == 5 or score2 == 5)
             {
             ball3 .x = 145;
             ball3 .y = 155;
@@ -133,7 +133,7 @@ void MoveBall()
             //Maze (&ball3, plaer1, &F4_Col);
             score1 = 0, score2 = 0;
             ball3 .r = 25;
-            }
+            }*/
 
         txBitBlt (txDC(), 0, 50, 0, 0, Fon);
 
@@ -153,6 +153,7 @@ void MoveBall()
         ball1.Drow();
         ball2.Drow();
         ball3.Drow();
+        txBitBlt (txDC(), ball3 .x, ball3 .y, 0, 0, Fon);
 
         ScoreDraw (score1, score2);
 
