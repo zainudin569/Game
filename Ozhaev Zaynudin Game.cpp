@@ -29,6 +29,16 @@ struct Key
     void Control (Ball* ball, int* F4_Col);
     };
 
+//---------------------------------------------------------------------------------
+
+struct Pictures
+    {
+    HDC Fon  = txLoadImage ("Pictures\\Fon.bmp");
+    HDC Ball  = txLoadImage ("Pictures\\Ball.bmp");
+    };
+
+//---------------------------------------------------------------------------------
+
 struct Ball
     {
     int  x, y , vx, vy;
@@ -75,8 +85,7 @@ void MoveBall()
     int F4_Col = 0;
     int score1 = 0, score2 = 0;
 
-    HDC Fon  = txLoadImage ("Pictures\\Fon.bmp");
-    HDC Ball  = txLoadImage ("Pictures\\Ball.bmp");
+
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
         txBegin();
