@@ -76,7 +76,7 @@ void MoveBall()
     int score1 = 0, score2 = 0;
 
     HDC Fon  = txLoadImage ("Pictures\\Fon.bmp");
-    HDC Ball  = txLoadImage ("Pictures\\Ball.png");
+    HDC Ball  = txLoadImage ("Pictures\\Ball.bmp");
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
         txBegin();
