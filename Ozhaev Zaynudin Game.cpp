@@ -76,7 +76,7 @@ void MoveBall()
     int score1 = 0, score2 = 0;
 
     HDC Fon  = txLoadImage ("Pictures\\Fon.bmp");
-    HDC Ball  = txLoadImage ("Pictures\\Fon.bmp");
+    HDC Ball  = txLoadImage ("Pictures\\Ball.png");
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
         txBegin();
@@ -153,7 +153,7 @@ void MoveBall()
         ball1.Drow();
         ball2.Drow();
         ball3.Drow();
-        txBitBlt (txDC(), ball3 .x, ball3 .y, 0, 0, Fon);
+        txBitBlt (txDC(), ball3 .x, ball3 .y, 0, 0, Ball);
 
         ScoreDraw (score1, score2);
 
@@ -162,6 +162,7 @@ void MoveBall()
         }
 
     txDeleteDC (Fon);
+    txDeleteDC (Ball);
     }
 
 //---------------------------------------------------------------------------------
