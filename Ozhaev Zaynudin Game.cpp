@@ -188,10 +188,10 @@ void Ball::Drow()
 
 void Key::Control (Ball* ball, int* F4_Col)
     {
-    if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 5;
-    if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 5;
-    if (txGetAsyncKeyState (key_up))    (*ball) .vy = (*ball) .vy - 5;;
-    if (txGetAsyncKeyState (key_down))  (*ball) .vy = (*ball) .vy + 5;;
+    if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 15;
+    if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 15;
+    if (txGetAsyncKeyState (key_up))    (*ball) .vy = (*ball) .vy - 15;;
+    if (txGetAsyncKeyState (key_down))  (*ball) .vy = (*ball) .vy + 15;;
 
     if (txGetAsyncKeyState (VK_SPACE)) (*ball) .vy = (*ball) .vx = 0;
 
