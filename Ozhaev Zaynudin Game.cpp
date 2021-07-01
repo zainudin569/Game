@@ -154,7 +154,7 @@ void MoveBall()
         ball2.Drow();
         ball3.Drow();
         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Ball, 0, 0);
-        txTransparentBit (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Ball, 0, 0, TX_BLACK);
+        txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Ball, 0, 0, TX_BLACK);
 
         ScoreDraw (score1, score2);
 
