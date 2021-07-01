@@ -3,6 +3,7 @@ const int W = 1070;
 const int H = 650;
 struct Ball;
 struct Key;
+struct Pictures;
 
 void MoveBall();
 void CollisionBall (Ball* ball_p, Ball* ball_b);
@@ -33,8 +34,8 @@ struct Key
 
 struct Pictures
     {
-    HDC Fon  = txLoadImage ("Pictures\\Fon.bmp");
-    HDC Ball  = txLoadImage ("Pictures\\Ball.bmp");
+    HDC Fon;
+    HDC Ball;
     };
 
 //---------------------------------------------------------------------------------
@@ -85,6 +86,8 @@ void MoveBall()
     int F4_Col = 0;
     int score1 = 0, score2 = 0;
 
+   Pictures Fon   = txLoadImage ("Pictures\\Fon.bmp");
+   Pictures Ball  = txLoadImage ("Pictures\\Ball.bmp");
 
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
