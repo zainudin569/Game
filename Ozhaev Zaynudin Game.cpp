@@ -146,7 +146,7 @@ void MoveBall()
             ball3 .r = 25;
             }*/
 
-        txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+        txBitBlt (txDC(), 0, 50, 0, 0, Pictures::Fon);
 
         //printf ("In collor():  %06x\n", collor);
         //printf ("In CraziBall(): score1 = %d and score2 = %d\n", score1, score2);
