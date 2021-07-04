@@ -165,16 +165,6 @@ void MoveBall()
 
         //ball3.Drow();
 
-        txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeBall_Y, 0, Photo .Ball, sizeBall_X * i + 4, 0);
-        //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
-        //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
-
-        i ++;
-        if (i >= 7) i = 0;
-
-
-
-
         if (ball1 .y <= (H + 50)/2)
             {
             txAlphaBlend (txDC(), ball1 .x - 55, ball1 .y - 60, 150, 150, Photo .Pad, 150, 150);
@@ -192,6 +182,9 @@ void MoveBall()
             txAlphaBlend (txDC(), ball2 .x - 85, ball2 .y - 95, 150, 150, Photo .Pad, 150, 0);
             }
 
+        txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeBall_Y, 0, Photo .Ball, sizeBall_X * i + 4, 0);
+        i ++;
+        if (i >= 7) i = 0;
 
 
         ball1.Drow();
