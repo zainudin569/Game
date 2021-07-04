@@ -180,7 +180,7 @@ void MoveBall()
             txAlphaBlend (txDC(), ball1 .x - 40, ball1 .y - 40, 0, 0, Photo .Pad, 70, 70);
             }
 
-    `   ball1.Drow();
+        ball1.Drow();
         ball2.Drow();
 
         ScoreDraw (score1, score2);
