@@ -169,7 +169,9 @@ void MoveBall()
         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
         i += ROUND ((ball3 .vx + ball3 .vy) / 10);
+
         printf ("In :  %d\n", i);
+
         if (i==7) i = 0;
 
         ScoreDraw (score1, score2);
