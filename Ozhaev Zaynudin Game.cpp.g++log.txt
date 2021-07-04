@@ -1,80 +1,38 @@
 In file included from c:\users\zainu\desktop\курс\codeblocks\mingw\include\txlib.h:1:0,
                  from C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:1:
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void MoveBall()':
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:89:21: error: conversion from 'HDC' to non-scalar type 'Pictures' requested
-    Pictures Fon   = txLoadImage ("Pictures\\Fon.bmp");
-                     ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:90:21: error: conversion from 'HDC' to non-scalar type 'Pictures' requested
-    Pictures Ball  = txLoadImage ("Pictures\\Ball.bmp");
-                     ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:150:9: error: no matching function for call to 'txBitBlt(HDC__*&, int, int, int, int, Pictures&)'
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:149:40: error: 'Fon' was not declared in this scope
          txBitBlt (txDC(), 0, 50, 0, 0, Fon);
-         ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:150:9: note: candidates are:
-C:\Users\zainu\Desktop\курс\TX\TXLib.h:13384:6: note: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int)
- bool txBitBlt (HDC destImage,   double xDest, double yDest, double width, double height,
-      ^
-C:\Users\zainu\Desktop\курс\TX\TXLib.h:13384:6: note:   no known conversion for argument 6 from 'Pictures' to 'HDC'
-C:\Users\zainu\Desktop\курс\TX\TXLib.h:13400:6: note: bool {anonymous}::TX::txBitBlt(double, double, HDC, double, double)
- bool txBitBlt (double xDest, double yDest, HDC sourceImage, double xSource /*= 0*/, double ySource /*= 0*/)
-      ^
-C:\Users\zainu\Desktop\курс\TX\TXLib.h:13400:6: note:   candidate expects 5 arguments, 6 provided
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:170:9: error: no matching function for call to 'txAlphaBlend(HDC__*&, int, int, int, int, Pictures&, int, int)'
+                                        ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:169:73: error: expected primary-expression before ',' token
          txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Ball, 0, 0);
-         ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:170:9: note: candidates are:
-C:\Users\zainu\Desktop\курс\TX\TXLib.h:13490:6: note: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double)
- bool txAlphaBlend (HDC destImage,   double xDest, double yDest, double width, double height,
-      ^
-C:\Users\zainu\Desktop\курс\TX\TXLib.h:13490:6: note:   no known conversion for argument 6 from 'Pictures' to 'HDC'
-C:\Users\zainu\Desktop\курс\TX\TXLib.h:13604:6: note: bool {anonymous}::TX::txAlphaBlend(double, double, HDC, double, double, double)
- bool txAlphaBlend (double xDest, double yDest, HDC sourceImage,
-      ^
-C:\Users\zainu\Desktop\курс\TX\TXLib.h:13604:6: note:   candidate expects 6 arguments, 8 provided
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:178:5: error: no matching function for call to 'txDeleteDC(Pictures&)'
+                                                                         ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:177:17: error: 'Fon' was not declared in this scope
      txDeleteDC (Fon);
-     ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:178:5: note: candidates are:
-C:\Users\zainu\Desktop\курс\TX\TXLib.h:13377:6: note: bool {anonymous}::TX::txDeleteDC(HDC)
- bool txDeleteDC (HDC dc)
-      ^
-C:\Users\zainu\Desktop\курс\TX\TXLib.h:13377:6: note:   no known conversion for argument 1 from 'Pictures' to 'HDC'
-C:\Users\zainu\Desktop\курс\TX\TXLib.h:13352:6: note: bool {anonymous}::TX::txDeleteDC(HDC__**)
- bool txDeleteDC (HDC* pdc)
-      ^
-C:\Users\zainu\Desktop\курс\TX\TXLib.h:13352:6: note:   no known conversion for argument 1 from 'Pictures' to 'HDC__**'
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:179:5: error: no matching function for call to 'txDeleteDC(Pictures&)'
+                 ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:178:5: error: expected primary-expression before ')' token
      txDeleteDC (Ball);
      ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:179:5: note: candidates are:
-C:\Users\zainu\Desktop\курс\TX\TXLib.h:13377:6: note: bool {anonymous}::TX::txDeleteDC(HDC)
- bool txDeleteDC (HDC dc)
-      ^
-C:\Users\zainu\Desktop\курс\TX\TXLib.h:13377:6: note:   no known conversion for argument 1 from 'Pictures' to 'HDC'
-C:\Users\zainu\Desktop\курс\TX\TXLib.h:13352:6: note: bool {anonymous}::TX::txDeleteDC(HDC__**)
- bool txDeleteDC (HDC* pdc)
-      ^
-C:\Users\zainu\Desktop\курс\TX\TXLib.h:13352:6: note:   no known conversion for argument 1 from 'Pictures' to 'HDC__**'
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In member function 'void Ball::Physics(int*, int*, int)':
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:299:50: warning: value computed is not used [-Wunused-value]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:298:50: warning: value computed is not used [-Wunused-value]
              x = W/2; vx = -10 + rand() % 20; -10 + rand() % 20;
                                                   ^
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: In function 'void CollisionBall(Ball*, Ball*)':
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:318:48: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:317:48: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
       double d = sqrt (Dx*Dx + Dy*Dy); if (d == 0) d = 0.01; // гипотенуза
                                                 ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:329:28: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:328:28: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
          if ((Vn1 - Vn2) == 0) Vn1 = Vn1 + 0.01;
                             ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:343:44: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:342:44: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
          d = sqrt (Dx*Dx + Dy*Dy); if (d == 0) d=0.01;
                                             ^
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp: At global scope:
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:387:6: warning: unused parameter 'ball' [-Wunused-parameter]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:386:6: warning: unused parameter 'ball' [-Wunused-parameter]
  void Maze (Ball* ball, Key plaer1, int* F4_Col)
       ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:387:6: warning: unused parameter 'plaer1' [-Wunused-parameter]
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:387:6: warning: unused parameter 'F4_Col' [-Wunused-parameter]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:386:6: warning: unused parameter 'plaer1' [-Wunused-parameter]
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:386:6: warning: unused parameter 'F4_Col' [-Wunused-parameter]
 ---------------------------------------------------------------------------------------------
-[04.07.2021  9:33:15,53 C:\Users\zainu@DESKTOP-ZAINU, returned 1]
+[04.07.2021 10:58:41,60 C:\Users\zainu@DESKTOP-ZAINU, returned 1]
 C:\Users\zainu\Desktop\курс\Game> g++.exe "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp" -o "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe"  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC

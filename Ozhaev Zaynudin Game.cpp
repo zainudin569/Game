@@ -34,8 +34,8 @@ struct Key
 
 struct Pictures
     {
-    HDC Fon;
-    HDC Ball;
+    HDC Fon   = txLoadImage ("Pictures\\Fon.bmp");
+    HDC Ball  = txLoadImage ("Pictures\\Ball.bmp");
     };
 
 //---------------------------------------------------------------------------------
@@ -86,8 +86,7 @@ void MoveBall()
     int F4_Col = 0;
     int score1 = 0, score2 = 0;
 
-   Pictures Fon   = txLoadImage ("Pictures\\Fon.bmp");
-   Pictures Ball  = txLoadImage ("Pictures\\Ball.bmp");
+
 
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
