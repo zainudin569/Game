@@ -185,7 +185,7 @@ void MoveBall()
             }
         if (ball2 .y <= (H + 50)/2)
             {
-            txAlphaBlend (txDC(), ball2 .x - 85, ball2 .y - 65, 150, 150, Photo .Pad, 0, 0);;
+            txAlphaBlend (txDC(), ball2 .x - 85, ball2 .y - 60, 150, 150, Photo .Pad, 0, 0);;
             }
             else
             {
