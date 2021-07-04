@@ -169,7 +169,7 @@ void MoveBall()
         int sizeX = txGetExtentX (Photo .Ball)/4;
 
         //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 0, 0, Photo .Ball, 0, 0);
-        txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 0, 0, Photo .Ball, 50, 0);
+        txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, 50, 0);
         //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, 0, 0, TX_BLACK);
         i++;
         if (i==5) i = 0;
