@@ -33,7 +33,7 @@ struct Key
 
 struct Pictures
     {
-    HDC Fon, Ball;
+    HDC Fon, Ball, Pad;
     };
 
 //---------------------------------------------------------------------------------
@@ -80,14 +80,17 @@ void MoveBall()
     Key plaer1 = { VK_LEFT, VK_RIGHT, VK_UP, VK_DOWN };
     Key plaer2 = { 'A', 'D', 'W', 'S' };
 
-    Pictures Photo  = {txLoadImage ("Pictures\\Fon.bmp"), txLoadImage ("Pictures\\Ball.bmp")};
+    Pictures Photo  = {txLoadImage ("Pictures\\Fon.bmp"), txLoadImage ("Pictures\\Ball.bmp"), txLoadImage ("Pictures\\Pad.bmp")};
 
     int dt = 1;
     int F4_Col = 0;
     int score1 = 0, score2 = 0;
     int i = 0;
-    int sizeX = txGetExtentX (Photo .Ball)/8;
-    int sizeY = txGetExtentY (Photo .Ball);
+    int sizeBall_X = txGetExtentX (Photo .Ball)/8;
+    int sizeBall_Y = txGetExtentY (Photo .Ball);
+    int sizePad_X  = txGetExtentX (Photo .Pad)/2;
+    int sizePad_Y  = txGetExtentY (Photo .Pad)/2;
+
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
         txBegin();
@@ -165,12 +168,17 @@ void MoveBall()
         ball2.Drow();
         //ball3.Drow();
 
-        txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+        txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeBall_Y, 0, Photo .Ball, sizeBall_X * i + 4, 0);
         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
 
         i ++;
         if (i >= 7) i = 0;
+
+        if (ball1 .x <= h/2)
+            {
+            txAlphaBlend (txDC(), ball1 .x - 40, ball3 .y - 40, 0, 0, Photo .Pad, 70, 70);
+            }
 
         ScoreDraw (score1, score2);
 
@@ -180,6 +188,7 @@ void MoveBall()
 
     txDeleteDC (Photo .Fon);
     txDeleteDC (Photo .Ball);
+    txDeleteDC (Photo .Pad);
     }
 
 //---------------------------------------------------------------------------------
