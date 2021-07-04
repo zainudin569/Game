@@ -34,8 +34,7 @@ struct Key
 
 struct Pictures
     {
-    HDC Fon  = txLoadImage ("Pictures\\Fon.bmp");
-    HDC Ball = txLoadImage ("Pictures\\Ball.bmp");
+    HDC  Fon, Ball;
     };
 
 //---------------------------------------------------------------------------------
@@ -81,6 +80,9 @@ void MoveBall()
 
     Key plaer1 = { VK_LEFT, VK_RIGHT, VK_UP, VK_DOWN };
     Key plaer2 = { 'A', 'D', 'W', 'S' };
+
+    Pictures Photo  = {txLoadImage ("Pictures\\Fon.bmp", txLoadImage ("Pictures\\Ball.bmp")};
+    //Pictures Ball = txLoadImage ("Pictures\\Ball.bmp");
 
     int dt = 1;
     int F4_Col = 0;
@@ -146,7 +148,7 @@ void MoveBall()
             ball3 .r = 25;
             }*/
 
-        txBitBlt (txDC(), 0, 50, 0, 0, Pictures::Fon);
+        txBitBlt (txDC(), 0, 50, 0, 0, Fon);
 
         //printf ("In collor():  %06x\n", collor);
         //printf ("In CraziBall(): score1 = %d and score2 = %d\n", score1, score2);
@@ -166,7 +168,7 @@ void MoveBall()
         //ball3.Drow();
         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Ball, 0, 0);
         //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Ball, 0, 0, TX_BLACK);
-        txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Pictures Ball, 0, 0);
+        txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Ball, 0, 0);
 
         ScoreDraw (score1, score2);
 
@@ -174,8 +176,8 @@ void MoveBall()
         txSleep (1);
         }
 
-    txDeleteDC (Pictures::Fon);
-    txDeleteDC (Pictures::Ball);
+    txDeleteDC (Fon);
+    txDeleteDC (Ball);
     }
 
 //---------------------------------------------------------------------------------
