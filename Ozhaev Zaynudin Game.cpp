@@ -167,9 +167,11 @@ void MoveBall()
         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Ball, 0, 0);
         //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Ball, 0, 0, TX_BLACK);
 
+        int i = 0
+        int j = 0
         int sizeX = txGetExtentX (Photo .Ball);
-
-        txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Photo .Ball, 0, 0);
+        int sizeY = txGetExtentY (Photo .Ball);
+        txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeX * i, sizeY * j, Photo .Ball, 0, 0);
 
         ScoreDraw (score1, score2);
 
