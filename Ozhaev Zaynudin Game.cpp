@@ -40,7 +40,7 @@ struct Pictures
 
 struct Ball
     {
-    int  x, y , vx, vy;
+    double  x, y , vx, vy;
 
     int r;
 
