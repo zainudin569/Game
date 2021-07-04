@@ -86,7 +86,7 @@ void MoveBall()
     int F4_Col = 0;
     int score1 = 0, score2 = 0;
     int i = 0;
-    int sizeX = txGetExtentX (Photo .Ball)/4;
+    int sizeX = txGetExtentX (Photo .Ball)/8;
     int sizeY = txGetExtentY (Photo .Ball);
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
@@ -169,7 +169,7 @@ void MoveBall()
         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
         txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
         i++;
-        if (i==6) i = 0;
+        if (i==7) i = 0;
 
         ScoreDraw (score1, score2);
 
