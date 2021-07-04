@@ -164,7 +164,7 @@ void MoveBall()
         ball1.Drow();
         ball2.Drow();
         //ball3.Drow();
-        txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, 0, 0);
+        txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, 50, 0);
         //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, 0, 0, TX_BLACK);
 
         int i = 0;
