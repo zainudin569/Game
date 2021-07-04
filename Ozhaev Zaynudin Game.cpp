@@ -166,6 +166,9 @@ void MoveBall()
         //ball3.Drow();
         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Ball, 0, 0);
         //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Ball, 0, 0, TX_BLACK);
+
+        int sizeX = txGetExtentX (Photo .Ball);
+
         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Photo .Ball, 0, 0);
 
         ScoreDraw (score1, score2);
