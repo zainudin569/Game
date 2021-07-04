@@ -7,12 +7,9 @@ C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:37:16: error: invalid 
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:149:50: error: from this location
          txBitBlt (txDC(), 0, 50, 0, 0, Pictures::Fon);
                                                   ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:38:16: error: invalid use of non-static data member 'Pictures::Ball'
-     HDC Ball = txLoadImage ("Pictures\\Ball.bmp");
-                ^
-C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:169:79: error: from this location
-         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Pictures::Ball, 0, 0);
-                                                                               ^
+C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:169:78: error: expected primary-expression before 'Ball'
+         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Pictures Ball, 0, 0);
+                                                                              ^
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:37:16: error: invalid use of non-static data member 'Pictures::Fon'
      HDC Fon  = txLoadImage ("Pictures\\Fon.bmp");
                 ^
@@ -46,5 +43,5 @@ C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:386:6: warning: unused
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:386:6: warning: unused parameter 'plaer1' [-Wunused-parameter]
 C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp:386:6: warning: unused parameter 'F4_Col' [-Wunused-parameter]
 ---------------------------------------------------------------------------------------------
-[04.07.2021 11:00:50,00 C:\Users\zainu@DESKTOP-ZAINU, returned 1]
+[04.07.2021 11:02:48,07 C:\Users\zainu@DESKTOP-ZAINU, returned 1]
 C:\Users\zainu\Desktop\курс\Game> g++.exe "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp" -o "C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe"  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC
