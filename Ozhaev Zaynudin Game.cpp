@@ -71,7 +71,7 @@ void MoveBall()
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
-    Ball ball3 = { W/2,  rand() % H, 0, 0,
+    Ball ball3 = { W/2,  rand() % H, -10 + rand() % 20, -10 + rand() % 20,
                    25,
                    0,
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
@@ -168,9 +168,7 @@ void MoveBall()
         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
-        i += sqrt (pow (ball3 .vx, 2) + pow (ball3 .vy, 2));
-
-        printf ("In :  %d\n", i);
+        i ++
 
         if (i >= 7) i = 0;
 
