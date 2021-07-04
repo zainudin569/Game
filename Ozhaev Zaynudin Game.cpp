@@ -168,7 +168,7 @@ void MoveBall()
         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
-        i += sqrt (pow (vx) + pow (vy));
+        i += sqrt (pow (ball3 .vx) + pow (ball3 .vy));
 
         printf ("In :  %d\n", i);
 
