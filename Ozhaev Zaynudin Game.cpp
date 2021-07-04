@@ -172,7 +172,7 @@ void MoveBall()
 
         printf ("In :  %d\n", i);
 
-        if (i => 7) i = 0;
+        if (i >= 7) i = 0;
 
         ScoreDraw (score1, score2);
 
