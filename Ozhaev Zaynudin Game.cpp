@@ -394,7 +394,7 @@ void DrawBall_Pad(int i, Pictures Photo, Ball ball1, Ball ball2, Ball ball3)
     {
     int sizeBall_X = txGetExtentX (Photo .Ball)/8;
     int sizeBall_Y = txGetExtentY (Photo .Ball);
-    int sizePad = 150
+    int sizePad = 150;
 
     if (ball1 .y <= (H + 50)/2)
         {
