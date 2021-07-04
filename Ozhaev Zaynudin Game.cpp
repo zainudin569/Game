@@ -8,7 +8,7 @@ struct Pictures;
 void MoveBall();
 void CollisionBall (Ball* ball_p, Ball* ball_b);
 void ScoreDraw (int score1, int score2);
-void DrawBall_Pad(int i, Pad, Ball, ball1, ball2, ball3);
+void DrawBall_Pad(int i, Photo Pad, Photo Ball, Ball ball1, Ball ball2, Ball ball3);
 
 //---------------------------------------------------------------------------------
 
