@@ -33,10 +33,7 @@ struct Key
 
 struct Pictures
     {
-    HDC Fon  = txLoadImage ("Pictures\\Fon.bmp");
-    HDC Ball = txLoadImage ("Pictures\\Ball.bmp");
-
-    //HDC Fon, Ball;
+    HDC Fon, Ball;
     };
 
 //---------------------------------------------------------------------------------
@@ -83,8 +80,7 @@ void MoveBall()
     Key plaer1 = { VK_LEFT, VK_RIGHT, VK_UP, VK_DOWN };
     Key plaer2 = { 'A', 'D', 'W', 'S' };
 
-    //Pictures Photo  = {txLoadImage ("Pictures\\Fon.bmp"), txLoadImage ("Pictures\\Ball.bmp")};
-    //Pictures Ball = txLoadImage ("Pictures\\Ball.bmp");
+    Pictures Photo  = {txLoadImage ("Pictures\\Fon.bmp"), txLoadImage ("Pictures\\Ball.bmp")};
 
     int dt = 1;
     int F4_Col = 0;
