@@ -173,7 +173,7 @@ void MoveBall()
         i ++;
         if (i >= 7) i = 0;
 
-        txAlphaBlend (txDC(), ball1 .x - 40, ball1 .y - 40, 0, 250, Photo .Pad, 0, 250);
+        txAlphaBlend (txDC(), ball1 .x - 40, ball1 .y - 40, 0, 125, Photo .Pad, 0, 125);
 
         if (ball1 .x <= H/2)
             {
