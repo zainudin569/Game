@@ -175,8 +175,8 @@ void MoveBall()
         txSleep (1);
         }
 
-    txDeleteDC (Fon);
-    txDeleteDC (Ball);
+    txDeleteDC (Photo .Fon);
+    txDeleteDC (Photo .Ball);
     }
 
 //---------------------------------------------------------------------------------
