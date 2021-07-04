@@ -33,8 +33,8 @@ struct Key
 
 struct Pictures
     {
-    HDC Fon  = txLoadImage ("Pictures\\Fon.bmp"),
-    HDC Ball = txLoadImage ("Pictures\\Ball.bmp")
+    HDC Fon  = txLoadImage ("Pictures\\Fon.bmp");
+    HDC Ball = txLoadImage ("Pictures\\Ball.bmp");
 
     //HDC Fon, Ball;
     };
