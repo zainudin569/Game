@@ -295,7 +295,7 @@ void Ball::Physics (int* score1, int* score2, int dt)
         if ( pl == 0)
             {
             ++(*score2);
-            x = W/2; vx = -10 + rand() % 20; -10 + rand() % 20;
+            x = W/2; vx = -10 + rand() % 20; vy = -10 + rand() % 20;
             txPlaySound ("sounds/zvuk-krika-gol.wav");
             Sleep (200);
             }
