@@ -85,7 +85,7 @@ void MoveBall()
     int dt = 1;
     int F4_Col = 0;
     int score1 = 0, score2 = 0;
-    char i = 0;
+    int i = 0;
     int sizeX = txGetExtentX (Photo .Ball)/8;
     int sizeY = txGetExtentY (Photo .Ball);
     while (!txGetAsyncKeyState (VK_ESCAPE))
@@ -168,7 +168,7 @@ void MoveBall()
         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
-        i += ROUND ((ball3 .vx + ball3 .vy) / 10);
+        i += ROUND (pow ((ball3 .vx + ball3 .vy), 2) / 10);
 
         printf ("In :  %d\n", i);
 
