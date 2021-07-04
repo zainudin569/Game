@@ -162,8 +162,7 @@ void MoveBall()
         CollisionBall (&ball1, &ball3);//проверка столкновения
         CollisionBall (&ball2, &ball3);
 
-        ball1.Drow();
-        ball2.Drow();
+
         //ball3.Drow();
 
         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeBall_Y, 0, Photo .Ball, sizeBall_X * i + 4, 0);
@@ -180,6 +179,9 @@ void MoveBall()
             {
             txAlphaBlend (txDC(), ball1 .x - 40, ball1 .y - 40, 0, 0, Photo .Pad, 70, 70);
             }
+
+    `   ball1.Drow();
+        ball2.Drow();
 
         ScoreDraw (score1, score2);
 
