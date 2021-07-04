@@ -166,7 +166,7 @@ void MoveBall()
 
         //ball3.Drow();
 
-        DrawBall_Pad(i, Pad, Ball, ball1, ball2, ball3)
+        DrawBall_Pad(i, Photo, ball1, ball2, ball3)
 
 
         ball1.Drow();
@@ -390,7 +390,7 @@ void ScoreDraw (int score1, int score2)
 
 
 
-void DrawBall_Pad(int i, Photo .Pad, Photo .Ball, Ball ball1, Ball ball2, Ball ball3)
+void DrawBall_Pad(int i, Pictures Photo, Ball ball1, Ball ball2, Ball ball3)
     {
     int sizeBall_X = txGetExtentX (Photo .Ball)/8;
     int sizeBall_Y = txGetExtentY (Photo .Ball);
