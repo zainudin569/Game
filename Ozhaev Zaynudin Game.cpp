@@ -8,7 +8,6 @@ struct Pictures;
 void MoveBall();
 void CollisionBall (Ball* ball_p, Ball* ball_b);
 void ScoreDraw (int score1, int score2);
-void Maze (Ball* ball, Key plaer, int* F4_Col);
 
 //---------------------------------------------------------------------------------
 
@@ -384,11 +383,4 @@ void ScoreDraw (int score1, int score2)
     txSetTextAlign (TA_CENTER);
     txTextOut (txGetExtentX() / 2, 2, str);
     }
-
-void Maze (Ball* ball, Key plaer1, int* F4_Col)
-    {
-
-
-    }
-
 
