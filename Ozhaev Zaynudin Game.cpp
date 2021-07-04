@@ -172,6 +172,7 @@ void MoveBall()
         int sizeX = txGetExtentX (Photo .Ball);
         int sizeY = txGetExtentY (Photo .Ball);
         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeX * i, sizeY * j, Photo .Ball, 0, 0);
+        printf ("In :  %d\n", sizeX);
 
         ScoreDraw (score1, score2);
 
