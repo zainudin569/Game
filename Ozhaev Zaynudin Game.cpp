@@ -8,7 +8,7 @@ struct Pictures;
 void MoveBall();
 void CollisionBall (Ball* ball_p, Ball* ball_b);
 void ScoreDraw (int score1, int score2);
-void DrawBall_Pad(int* i, Pictures Photo, Ball ball1, Ball ball2, Ball ball3);
+void DrawBall_Pad(int* i, Pictures Photo, Ball* ball1, Ball* ball2, Ball ball3);
 
 //---------------------------------------------------------------------------------
 
@@ -87,8 +87,6 @@ void MoveBall()
     int F4_Col = 0;
     int score1 = 0, score2 = 0;
     int i = 0;
-    int sizeBall_X = txGetExtentX (Photo .Ball)/8;
-    int sizeBall_Y = txGetExtentY (Photo .Ball);
 
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
@@ -163,7 +161,7 @@ void MoveBall()
         CollisionBall (&ball1, &ball3);//проверка столкновения
         CollisionBall (&ball2, &ball3);
 
-        DrawBall_Pad(&i, Photo, ball1, ball2, ball3);
+        DrawBall_Pad(&i, Photo, &ball1, &ball2, ball3);
 
         //ball1.Drow();
         //ball2.Drow();
@@ -387,7 +385,7 @@ void ScoreDraw (int score1, int score2)
 
 //---------------------------------------------------------------------------------
 
-void DrawBall_Pad(int* i, Pictures Photo, Ball ball1, Ball ball2, Ball ball3)
+void DrawBall_Pad(int* i, Pictures Photo, Ball* ball1, Ball* ball2, Ball ball3)
     {
     int sizeBall_X = txGetExtentX (Photo .Ball)/8;
     int sizeBall_Y = txGetExtentY (Photo .Ball);
@@ -416,4 +414,10 @@ void DrawBall_Pad(int* i, Pictures Photo, Ball ball1, Ball ball2, Ball ball3)
     txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeBall_Y, 0, Photo .Ball, sizeBall_X * (*i) + 4, 0);
     (*i) ++;
     if (*i >= 7) *i = 0;
+
+    *ball1 .vx = 0;
+    *ball1 .vy = 0
+    *ball2 .vx = 0;
+    *ball2 .vy = 0;
+
     }
