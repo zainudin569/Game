@@ -166,7 +166,7 @@ void MoveBall()
 
         //ball3.Drow();
 
-        DrawBall_Pad(i, Photo, ball1, ball2, ball3)
+        DrawBall_Pad(i, Photo, ball1, ball2, ball3);
 
 
         ball1.Drow();
