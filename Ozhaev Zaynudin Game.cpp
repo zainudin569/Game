@@ -342,7 +342,7 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 
         Dx = (*ball_b) .x - (*ball_p) .x;
         Dy = (*ball_b) .y - (*ball_p) .y;
-        d = sqrt (Dx*Dx + Dy*Dy); if (d == 0) d=0.01;
+        d = sqrt (Dx*Dx + Dy*Dy); if (d == 0) d = 0.01;
         sin = Dx/d;
         cos = Dy/d;
 
