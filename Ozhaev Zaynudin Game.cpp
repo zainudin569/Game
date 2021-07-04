@@ -85,8 +85,8 @@ void MoveBall()
     int dt = 1;
     int F4_Col = 0;
     int score1 = 0, score2 = 0;
-
-
+    int i = 0;
+    int sizeX = txGetExtentX (Photo .Ball)/4;
 
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
@@ -165,11 +165,8 @@ void MoveBall()
         ball2.Drow();
         //ball3.Drow();
 
-        int i = 0;
-        int sizeX = txGetExtentX (Photo .Ball)/4;
-
         //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 0, 0, Photo .Ball, 0, 0);
-        txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, 100, 0);
+        txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
         //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, 0, 0, TX_BLACK);
         i++;
         if (i==5) i = 0;
@@ -177,7 +174,7 @@ void MoveBall()
         ScoreDraw (score1, score2);
 
         txEnd();
-        txSleep (1000);
+        txSleep (500);
         }
 
     txDeleteDC (Photo .Fon);
