@@ -40,7 +40,7 @@ struct Pictures
 
 struct Ball
     {
-    double  x, y , vx, vy;
+    int  x, y , vx, vy;
 
     int r;
 
@@ -168,7 +168,7 @@ void MoveBall()
         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
-        i += sqrt (pow (ball3 .vx) + pow (ball3 .vy));
+        i += sqrt (pow (ball3 .vx, 2) + pow (ball3 .vy, 2));
 
         printf ("In :  %d\n", i);
 
