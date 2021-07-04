@@ -174,7 +174,7 @@ void MoveBall()
         ScoreDraw (score1, score2);
 
         txEnd();
-        txSleep (500);
+        txSleep (20);
         }
 
     txDeleteDC (Photo .Fon);
