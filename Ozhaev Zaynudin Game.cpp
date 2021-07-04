@@ -174,8 +174,8 @@ void MoveBall()
         txSleep (1);
         }
 
-    txDeleteDC (Fon);
-    txDeleteDC (Ball);
+    txDeleteDC (Pictures::Fon);
+    txDeleteDC (Pictures::Ball);
     }
 
 //---------------------------------------------------------------------------------
