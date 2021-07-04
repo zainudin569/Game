@@ -163,14 +163,11 @@ void MoveBall()
         CollisionBall (&ball1, &ball3);//проверка столкновения
         CollisionBall (&ball2, &ball3);
 
-
-        //ball3.Drow();
-
         DrawBall_Pad(&i, Photo, ball1, ball2, ball3);
 
-
-        ball1.Drow();
-        ball2.Drow();
+        //ball1.Drow();
+        //ball2.Drow();
+        //ball3.Drow();
 
         ScoreDraw (score1, score2);
 
