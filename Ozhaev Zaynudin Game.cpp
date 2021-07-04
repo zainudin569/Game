@@ -391,24 +391,24 @@ void DrawBall_Pad(int* i, Pictures Photo, Ball* ball1, Ball* ball2, Ball ball3)
     int sizeBall_Y = txGetExtentY (Photo .Ball);
     int sizePad = 150;
 
-    if (ball1 .y <= (H + 50)/2)
+    if (*ball1 .y <= (H + 50)/2)
         {
-        txAlphaBlend (txDC(), ball1 .x - 55, ball1 .y - 60, sizePad, sizePad, Photo .Pad, sizePad, sizePad);
+        txAlphaBlend (txDC(), *ball1 .x - 55, *ball1 .y - 60, sizePad, sizePad, Photo .Pad, sizePad, sizePad);
         }
 
         else
         {
-        txAlphaBlend (txDC(), ball1 .x - 55, ball1 .y - 100, sizePad, sizePad, Photo .Pad, 0, sizePad);
+        txAlphaBlend (txDC(), *ball1 .x - 55, *ball1 .y - 100, sizePad, sizePad, Photo .Pad, 0, sizePad);
         }
 
-    if (ball2 .y <= (H + 50)/2)
+    if (*ball2 .y <= (H + 50)/2)
         {
-        txAlphaBlend (txDC(), ball2 .x - 85, ball2 .y - 58, sizePad, sizePad, Photo .Pad, 0, 0);;
+        txAlphaBlend (txDC(), *ball2 .x - 85, *ball2 .y - 58, sizePad, sizePad, Photo .Pad, 0, 0);;
         }
 
         else
         {
-        txAlphaBlend (txDC(), ball2 .x - 85, ball2 .y - 95, sizePad, sizePad, Photo .Pad, sizePad, 0);
+        txAlphaBlend (txDC(), *ball2 .x - 85, *ball2 .y - 95, sizePad, sizePad, Photo .Pad, sizePad, 0);
         }
 
     txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeBall_Y, 0, Photo .Ball, sizeBall_X * (*i) + 4, 0);
