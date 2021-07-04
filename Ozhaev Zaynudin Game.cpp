@@ -165,9 +165,9 @@ void MoveBall()
         ball2.Drow();
         //ball3.Drow();
 
-        //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 0, 0, Photo .Ball, 0, 0);
+        txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0);
         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
-        txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+        //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
         i++;
         if (i==7) i = 0;
 
