@@ -86,7 +86,7 @@ void MoveBall()
     int F4_Col = 0;
     int score1 = 0, score2 = 0;
     int i = 0;
-    int sizeX = txGetExtentX (Photo .Ball)/8;
+    int sizeX = txGetExtentX (Photo .Ball)/8 + 4;
     int sizeY = txGetExtentY (Photo .Ball);
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
