@@ -80,7 +80,7 @@ void MoveBall()
     Key plaer1 = { VK_LEFT, VK_RIGHT, VK_UP, VK_DOWN };
     Key plaer2 = { 'A', 'D', 'W', 'S' };
 
-    Pictures Photo  = {txLoadImage ("Pictures\\Fon.bmp", txLoadImage ("Pictures\\Ball.bmp")};
+    Pictures Photo  = {txLoadImage ("Pictures\\Fon.bmp"), txLoadImage ("Pictures\\Ball.bmp")};
     //Pictures Ball = txLoadImage ("Pictures\\Ball.bmp");
 
     int dt = 1;
