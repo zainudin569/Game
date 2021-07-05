@@ -417,7 +417,7 @@ void DrawBall_Pad(int* i, Pictures Photo, Ball ball1, Ball ball2, Ball ball3)
         }
 
     txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeBall_Y, 0, Photo .Ball, sizeBall_X * (*i) + 4, 0);
-    (*i) ++;
+    *i ++;
     if (*i >= 7) *i = 0;
 
     }
