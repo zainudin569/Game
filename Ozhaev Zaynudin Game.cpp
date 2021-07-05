@@ -164,7 +164,7 @@ void MoveBall()
         DrawBall_Pad(&i, Photo, ball1, ball2, ball3);
 
         ball1 .vx = 0;
-        ball1 .vy = 0
+        ball1 .vy = 0;
         ball2 .vx = 0;
         ball2 .vy = 0;
 
