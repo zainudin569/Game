@@ -391,7 +391,7 @@ void DrawBall_Pad(int* i, Pictures Photo, Ball* ball1, Ball* ball2, Ball ball3)
     int sizeBall_Y = txGetExtentY (Photo .Ball);
     int sizePad = 150;
 
-    if ((*ball1 .y) <= (H + 50)/2)
+    if ((*ball1) .y <= (H + 50)/2)
         {
         txAlphaBlend (txDC(), *ball1 .x - 55, *ball1 .y - 60, sizePad, sizePad, Photo .Pad, sizePad, sizePad);
         }
