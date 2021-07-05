@@ -3,11 +3,12 @@ const int W = 1070;
 const int H = 650;
 struct Ball;
 struct Key;
+struct Pictures;
 
 void MoveBall();
 void CollisionBall (Ball* ball_p, Ball* ball_b);
 void ScoreDraw (int score1, int score2);
-void Maze (Ball* ball, Key plaer, int* F4_Col);
+void DrawBall_Pad(int* i, Pictures Photo, Ball ball1, Ball ball2, Ball ball3);
 
 //---------------------------------------------------------------------------------
 
@@ -28,6 +29,15 @@ struct Key
 
     void Control (Ball* ball, int* F4_Col);
     };
+
+//---------------------------------------------------------------------------------
+
+struct Pictures
+    {
+    HDC Fon, Ball, Pad;
+    };
+
+//---------------------------------------------------------------------------------
 
 struct Ball
     {
@@ -51,13 +61,13 @@ void MoveBall()
     //srand(time(NULL));
 
     Ball ball1 = { W/2 + rand() % W/2 ,  rand() % H, 0, 0,
-                   40,
+                   35,
                    1,
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
 
     Ball ball2 = { rand() % W/2,  rand() % H, 0, 0,
-                   40,
+                   35,
                    2,
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200),
                    RGB(50 + rand() % 200, 50 + rand() % 200, 50 + rand() % 200) };
@@ -71,23 +81,24 @@ void MoveBall()
     Key plaer1 = { VK_LEFT, VK_RIGHT, VK_UP, VK_DOWN };
     Key plaer2 = { 'A', 'D', 'W', 'S' };
 
+    Pictures Photo  = {txLoadImage ("Pictures\\Fon.bmp"), txLoadImage ("Pictures\\Ball.bmp"), txLoadImage ("Pictures\\Pad.bmp")};
+
     int dt = 1;
     int F4_Col = 0;
-    int score1 = 4, score2 = 4;
-
-    HDC Fon  = txLoadImage ("Pictures\\Fon.bmp");
-
+    int score1 = 0, score2 = 0;
+    int i = 0;
+    
     while (!txGetAsyncKeyState (VK_ESCAPE))
         {
         txBegin();
         txSetFillColor (TX_BLACK);
         txClear();
 
-        if (score1 == 5 or score2 == 5)
+        /*if (score1 == 5 or score2 == 5)
             {
             ball3 .x = 145;
             ball3 .y = 155;
-            ball3 .r = 15
+            ball3 .r = 15;
             HDC Map1 = txLoadImage ("Pictures\\Map1.bmp");
             HDC Map2 = txLoadImage ("Pictures\\Map2.bmp");
 
@@ -132,10 +143,10 @@ void MoveBall()
 
             //Maze (&ball3, plaer1, &F4_Col);
             score1 = 0, score2 = 0;
-            ball3 .r = 25
-            }
+            ball3 .r = 25;
+            }*/
 
-        txBitBlt (txDC(), 0, 50, 0, 0, Fon);
+        txBitBlt (txDC(), 0, 50, 0, 0, Photo .Fon);
 
         //printf ("In collor():  %06x\n", collor);
         //printf ("In CraziBall(): score1 = %d and score2 = %d\n", score1, score2);
@@ -150,9 +161,11 @@ void MoveBall()
         CollisionBall (&ball1, &ball3);//проверка столкновения
         CollisionBall (&ball2, &ball3);
 
-        ball1.Drow();
-        ball2.Drow();
-        ball3.Drow();
+        DrawBall_Pad(&i, Photo, ball1, ball2, ball3);
+
+        //ball1.Drow();
+        //ball2.Drow();
+        //ball3.Drow();
 
         ScoreDraw (score1, score2);
 
@@ -160,7 +173,9 @@ void MoveBall()
         txSleep (1);
         }
 
-    txDeleteDC (Fon);
+    txDeleteDC (Photo .Fon);
+    txDeleteDC (Photo .Ball);
+    txDeleteDC (Photo .Pad);
     }
 
 //---------------------------------------------------------------------------------
@@ -185,10 +200,10 @@ void Ball::Drow()
 
 void Key::Control (Ball* ball, int* F4_Col)
     {
-    if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 5;
-    if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 5;
-    if (txGetAsyncKeyState (key_up))    (*ball) .vy = (*ball) .vy - 5;;
-    if (txGetAsyncKeyState (key_down))  (*ball) .vy = (*ball) .vy + 5;;
+    if (txGetAsyncKeyState (key_left))  (*ball) .vx = (*ball) .vx - 15;
+    if (txGetAsyncKeyState (key_right)) (*ball) .vx = (*ball) .vx + 15;
+    if (txGetAsyncKeyState (key_up))    (*ball) .vy = (*ball) .vy - 15;;
+    if (txGetAsyncKeyState (key_down))  (*ball) .vy = (*ball) .vy + 15;;
 
     if (txGetAsyncKeyState (VK_SPACE)) (*ball) .vy = (*ball) .vx = 0;
 
@@ -280,7 +295,7 @@ void Ball::Physics (int* score1, int* score2, int dt)
         if ( pl == 0)
             {
             ++(*score2);
-            x = W/2; vx = -10 + rand() % 20; -10 + rand() % 20;
+            x = W/2; vx = -10 + rand() % 20; vy = -10 + rand() % 20;
             txPlaySound ("sounds/zvuk-krika-gol.wav");
             Sleep (200);
             }
@@ -324,7 +339,7 @@ void CollisionBall (Ball* ball_p, Ball* ball_b)
 
         Dx = (*ball_b) .x - (*ball_p) .x;
         Dy = (*ball_b) .y - (*ball_p) .y;
-        d = sqrt (Dx*Dx + Dy*Dy); if (d == 0) d=0.01;
+        d = sqrt (Dx*Dx + Dy*Dy); if (d == 0) d = 0.01;
         sin = Dx/d;
         cos = Dy/d;
 
@@ -368,10 +383,40 @@ void ScoreDraw (int score1, int score2)
     txTextOut (txGetExtentX() / 2, 2, str);
     }
 
-void Maze (Ball* ball, Key plaer1, int* F4_Col)
+//---------------------------------------------------------------------------------
+
+void DrawBall_Pad(int* i, Pictures Photo, Ball* ball1, Ball ball2, Ball ball3)
     {
+    int sizeBall_X = txGetExtentX (Photo .Ball)/8;
+    int sizeBall_Y = txGetExtentY (Photo .Ball);
+    int sizePad = 150;
 
+    if (ball1 .y <= (H + 50)/2)
+        {
+        txAlphaBlend (txDC(), ball1 .x - 55, ball1 .y - 60, sizePad, sizePad, Photo .Pad, sizePad, sizePad);
+        }
 
+        else
+        {
+        txAlphaBlend (txDC(), ball1 .x - 55, ball1 .y - 100, sizePad, sizePad, Photo .Pad, 0, sizePad);
+        }
+
+    if (ball2 .y <= (H + 50)/2)
+        {
+        txAlphaBlend (txDC(), ball2 .x - 85, ball2 .y - 58, sizePad, sizePad, Photo .Pad, 0, 0);;
+        }
+
+        else
+        {
+        txAlphaBlend (txDC(), ball2 .x - 85, ball2 .y - 95, sizePad, sizePad, Photo .Pad, sizePad, 0);
+        }
+
+    txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeBall_Y, 0, Photo .Ball, sizeBall_X * (*i) + 4, 0);
+    (*i) ++;
+    if (*i >= 7) *i = 0;
+    *ball1 .vx = 0;
+    *ball1 .vy = 0
+    *ball2 .vx = 0;
+    *ball2 .vy = 0;
+        
     }
-
-

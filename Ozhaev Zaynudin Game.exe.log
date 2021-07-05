@@ -1730,3 +1730,2546 @@ Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
 Directory:	C:\Users\zainu\Desktop\курс\Game
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x3E48 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C8FB in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (156):
+
+    154:         ball2.Drow();
+    155:         ball3.Drow();
+=>  156:         txBitBlt (txDC(), ball3 .x, ball3 .y, 0, 0, Ball);
+    157: 
+    158:         ScoreDraw (score1, score2);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (156):
+
+    154:         ball2.Drow();
+    155:         ball3.Drow();
+=>  156:         txBitBlt (txDC(), ball3 .x, ball3 .y, 0, 0, Ball);
+    157: 
+    158:         ScoreDraw (score1, score2);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  1 2021 14:33:59, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 01 2021 14:34:05
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#2: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x3E48 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C8FB in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (156):
+
+    154:         ball2.Drow();
+    155:         ball3.Drow();
+=>  156:         txBitBlt (txDC(), ball3 .x, ball3 .y, 0, 0, Ball);
+    157: 
+    158:         ScoreDraw (score1, score2);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (156):
+
+    154:         ball2.Drow();
+    155:         ball3.Drow();
+=>  156:         txBitBlt (txDC(), ball3 .x, ball3 .y, 0, 0, Ball);
+    157: 
+    158:         ScoreDraw (score1, score2);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  1 2021 14:33:59, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 01 2021 14:34:05
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13388, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#3: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x3E48 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422B22 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txBitBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13388)
+
+# 1 0x0042C8FB in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (156):
+
+    154:         ball2.Drow();
+    155:         ball3.Drow();
+=>  156:         txBitBlt (txDC(), ball3 .x, ball3 .y, 0, 0, Ball);
+    157: 
+    158:         ScoreDraw (score1, score2);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13388):
+
+  13386:     {
+  13387: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13388: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13389: 
+  13390: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (156):
+
+    154:         ball2.Drow();
+    155:         ball3.Drow();
+=>  156:         txBitBlt (txDC(), ball3 .x, ball3 .y, 0, 0, Ball);
+    157: 
+    158:         ScoreDraw (score1, score2);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  1 2021 14:33:59, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 01 2021 14:34:05
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {200, 0, 250, 50} не полностью лежит внутри изображения-источника {0, 0, 200, 50}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x339C (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D69 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C964 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (175):
+
+    173:         //int sizeY = txGetExtentY (Photo .Ball);
+    174:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Photo .Ball,
+=>  175:         sizeX - 50 * i, 0);
+    176: 
+    177:         ScoreDraw (score1, score2);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (175):
+
+    173:         //int sizeY = txGetExtentY (Photo .Ball);
+    174:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Photo .Ball,
+=>  175:         sizeX - 50 * i, 0);
+    176: 
+    177:         ScoreDraw (score1, score2);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  4 2021 11:49:22, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 04 2021 11:49:26
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {200, 0, 250, 50} не полностью лежит внутри изображения-источника {0, 0, 200, 50}, функция txAlphaBlend() работать не будет.
+
+#2: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x339C (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D69 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C964 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (175):
+
+    173:         //int sizeY = txGetExtentY (Photo .Ball);
+    174:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Photo .Ball,
+=>  175:         sizeX - 50 * i, 0);
+    176: 
+    177:         ScoreDraw (score1, score2);
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (175):
+
+    173:         //int sizeY = txGetExtentY (Photo .Ball);
+    174:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 50, Photo .Ball,
+=>  175:         sizeX - 50 * i, 0);
+    176: 
+    177:         ScoreDraw (score1, score2);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  4 2021 11:49:22, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 04 2021 11:49:27
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13435, функция: bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF),
+
+Сообщение: Прямоугольник копируемой области {592, 0, 652, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txTransparentBlt() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x20A0 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13434) bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042324B in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txTransparentBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13435)
+
+# 1 0x0042C90D in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (170):
+
+    168:         //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 0, 0, Photo .Ball, 0, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+=>  170:         txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 60, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+    171:         i++;
+    172:         if (i==7) i = 0;
+
+# 2 0x0042C01F in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13434):
+
+  13432:         {
+  13433: $       SetLastError (ERROR_INVALID_DATA);
+=>13434: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13435:                   "функция txTransparentBlt() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13436:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (170):
+
+    168:         //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 0, 0, Photo .Ball, 0, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+=>  170:         txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 60, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+    171:         i++;
+    172:         if (i==7) i = 0;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  4 2021 23:58:55, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 04 2021 23:58:59
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13435, функция: bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF),
+
+Сообщение: Прямоугольник копируемой области {592, 0, 652, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txTransparentBlt() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x1F50 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13434) bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423260 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txTransparentBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13435)
+
+# 1 0x0042C956 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (170):
+
+    168:         //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 0, 0, Photo .Ball, 0, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+=>  170:         txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+    171:         i++;
+    172:         if (i==7) i = 0;
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13434):
+
+  13432:         {
+  13433: $       SetLastError (ERROR_INVALID_DATA);
+=>13434: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13435:                   "функция txTransparentBlt() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13436:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (170):
+
+    168:         //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 0, 0, Photo .Ball, 0, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+=>  170:         txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+    171:         i++;
+    172:         if (i==7) i = 0;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:00:27, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:00:31
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13435, функция: bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF),
+
+Сообщение: Прямоугольник копируемой области {740, 0, 800, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txTransparentBlt() работать не будет.
+
+#2: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRE0, Thread: 0x1F50 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13434) bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423260 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txTransparentBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13435)
+
+# 1 0x0042C956 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (170):
+
+    168:         //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 0, 0, Photo .Ball, 0, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+=>  170:         txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+    171:         i++;
+    172:         if (i==7) i = 0;
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13434):
+
+  13432:         {
+  13433: $       SetLastError (ERROR_INVALID_DATA);
+=>13434: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13435:                   "функция txTransparentBlt() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13436:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (170):
+
+    168:         //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 0, 0, Photo .Ball, 0, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+=>  170:         txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+    171:         i++;
+    172:         if (i==7) i = 0;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:00:27, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:00:30
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13435, функция: bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF),
+
+Сообщение: Прямоугольник копируемой области {592, 0, 652, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txTransparentBlt() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x500 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13434) bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423260 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txTransparentBlt() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13435)
+
+# 1 0x0042C956 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (170):
+
+    168:         //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 0, 0, Photo .Ball, 0, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+=>  170:         txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+    171:         i++;
+    172:         if (i==6) i = 0;
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13434):
+
+  13432:         {
+  13433: $       SetLastError (ERROR_INVALID_DATA);
+=>13434: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13435:                   "функция txTransparentBlt() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13436:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (170):
+
+    168:         //txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, 0, 0, Photo .Ball, 0, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+=>  170:         txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+    171:         i++;
+    172:         if (i==6) i = 0;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:01:10, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:01:14
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {-70, 0, -10, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x2750 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C957 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:18:10, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:18:14
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {-144, 0, -84, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#2: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x2750 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C957 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:18:10, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:18:15
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {-218, 0, -158, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#3: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x2750 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C957 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:18:10, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:18:14
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {-70, 0, -10, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x2DC0 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C955 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:21:24, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:21:27
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {-70, 0, -10, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x3EC4 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C955 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:21:49, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:21:54
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {-144, 0, -84, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x1B34 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C955 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:22:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:22:16
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {-292, 0, -232, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#2: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x1B34 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C955 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:22:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:22:16
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {596, 0, 656, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x2B98 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C957 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:27:53, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:27:57
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {892, 0, 952, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#2: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x2B98 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C957 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:27:53, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:27:57
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {1188, 0, 1248, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#3: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x2B98 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C957 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:27:53, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:27:57
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {1484, 0, 1544, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#4: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x2B98 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C957 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:27:53, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:27:57
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {1780, 0, 1840, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#5: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x2B98 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C957 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:27:53, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:27:56
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {2076, 0, 2136, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#6: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x2B98 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C957 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:27:53, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:27:57
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {2372, 0, 2432, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#7: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x2B98 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C957 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:27:53, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:27:57
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {2668, 0, 2728, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#8: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x2B98 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C957 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:27:53, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:27:57
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {2964, 0, 3024, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#9: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x2B98 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C957 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:27:53, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:27:57
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {596, 0, 656, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x2608 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C957 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:30:38, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:30:42
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {1040, 0, 1100, 60} не полностью лежит внутри изображения-источника {0, 0, 595, 60}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x3E7C (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042C957 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (168):
+
+    166:         //ball3.Drow();
+    167: 
+=>  168:         txAlphaBlend (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i + 4, 0);
+    169:         //txBitBlt (txDC(), ball3 .x - 25, ball3 .y - 25, 50, 0, Photo .Ball, sizeX * i, 0);
+    170:         //txTransparentBlt (txDC(), ball3 .x - 25, ball3 .y - 25, sizeY, 0, Photo .Ball, sizeX * i, 0, TX_BLACK);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 00:45:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 00:45:05
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {70, 70, 140, 210} не полностью лежит внутри изображения-источника {0, 0, 140, 140}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x3914 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042CB3A in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (178):
+
+    176:         if (i >= 7) i = 0;
+    177: 
+=>  178:         txAlphaBlend (txDC(), ball1 .x - 40, ball3 .y - 40, 70, 0, Photo .Pad, 70, 70);
+    179: 
+    180:         if (ball1 .x <= H/2)
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (178):
+
+    176:         if (i >= 7) i = 0;
+    177: 
+=>  178:         txAlphaBlend (txDC(), ball1 .x - 40, ball3 .y - 40, 70, 0, Photo .Pad, 70, 70);
+    179: 
+    180:         if (ball1 .x <= H/2)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 01:31:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 01:31:05
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {70, 70, 140, 210} не полностью лежит внутри изображения-источника {0, 0, 140, 140}, функция txAlphaBlend() работать не будет.
+
+#2: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x3914 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042CB3A in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (178):
+
+    176:         if (i >= 7) i = 0;
+    177: 
+=>  178:         txAlphaBlend (txDC(), ball1 .x - 40, ball3 .y - 40, 70, 0, Photo .Pad, 70, 70);
+    179: 
+    180:         if (ball1 .x <= H/2)
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (178):
+
+    176:         if (i >= 7) i = 0;
+    177: 
+=>  178:         txAlphaBlend (txDC(), ball1 .x - 40, ball3 .y - 40, 70, 0, Photo .Pad, 70, 70);
+    179: 
+    180:         if (ball1 .x <= H/2)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 01:31:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 01:31:05
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {70, 70, 210, 210} не полностью лежит внутри изображения-источника {0, 0, 140, 140}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x1138 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042CB36 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (178):
+
+    176:         if (i >= 7) i = 0;
+    177: 
+=>  178:         txAlphaBlend (txDC(), ball1 .x - 40, ball3 .y - 40, 0, 0, Photo .Pad, 70, 70);
+    179: 
+    180:         if (ball1 .x <= H/2)
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (178):
+
+    176:         if (i >= 7) i = 0;
+    177: 
+=>  178:         txAlphaBlend (txDC(), ball1 .x - 40, ball3 .y - 40, 0, 0, Photo .Pad, 70, 70);
+    179: 
+    180:         if (ball1 .x <= H/2)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 01:31:51, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 01:31:55
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {70, 70, 210, 210} не полностью лежит внутри изображения-источника {0, 0, 140, 140}, функция txAlphaBlend() работать не будет.
+
+#2: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x1138 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042CB36 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (178):
+
+    176:         if (i >= 7) i = 0;
+    177: 
+=>  178:         txAlphaBlend (txDC(), ball1 .x - 40, ball3 .y - 40, 0, 0, Photo .Pad, 70, 70);
+    179: 
+    180:         if (ball1 .x <= H/2)
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (178):
+
+    176:         if (i >= 7) i = 0;
+    177: 
+=>  178:         txAlphaBlend (txDC(), ball1 .x - 40, ball3 .y - 40, 0, 0, Photo .Pad, 70, 70);
+    179: 
+    180:         if (ball1 .x <= H/2)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 01:31:51, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 01:31:55
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {70, 70, 210, 210} не полностью лежит внутри изображения-источника {0, 0, 140, 140}, функция txAlphaBlend() работать не будет.
+
+#3: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x1138 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042CB36 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (178):
+
+    176:         if (i >= 7) i = 0;
+    177: 
+=>  178:         txAlphaBlend (txDC(), ball1 .x - 40, ball3 .y - 40, 0, 0, Photo .Pad, 70, 70);
+    179: 
+    180:         if (ball1 .x <= H/2)
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (178):
+
+    176:         if (i >= 7) i = 0;
+    177: 
+=>  178:         txAlphaBlend (txDC(), ball1 .x - 40, ball3 .y - 40, 0, 0, Photo .Pad, 70, 70);
+    179: 
+    180:         if (ball1 .x <= H/2)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 01:31:51, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 01:31:54
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {0, 250, 250, 500} не полностью лежит внутри изображения-источника {0, 0, 250, 250}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x144C (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042CACD in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (176):
+
+    174:         if (i >= 7) i = 0;
+    175: 
+=>  176:         txAlphaBlend (txDC(), ball1 .x - 40, ball1 .y - 40, 0, 250, Photo .Pad, 0, 250);
+    177: 
+    178:         if (ball1 .x <= H/2)
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (176):
+
+    174:         if (i >= 7) i = 0;
+    175: 
+=>  176:         txAlphaBlend (txDC(), ball1 .x - 40, ball1 .y - 40, 0, 250, Photo .Pad, 0, 250);
+    177: 
+    178:         if (ball1 .x <= H/2)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 01:44:58, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 01:45:02
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {0, 150, 300, 450} не полностью лежит внутри изображения-источника {0, 0, 300, 300}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x3CF8 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042CB87 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (177):
+
+    175: 
+    176:         txAlphaBlend (txDC(), ball1 .x - 60, ball1 .y - 85, 0, 150, Photo .Pad, 0, 150);
+=>  177:         txAlphaBlend (txDC(), ball2 .x - 60, ball2 .y - 85, 0, 0, Photo .Pad, 0, 150);
+    178: 
+    179:         if (ball1 .x <= H/2)
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (177):
+
+    175: 
+    176:         txAlphaBlend (txDC(), ball1 .x - 60, ball1 .y - 85, 0, 150, Photo .Pad, 0, 150);
+=>  177:         txAlphaBlend (txDC(), ball2 .x - 60, ball2 .y - 85, 0, 0, Photo .Pad, 0, 150);
+    178: 
+    179:         if (ball1 .x <= H/2)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 01:51:26, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 01:51:30
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {0, 150, 300, 450} не полностью лежит внутри изображения-источника {0, 0, 300, 300}, функция txAlphaBlend() работать не будет.
+
+#2: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x3CF8 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042CB87 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (177):
+
+    175: 
+    176:         txAlphaBlend (txDC(), ball1 .x - 60, ball1 .y - 85, 0, 150, Photo .Pad, 0, 150);
+=>  177:         txAlphaBlend (txDC(), ball2 .x - 60, ball2 .y - 85, 0, 0, Photo .Pad, 0, 150);
+    178: 
+    179:         if (ball1 .x <= H/2)
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (177):
+
+    175: 
+    176:         txAlphaBlend (txDC(), ball1 .x - 60, ball1 .y - 85, 0, 150, Photo .Pad, 0, 150);
+=>  177:         txAlphaBlend (txDC(), ball2 .x - 60, ball2 .y - 85, 0, 0, Photo .Pad, 0, 150);
+    178: 
+    179:         if (ball1 .x <= H/2)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 01:51:26, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 01:51:30
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {0, 150, 300, 450} не полностью лежит внутри изображения-источника {0, 0, 300, 300}, функция txAlphaBlend() работать не будет.
+
+#3: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRE0, Thread: 0x3CF8 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042CB87 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (177):
+
+    175: 
+    176:         txAlphaBlend (txDC(), ball1 .x - 60, ball1 .y - 85, 0, 150, Photo .Pad, 0, 150);
+=>  177:         txAlphaBlend (txDC(), ball2 .x - 60, ball2 .y - 85, 0, 0, Photo .Pad, 0, 150);
+    178: 
+    179:         if (ball1 .x <= H/2)
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (177):
+
+    175: 
+    176:         txAlphaBlend (txDC(), ball1 .x - 60, ball1 .y - 85, 0, 150, Photo .Pad, 0, 150);
+=>  177:         txAlphaBlend (txDC(), ball2 .x - 60, ball2 .y - 85, 0, 0, Photo .Pad, 0, 150);
+    178: 
+    179:         if (ball1 .x <= H/2)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 01:51:26, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 01:51:30
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {150, 0, 450, 300} не полностью лежит внутри изображения-источника {0, 0, 300, 300}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x1720 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042CB87 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (177):
+
+    175: 
+    176:         txAlphaBlend (txDC(), ball1 .x - 60, ball1 .y - 85, 0, 150, Photo .Pad, 0, 150);
+=>  177:         txAlphaBlend (txDC(), ball2 .x - 60, ball2 .y - 85, 0, 0, Photo .Pad, 150, 0);
+    178: 
+    179:         if (ball1 .x <= H/2)
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (177):
+
+    175: 
+    176:         txAlphaBlend (txDC(), ball1 .x - 60, ball1 .y - 85, 0, 150, Photo .Pad, 0, 150);
+=>  177:         txAlphaBlend (txDC(), ball2 .x - 60, ball2 .y - 85, 0, 0, Photo .Pad, 150, 0);
+    178: 
+    179:         if (ball1 .x <= H/2)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 01:52:13, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 01:52:17
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe, файл: C:\Users\zainu\Desktop\курс\TX\TXLib.h, строка: 13516, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {150, 0, 450, 300} не полностью лежит внутри изображения-источника {0, 0, 300, 300}, функция txAlphaBlend() работать не будет.
+
+#2: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x1720 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423D7E in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: txAlphaBlend() at C:/Users/zainu/Desktop/курс/TX/TXLib.h (13516)
+
+# 1 0x0042CB87 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: MoveBall() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (177):
+
+    175: 
+    176:         txAlphaBlend (txDC(), ball1 .x - 60, ball1 .y - 85, 0, 150, Photo .Pad, 0, 150);
+=>  177:         txAlphaBlend (txDC(), ball2 .x - 60, ball2 .y - 85, 0, 0, Photo .Pad, 150, 0);
+    178: 
+    179:         if (ball1 .x <= H/2)
+
+# 2 0x0042C035 in C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe: main() at C:/Users/zainu/Desktop/курс/Game/Ozhaev Zaynudin Game.cpp (18):
+
+     16:     txCreateWindow (W, H);
+     17: 
+=>   18:     MoveBall();
+     19: 
+     20:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\zainu\Desktop\курс\TX\TXLib.h (13515):
+
+  13513:         {
+  13514: $       SetLastError (ERROR_INVALID_DATA);
+=>13515: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13516:                   "функция txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13517:         }
+
+# 1 in void MoveBall() at C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.cpp (177):
+
+    175: 
+    176:         txAlphaBlend (txDC(), ball1 .x - 60, ball1 .y - 85, 0, 150, Photo .Pad, 0, 150);
+=>  177:         txAlphaBlend (txDC(), ball2 .x - 60, ball2 .y - 85, 0, 0, Photo .Pad, 150, 0);
+    178: 
+    179:         if (ball1 .x <= H/2)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-20 16:46:48 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\zainu\Desktop\курс\TX\TXLib.h
+Compiled:	Jul  5 2021 01:52:13, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Jul 05 2021 01:52:17
+
+Run file:	C:\Users\zainu\Desktop\курс\Game\Ozhaev Zaynudin Game.exe
+Directory:	C:\Users\zainu\Desktop\курс\Game
+
+--------------------------------------------------
